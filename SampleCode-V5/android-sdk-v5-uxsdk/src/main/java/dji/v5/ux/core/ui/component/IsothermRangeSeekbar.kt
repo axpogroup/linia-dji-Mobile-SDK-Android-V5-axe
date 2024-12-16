@@ -38,14 +38,14 @@ open class IsothermRangeSeekbar @JvmOverloads constructor(
         }
 
     }
-
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-        if (DEBUG_TOUCH_RECT) {
-            canvas?.drawRect(getTouchRect(mLeftThumb), paint)
-            canvas?.drawRect(getTouchRect(mRightThumb), paint)
-        }
-    }
+//TODO check why this is commented
+//    override fun onDraw(canvas: Canvas?) {
+//        super.onDraw(canvas)
+//        if (DEBUG_TOUCH_RECT) {
+//            canvas?.drawRect(getTouchRect(mLeftThumb), paint)
+//            canvas?.drawRect(getTouchRect(mRightThumb), paint)
+//        }
+//    }
 
     override fun getTouchRect(thumb: Drawable?): Rect {
         mTouchRect = super.getTouchRect(thumb)

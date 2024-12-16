@@ -47,17 +47,18 @@ open class StrokeTextView @JvmOverloads constructor(
         }
     }
 
-    override fun onDraw(canvas: Canvas) {
-        onDrawingFlag = true
-        val lastColor = textColors
-        setTextColor(strokeColor)
-        paint.style = Paint.Style.STROKE
-        paint.strokeWidth = strokeWidth
-        super.onDraw(canvas)
-
-        setTextColor(lastColor)
-        paint.style = Paint.Style.FILL
-        super.onDraw(canvas)
-        onDrawingFlag = false
-    }
+    //TODO check why this is commented
+//    override fun onDraw(canvas: Canvas?) {
+//        onDrawingFlag = true
+//        val lastColor = textColors
+//        setTextColor(strokeColor)
+//        paint.style = Paint.Style.STROKE
+//        paint.strokeWidth = strokeWidth
+//        super.onDraw(canvas)
+//
+//        setTextColor(lastColor)
+//        paint.style = Paint.Style.FILL
+//        super.onDraw(canvas)
+//        onDrawingFlag = false
+//    }
 }
