@@ -192,23 +192,24 @@ class PopoverView(context: Context,
         postInvalidate()
     }
 
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-
-        if (!enableDropShadow) {
-            return
-        }
-
-        shadowRectF.set(contentLayout.left + shadowDx,
-            contentLayout.top + shadowDy,
-            contentLayout.right + shadowDx,
-            contentLayout.bottom + shadowDy)
-
-        canvas?.save()
-
-        canvas?.drawRoundRect(shadowRectF, contentLayout.radius, contentLayout.radius, shadowPaint)
-
-        canvas?.restore()
-
-    }
+    //TODO check why did we comment this?
+//    override fun onDraw(canvas: Canvas?) {
+//        super.onDraw(canvas)
+//
+//        if (!enableDropShadow) {
+//            return
+//        }
+//
+//        shadowRectF.set(contentLayout.left + shadowDx,
+//            contentLayout.top + shadowDy,
+//            contentLayout.right + shadowDx,
+//            contentLayout.bottom + shadowDy)
+//
+//        canvas?.save()
+//
+//        canvas?.drawRoundRect(shadowRectF, contentLayout.radius, contentLayout.radius, shadowPaint)
+//
+//        canvas?.restore()
+//
+//    }
 }

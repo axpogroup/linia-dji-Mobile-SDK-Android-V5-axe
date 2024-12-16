@@ -75,19 +75,20 @@ class SegmentedButtonGroup @JvmOverloads constructor(
         }
     }
 
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-
-        checkedItemView?.let { child->
-            if (checkedItemLeft == NOT_SET) {
-                checkedItemLeft = child.left.toFloat()
-            }
-            child.background = null
-            checkedItemRect.set(checkedItemLeft, child.top.toFloat(), checkedItemLeft + child.width, child.bottom.toFloat())
-            paint.color = checkedItemBgColor
-            canvas?.drawRoundRect(checkedItemRect, radius, radius, paint)
-        }
-    }
+    //TODO check why we commented this
+//    override fun onDraw(canvas: Canvas?) {
+//        super.onDraw(canvas)
+//
+//        checkedItemView?.let { child->
+//            if (checkedItemLeft == NOT_SET) {
+//                checkedItemLeft = child.left.toFloat()
+//            }
+//            child.background = null
+//            checkedItemRect.set(checkedItemLeft, child.top.toFloat(), checkedItemLeft + child.width, child.bottom.toFloat())
+//            paint.color = checkedItemBgColor
+//            canvas?.drawRoundRect(checkedItemRect, radius, radius, paint)
+//        }
+//    }
 
     private fun onClickItem(view: View) {
         // 取消上次选中的view的selection

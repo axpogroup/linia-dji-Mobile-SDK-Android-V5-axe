@@ -49,13 +49,13 @@ class ExposeVSeekBar @JvmOverloads constructor(
         }
         return super.onTouchEvent(event)
     }
-
-    override fun onDraw(canvas: Canvas) {
-        canvas.takeIf { isShowSeekBar }?.let {
-            drawRect(it)
-        }
-        super.onDraw(canvas)
-    }
+//TODO check Don't know why this is commented? Do we even use this component?
+//    override fun onDraw(canvas: Canvas?) {
+//        canvas?.takeIf { isShowSeekBar }?.let {
+//            drawRect(it)
+//        }
+//        super.onDraw(canvas)
+//    }
 
     private fun drawRect(canvas: Canvas) {
         val thumbRect = mThumb.bounds
