@@ -30,6 +30,8 @@ android {
 }
 
 dependencies {
+    apply from: file('dependencies.gradle')
+
     implementation deps.annotation
     implementation deps.appcompat
     implementation deps.multidex
