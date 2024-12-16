@@ -186,8 +186,8 @@ open class SDCardStatusListItemWidget @JvmOverloads constructor(
                         showAlertDialog(title = getString(R.string.uxsdk_sd_card_dialog_title),
                                 icon = formatErrorDialogIcon,
                                 dialogTheme = dialogTheme,
-                                message = String.format(getString(R.string.uxsdk_sd_card_format_error),
-                                        error.djiError.description()),
+                                message = String.format(getString(R.string.uxsdk_sd_card_format_error,
+                                        error.djiError.description() ?: error.djiError.hint() ?: error.djiError.toString())),
                                 dialogDismissListener = dialogDismissListener)
                         uiUpdateStateProcessor.onNext(DialogDisplayed(dialogType))
                     }
