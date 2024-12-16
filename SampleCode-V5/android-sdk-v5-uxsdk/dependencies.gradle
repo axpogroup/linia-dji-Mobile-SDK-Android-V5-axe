@@ -67,7 +67,7 @@ ext {
     deps.dom = 'org.dom4j:dom4j:2.1.1'
 
     //kotlin
-    deps.kotlinLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    deps.kotlinLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10"
 
     //glide
     deps.glide = 'com.github.bumptech.glide:glide:4.9.0'
