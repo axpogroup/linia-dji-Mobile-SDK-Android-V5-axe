@@ -74,8 +74,8 @@ open class FPVWidget @JvmOverloads constructor(
     private var width = -1
     private var height = -1
     private val fpvSurfaceView: SurfaceView = findViewById(R.id.surface_view_fpv)
-    private val cameraNameTextView: TextView = findViewById(R.id.textview_camera_name)
-    private val cameraSideTextView: TextView = findViewById(R.id.textview_camera_side)
+//    private val cameraNameTextView: TextView = findViewById(R.id.textview_camera_name)
+//    private val cameraSideTextView: TextView = findViewById(R.id.textview_camera_side)
     private val verticalOffset: Guideline = findViewById(R.id.vertical_offset)
     private val horizontalOffset: Guideline = findViewById(R.id.horizontal_offset)
     private var fpvStateChangeResourceId: Int = INVALID_RESOURCE
@@ -130,7 +130,7 @@ open class FPVWidget @JvmOverloads constructor(
     var isGridLinesEnabled = true
         set(isGridLinesEnabled) {
             field = isGridLinesEnabled
-            updateGridLineVisibility()
+//            updateGridLineVisibility()
         }
 
     /**
@@ -145,82 +145,82 @@ open class FPVWidget @JvmOverloads constructor(
     /**
      * The text color state list of the camera name text view
      */
-    var cameraNameTextColors: ColorStateList?
-        get() = cameraNameTextView.textColors
-        set(colorStateList) {
-            cameraNameTextView.setTextColor(colorStateList)
-        }
-
-    /**
-     * The text color of the camera name text view
-     */
-    @get:ColorInt
-    @setparam:ColorInt
-    var cameraNameTextColor: Int
-        get() = cameraNameTextView.currentTextColor
-        set(color) {
-            cameraNameTextView.setTextColor(color)
-        }
-
-    /**
-     * The text size of the camera name text view
-     */
-    @get:Dimension
-    @setparam:Dimension
-    var cameraNameTextSize: Float
-        get() = cameraNameTextView.textSize
-        set(textSize) {
-            cameraNameTextView.textSize = textSize
-        }
-
-    /**
-     * The background for the camera name text view
-     */
-    var cameraNameTextBackground: Drawable?
-        get() = cameraNameTextView.background
-        set(drawable) {
-            cameraNameTextView.background = drawable
-        }
-
-    /**
-     * The text color state list of the camera name text view
-     */
-    var cameraSideTextColors: ColorStateList?
-        get() = cameraSideTextView.textColors
-        set(colorStateList) {
-            cameraSideTextView.setTextColor(colorStateList)
-        }
-
-    /**
-     * The text color of the camera side text view
-     */
-    @get:ColorInt
-    @setparam:ColorInt
-    var cameraSideTextColor: Int
-        get() = cameraSideTextView.currentTextColor
-        set(color) {
-            cameraSideTextView.setTextColor(color)
-        }
-
-    /**
-     * The text size of the camera side text view
-     */
-    @get:Dimension
-    @setparam:Dimension
-    var cameraSideTextSize: Float
-        get() = cameraSideTextView.textSize
-        set(textSize) {
-            cameraSideTextView.textSize = textSize
-        }
-
-    /**
-     * The background for the camera side text view
-     */
-    var cameraSideTextBackground: Drawable?
-        get() = cameraSideTextView.background
-        set(drawable) {
-            cameraSideTextView.background = drawable
-        }
+//    var cameraNameTextColors: ColorStateList?
+//        get() = cameraNameTextView.textColors
+//        set(colorStateList) {
+//            cameraNameTextView.setTextColor(colorStateList)
+//        }
+//
+//    /**
+//     * The text color of the camera name text view
+//     */
+//    @get:ColorInt
+//    @setparam:ColorInt
+//    var cameraNameTextColor: Int
+//        get() = cameraNameTextView.currentTextColor
+//        set(color) {
+//            cameraNameTextView.setTextColor(color)
+//        }
+//
+//    /**
+//     * The text size of the camera name text view
+//     */
+//    @get:Dimension
+//    @setparam:Dimension
+//    var cameraNameTextSize: Float
+//        get() = cameraNameTextView.textSize
+//        set(textSize) {
+//            cameraNameTextView.textSize = textSize
+//        }
+//
+//    /**
+//     * The background for the camera name text view
+//     */
+//    var cameraNameTextBackground: Drawable?
+//        get() = cameraNameTextView.background
+//        set(drawable) {
+//            cameraNameTextView.background = drawable
+//        }
+//
+//    /**
+//     * The text color state list of the camera name text view
+//     */
+//    var cameraSideTextColors: ColorStateList?
+//        get() = cameraSideTextView.textColors
+//        set(colorStateList) {
+//            cameraSideTextView.setTextColor(colorStateList)
+//        }
+//
+//    /**
+//     * The text color of the camera side text view
+//     */
+//    @get:ColorInt
+//    @setparam:ColorInt
+//    var cameraSideTextColor: Int
+//        get() = cameraSideTextView.currentTextColor
+//        set(color) {
+//            cameraSideTextView.setTextColor(color)
+//        }
+//
+//    /**
+//     * The text size of the camera side text view
+//     */
+//    @get:Dimension
+//    @setparam:Dimension
+//    var cameraSideTextSize: Float
+//        get() = cameraSideTextView.textSize
+//        set(textSize) {
+//            cameraSideTextView.textSize = textSize
+//        }
+//
+//    /**
+//     * The background for the camera side text view
+//     */
+//    var cameraSideTextBackground: Drawable?
+//        get() = cameraSideTextView.background
+//        set(drawable) {
+//            cameraSideTextView.background = drawable
+//        }
 
     /**
      * The vertical alignment of the camera name and side text views
@@ -253,7 +253,7 @@ open class FPVWidget @JvmOverloads constructor(
     /**
      * The [GridLineView] shown in this widget
      */
-    val gridLineView: GridLineView = findViewById(R.id.view_grid_line)
+//    val gridLineView: GridLineView = findViewById(R.id.view_grid_line)
 
     /**
      * The [CenterPointView] shown in this widget
@@ -360,21 +360,21 @@ open class FPVWidget @JvmOverloads constructor(
     }
 
     private fun updateCameraName(cameraName: String) {
-        cameraNameTextView.text = cameraName
-        if (cameraName.isNotEmpty() && isCameraSourceNameVisible) {
-            cameraNameTextView.visibility = View.VISIBLE
-        } else {
-            cameraNameTextView.visibility = View.INVISIBLE
-        }
+//        cameraNameTextView.text = cameraName
+//        if (cameraName.isNotEmpty() && isCameraSourceNameVisible) {
+//            cameraNameTextView.visibility = View.VISIBLE
+//        } else {
+//            cameraNameTextView.visibility = View.INVISIBLE
+//        }
     }
 
     private fun updateCameraSide(cameraSide: String) {
-        cameraSideTextView.text = cameraSide
-        if (cameraSide.isNotEmpty() && isCameraSourceSideVisible) {
-            cameraSideTextView.visibility = View.VISIBLE
-        } else {
-            cameraSideTextView.visibility = View.INVISIBLE
-        }
+//        cameraSideTextView.text = cameraSide
+//        if (cameraSide.isNotEmpty() && isCameraSourceSideVisible) {
+//            cameraSideTextView.visibility = View.VISIBLE
+//        } else {
+//            cameraSideTextView.visibility = View.INVISIBLE
+//        }
     }
 
     private fun checkAndUpdateCameraName() {
@@ -397,9 +397,10 @@ open class FPVWidget @JvmOverloads constructor(
         }
     }
 
-    private fun updateGridLineVisibility() {
-        gridLineView.visibility = if (isGridLinesEnabled && widgetModel.getCameraIndex() == ComponentIndexType.FPV) View.VISIBLE else View.GONE
-    }
+//    private fun updateGridLineVisibility() {
+//        gridLineView.visibility = if (isGridLinesEnabled
+//            && widgetModel.streamSource?.physicalDevicePosition == PhysicalDevicePosition.NOSE) View.VISIBLE else View.GONE
+//    }
     //endregion
 
     //region Customization helpers
@@ -409,7 +410,7 @@ open class FPVWidget @JvmOverloads constructor(
      * @param textAppearance Style resource for text appearance
      */
     fun setCameraNameTextAppearance(@StyleRes textAppearance: Int) {
-        cameraNameTextView.setTextAppearance(context, textAppearance)
+//        cameraNameTextView.setTextAppearance(context, textAppearance)
     }
 
     /**
@@ -417,9 +418,9 @@ open class FPVWidget @JvmOverloads constructor(
      *
      * @param textAppearance Style resource for text appearance
      */
-    fun setCameraSideTextAppearance(@StyleRes textAppearance: Int) {
-        cameraSideTextView.setTextAppearance(context, textAppearance)
-    }
+//    fun setCameraSideTextAppearance(@StyleRes textAppearance: Int) {
+//        cameraSideTextView.setTextAppearance(context, textAppearance)
+//    }
 
     @SuppressLint("Recycle")
     private fun initAttributes(context: Context, attrs: AttributeSet) {
@@ -441,45 +442,45 @@ open class FPVWidget @JvmOverloads constructor(
             typedArray.getResourceIdAndUse(R.styleable.FPVWidget_uxsdk_cameraNameTextAppearance) {
                 setCameraNameTextAppearance(it)
             }
-            typedArray.getDimensionAndUse(R.styleable.FPVWidget_uxsdk_cameraNameTextSize) {
-                cameraNameTextSize = DisplayUtil.pxToSp(context, it)
-            }
-            typedArray.getColorAndUse(R.styleable.FPVWidget_uxsdk_cameraNameTextColor) {
-                cameraNameTextColor = it
-            }
-            typedArray.getDrawableAndUse(R.styleable.FPVWidget_uxsdk_cameraNameBackgroundDrawable) {
-                cameraNameTextBackground = it
-            }
-            typedArray.getResourceIdAndUse(R.styleable.FPVWidget_uxsdk_cameraSideTextAppearance) {
-                setCameraSideTextAppearance(it)
-            }
-            typedArray.getDimensionAndUse(R.styleable.FPVWidget_uxsdk_cameraSideTextSize) {
-                cameraSideTextSize = DisplayUtil.pxToSp(context, it)
-            }
-            typedArray.getColorAndUse(R.styleable.FPVWidget_uxsdk_cameraSideTextColor) {
-                cameraSideTextColor = it
-            }
-            typedArray.getDrawableAndUse(R.styleable.FPVWidget_uxsdk_cameraSideBackgroundDrawable) {
-                cameraSideTextBackground = it
-            }
-            typedArray.getFloatAndUse(R.styleable.FPVWidget_uxsdk_cameraDetailsVerticalAlignment) {
-                cameraDetailsVerticalAlignment = it
-            }
-            typedArray.getFloatAndUse(R.styleable.FPVWidget_uxsdk_cameraDetailsHorizontalAlignment) {
-                cameraDetailsHorizontalAlignment = it
-            }
-            typedArray.getIntegerAndUse(R.styleable.FPVWidget_uxsdk_gridLineType) {
-                gridLineView.type = GridLineView.GridLineType.find(it)
-            }
-            typedArray.getColorAndUse(R.styleable.FPVWidget_uxsdk_gridLineColor) {
-                gridLineView.lineColor = it
-            }
-            typedArray.getFloatAndUse(R.styleable.FPVWidget_uxsdk_gridLineWidth) {
-                gridLineView.lineWidth = it
-            }
-            typedArray.getIntegerAndUse(R.styleable.FPVWidget_uxsdk_gridLineNumber) {
-                gridLineView.numberOfLines = it
-            }
+//            typedArray.getDimensionAndUse(R.styleable.FPVWidget_uxsdk_cameraNameTextSize) {
+//                cameraNameTextSize = DisplayUtil.pxToSp(context, it)
+//            }
+//            typedArray.getColorAndUse(R.styleable.FPVWidget_uxsdk_cameraNameTextColor) {
+//                cameraNameTextColor = it
+//            }
+//            typedArray.getDrawableAndUse(R.styleable.FPVWidget_uxsdk_cameraNameBackgroundDrawable) {
+//                cameraNameTextBackground = it
+//            }
+//            typedArray.getResourceIdAndUse(R.styleable.FPVWidget_uxsdk_cameraSideTextAppearance) {
+//                setCameraSideTextAppearance(it)
+//            }
+//            typedArray.getDimensionAndUse(R.styleable.FPVWidget_uxsdk_cameraSideTextSize) {
+//                cameraSideTextSize = DisplayUtil.pxToSp(context, it)
+//            }
+//            typedArray.getColorAndUse(R.styleable.FPVWidget_uxsdk_cameraSideTextColor) {
+//                cameraSideTextColor = it
+//            }
+//            typedArray.getDrawableAndUse(R.styleable.FPVWidget_uxsdk_cameraSideBackgroundDrawable) {
+//                cameraSideTextBackground = it
+//            }
+//            typedArray.getFloatAndUse(R.styleable.FPVWidget_uxsdk_cameraDetailsVerticalAlignment) {
+//                cameraDetailsVerticalAlignment = it
+//            }
+//            typedArray.getFloatAndUse(R.styleable.FPVWidget_uxsdk_cameraDetailsHorizontalAlignment) {
+//                cameraDetailsHorizontalAlignment = it
+//            }
+//            typedArray.getIntegerAndUse(R.styleable.FPVWidget_uxsdk_gridLineType) {
+//                gridLineView.type = GridLineView.GridLineType.find(it)
+//            }
+//            typedArray.getColorAndUse(R.styleable.FPVWidget_uxsdk_gridLineColor) {
+//                gridLineView.lineColor = it
+//            }
+//            typedArray.getFloatAndUse(R.styleable.FPVWidget_uxsdk_gridLineWidth) {
+//                gridLineView.lineWidth = it
+//            }
+//            typedArray.getIntegerAndUse(R.styleable.FPVWidget_uxsdk_gridLineNumber) {
+//                gridLineView.numberOfLines = it
+//            }
             typedArray.getIntegerAndUse(R.styleable.FPVWidget_uxsdk_centerPointType) {
                 centerPointView.type = CenterPointView.CenterPointType.find(it)
             }
