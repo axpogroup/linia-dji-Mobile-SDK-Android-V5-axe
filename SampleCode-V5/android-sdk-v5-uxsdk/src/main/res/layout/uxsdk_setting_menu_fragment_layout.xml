@@ -47,6 +47,7 @@
             android:layout_height="@dimen/uxsdk_42_dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:visibility="gone"
             android:background="@drawable/uxsdk_selector_blue_oval_mask"
             android:padding="12dp"
             android:scaleType="centerCrop"

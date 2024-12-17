@@ -1,6 +1,9 @@
 package dji.v5.ux.core.widget.setting;
 
+import static dji.v5.ux.core.extension.ViewExtensions.toggleVisibility;
+
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -24,6 +27,7 @@ import dji.v5.ux.accessory.RTKStartServiceHelper;
 import dji.v5.ux.core.base.DJISDKModel;
 import dji.v5.ux.core.base.widget.ConstraintLayoutWidget;
 import dji.v5.ux.core.communication.ObservableInMemoryKeyedStore;
+import dji.v5.ux.core.communication.OnStateChangeCallback;
 import dji.v5.ux.core.ui.setting.SettingFragmentPagerAdapter;
 import dji.v5.ux.core.ui.setting.data.MenuBean;
 import dji.v5.ux.core.ui.setting.taplayout.TabViewPager;
@@ -45,7 +49,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * <p>
  * Copyright (c) 2022, DJI All Rights Reserved.
  */
-public class SettingPanelWidget extends ConstraintLayoutWidget<Boolean> {
+public class SettingPanelWidget extends ConstraintLayoutWidget<Boolean> implements OnStateChangeCallback<Object> {
     private final String tag = LogUtils.getTag(this);
 
     private ProductType mProductType = ProductType.UNKNOWN;
@@ -141,8 +145,19 @@ public class SettingPanelWidget extends ConstraintLayoutWidget<Boolean> {
     }
 
 
+    private FragmentActivity getFragmentActivity() {
+        Context context = getContext();
+        while (context instanceof ContextWrapper) {
+            if (context instanceof FragmentActivity) {
+                return (FragmentActivity) context;
+            }
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        throw new IllegalStateException("Context does not contain a FragmentActivity");
+    }
+
     protected void showWidgets() {
-        fm = ((FragmentActivity) getContext()).getSupportFragmentManager();
+        fm = getFragmentActivity().getSupportFragmentManager();
         if (isSlaverRcMode(mCurrentRcMode)) {
             createSlaverFragments();
         } else {
@@ -368,5 +383,10 @@ public class SettingPanelWidget extends ConstraintLayoutWidget<Boolean> {
     @Override
     public String getIdealDimensionRatioString() {
         return null;
+    }
+
+    @Override
+    public void onStateChange(@Nullable Object state) {
+        toggleVisibility(this);
     }
 }
