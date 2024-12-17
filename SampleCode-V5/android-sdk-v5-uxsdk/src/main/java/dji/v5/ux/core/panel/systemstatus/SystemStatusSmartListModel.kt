@@ -73,7 +73,8 @@ open class SystemStatusSmartListModel @JvmOverloads constructor(
             AIRCRAFT_BATTERY_TEMPERATURE.widgetID,
             TRAVEL_MODE.widgetID,
             NOVICE_MODE.widgetID,
-            OBSTACLE_AVOIDANCE.widgetID
+            OBSTACLE_AVOIDANCE.widgetID,
+            SD_CARD_STATUS.widgetID,
         )
     }
 
@@ -116,7 +117,7 @@ open class SystemStatusSmartListModel @JvmOverloads constructor(
             RC_STICK_MODE -> RCStickModeListItemWidget(context)
             RC_BATTERY -> RCBatteryListItemWidget(context)
             AIRCRAFT_BATTERY_TEMPERATURE -> AircraftBatteryTemperatureListItemWidget(context)
-            SD_CARD_STATUS -> SDCardStatusListItemWidget(context)
+            SD_CARD_STATUS -> SDCardStatusListItemWidget(context, attrs)
             EMMC_STATUS -> EMMCStatusListItemWidget(context)
             MAX_ALTITUDE -> MaxAltitudeListItemWidget(context)
             MAX_FLIGHT_DISTANCE -> MaxFlightDistanceListItemWidget(context)
