@@ -40,6 +40,7 @@ import dji.v5.ux.core.base.DJISDKModel
 import dji.v5.ux.core.base.SchedulerProvider
 import dji.v5.ux.core.base.widget.IconButtonWidget
 import dji.v5.ux.core.communication.ObservableInMemoryKeyedStore
+import dji.v5.ux.core.communication.OnStateChangeCallback
 import dji.v5.ux.core.extension.*
 import dji.v5.ux.core.util.UxErrorHandle
 import dji.v5.ux.core.widget.simulator.SimulatorIndicatorWidget.ModelState
@@ -90,6 +91,12 @@ open class SimulatorIndicatorWidget @JvmOverloads constructor(
             checkAndUpdateIcon()
         }
 
+    /**
+     * Call back for when the widget is tapped.
+     * This can be used to link the widget to SimulatorControlWidget
+     */
+    var stateChangeCallback: OnStateChangeCallback<Any>? = null
+
     //endregion
 
     //region Lifecycle
@@ -117,13 +124,20 @@ open class SimulatorIndicatorWidget @JvmOverloads constructor(
         if (!isInEditMode) {
             widgetModel.setup()
         }
+        initializeListener()
     }
 
     override fun onDetachedFromWindow() {
+        destroyListener()
         if (!isInEditMode) {
             widgetModel.cleanup()
         }
         super.onDetachedFromWindow()
+    }
+
+    override fun onClick(view: View?) {
+        super.onClick(view)
+        stateChangeCallback?.onStateChange(null)
     }
 
     override fun checkAndUpdateIconColor() {
@@ -167,6 +181,19 @@ open class SimulatorIndicatorWidget @JvmOverloads constructor(
         if (!isInEditMode) {
             addDisposable(reactToSimulatorStateChange())
         }
+    }
+
+    private fun initializeListener() {
+        if (stateChangeResourceId != INVALID_RESOURCE && this.rootView != null) {
+            val widgetView = this.rootView.findViewById<View>(stateChangeResourceId)
+            if (widgetView is OnStateChangeCallback<*>?) {
+                stateChangeCallback = widgetView as OnStateChangeCallback<Any>?
+            }
+        }
+    }
+
+    private fun destroyListener() {
+        stateChangeCallback = null
     }
 
     @SuppressLint("Recycle")

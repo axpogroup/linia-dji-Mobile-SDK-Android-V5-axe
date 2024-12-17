@@ -28,6 +28,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.Pair
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -50,6 +51,7 @@ import dji.v5.ux.core.base.WidgetSizeDescription
 import dji.v5.ux.core.base.widget.ConstraintLayoutWidget
 import dji.v5.ux.core.communication.GlobalPreferencesManager
 import dji.v5.ux.core.communication.ObservableInMemoryKeyedStore
+import dji.v5.ux.core.communication.OnStateChangeCallback
 import dji.v5.ux.core.extension.*
 import dji.v5.ux.core.util.UxErrorHandle
 import dji.v5.ux.core.util.UnitConversionUtil
@@ -74,7 +76,7 @@ open class SystemStatusWidget @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : ConstraintLayoutWidget<ModelState>(context, attrs, defStyleAttr){
+) : ConstraintLayoutWidget<ModelState>(context, attrs, defStyleAttr), View.OnClickListener {
     //region Fields
     private val systemStatusTextView: TextView = findViewById(R.id.textview_system_status)
     private val systemStatusBackgroundImageView: ImageView = findViewById(R.id.imageview_system_status_background)
@@ -115,6 +117,12 @@ open class SystemStatusWidget @JvmOverloads constructor(
         }
 
     /**
+     * Call back for when the widget is tapped.
+     * This can be used to link the widget to [dji.ux.beta.core.panel.systemstatus.SystemStatusListPanelWidget]
+     */
+    var stateChangeCallback: OnStateChangeCallback<Any>? = null
+
+    /**
      * The default mode determines the default text color and image background settings.
      */
     var defaultMode = DefaultMode.COLOR
@@ -146,6 +154,7 @@ open class SystemStatusWidget @JvmOverloads constructor(
     }
 
     init {
+        setOnClickListener(this)
         systemStatusTextView.isSelected = true //Required for horizontal scrolling in textView
         attrs?.let { initAttributes(context, it) }
     }
@@ -157,9 +166,11 @@ open class SystemStatusWidget @JvmOverloads constructor(
         if (!isInEditMode) {
             widgetModel.setup()
         }
+        initializeListener()
     }
 
     override fun onDetachedFromWindow() {
+        destroyListener()
         if (!isInEditMode) {
             widgetModel.cleanup()
         }
@@ -179,6 +190,10 @@ open class SystemStatusWidget @JvmOverloads constructor(
             .subscribe { widgetStateDataProcessor.onNext(ProductConnected(it)) })
     }
 
+    override fun onClick(v: View?) {
+        uiUpdateStateProcessor.onNext(UIState.WidgetClicked)
+        stateChangeCallback?.onStateChange(null)
+    }
     //endregion
 
     //region Reactions to model
@@ -378,6 +393,23 @@ open class SystemStatusWidget @JvmOverloads constructor(
             }
         }
     }
+
+    private fun initializeListener() {
+        if (stateChangeResourceId != INVALID_RESOURCE && this.rootView != null) {
+            val widgetView = this.rootView.findViewById<View>(stateChangeResourceId)
+            if (widgetView is OnStateChangeCallback<*>) {
+                stateChangeCallback = widgetView as? OnStateChangeCallback<Any>
+            }
+        }
+    }
+
+    private fun destroyListener() {
+        stateChangeCallback = null
+    }
+
+    //endregion
+
+    //region Hooks
 
     /**
      * Get the [ModelState] updates

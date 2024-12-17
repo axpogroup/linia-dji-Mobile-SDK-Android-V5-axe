@@ -100,7 +100,7 @@ class SystemStatusListPanelWidget @JvmOverloads constructor(
         panelTitle = context.getString(R.string.uxsdk_system_status_list_title),
         hasCloseButton = true
     )
-) : ListPanelWidget<Any>(context, attrs, defStyleAttr, configuration) {
+) : ListPanelWidget<Any>(context, attrs, defStyleAttr, configuration), OnStateChangeCallback<Any?> {
 
     //region Lifecycle
     override fun initPanelWidget(context: Context, attrs: AttributeSet?, defStyleAttr: Int, widgetConfiguration: PanelWidgetConfiguration?) {
@@ -145,6 +145,10 @@ class SystemStatusListPanelWidget @JvmOverloads constructor(
         } else {
             null
         }
+    }
+
+    override fun onStateChange(state: Any?) {
+        toggleVisibility()
     }
     //endregion
 
