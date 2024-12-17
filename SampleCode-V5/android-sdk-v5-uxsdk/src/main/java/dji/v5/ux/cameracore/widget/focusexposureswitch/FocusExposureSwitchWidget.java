@@ -118,11 +118,7 @@ public class FocusExposureSwitchWidget extends FrameLayoutWidget<Object> impleme
     public void onClick(View v) {
         int id = v.getId();
         if (id == this.getId()) {
-            addDisposable(widgetModel.switchControlMode()
-                    .observeOn(SchedulerProvider.ui())
-                    .subscribe(() -> {
-                        //do nothing
-                    }, UxErrorHandle.logErrorConsumer(TAG, "switchControlMode: ")));
+            widgetModel.switchControlMode();
         }
     }
 
