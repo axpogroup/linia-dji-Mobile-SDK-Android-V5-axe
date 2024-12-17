@@ -142,13 +142,9 @@ public class FocusModeWidget extends FrameLayoutWidget<Object> implements OnClic
         return getResources().getString(R.string.uxsdk_widget_default_ratio);
     }
 
-    @SuppressLint("CheckResult")
     @Override
     public void onClick(View v) {
-        addReaction(widgetModel.toggleFocusMode()
-                .observeOn(SchedulerProvider.ui())
-                .subscribe(() -> {
-                }, UxErrorHandle.logErrorConsumer(TAG, "switch focus mode: ")));
+        widgetModel.toggleFocusMode();
     }
 
     //endregion

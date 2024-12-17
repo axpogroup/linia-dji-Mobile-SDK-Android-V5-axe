@@ -27,10 +27,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import dji.sdk.keyvalue.key.CameraKey;
 import dji.sdk.keyvalue.key.DJIKey;
+import dji.sdk.keyvalue.key.FlightControllerKey;
 import dji.sdk.keyvalue.key.KeyTools;
 import dji.sdk.keyvalue.value.camera.CameraFocusMode;
 import dji.sdk.keyvalue.value.common.CameraLensType;
 import dji.sdk.keyvalue.value.common.ComponentIndexType;
+import dji.sdk.keyvalue.value.flightcontroller.DroneType;
+import dji.v5.manager.KeyManager;
+import dji.v5.ux.cameracore.widget.UtilsKt;
 import dji.v5.ux.core.base.DJISDKModel;
 import dji.v5.ux.core.base.ICameraIndex;
 import dji.v5.ux.core.base.WidgetModel;
@@ -66,6 +70,8 @@ public class FocusModeWidgetModel extends WidgetModel implements ICameraIndex {
     private UXKey controlModeKey;
     private ComponentIndexType cameraIndex = ComponentIndexType.LEFT_OR_MAIN;
     private CameraLensType lensType = CameraLensType.CAMERA_LENS_ZOOM;
+
+    private boolean isM30 = false;
     //endregion
 
     //region Lifecycle
@@ -94,6 +100,7 @@ public class FocusModeWidgetModel extends WidgetModel implements ICameraIndex {
         bindDataProcessor(KeyTools.createCameraKey(CameraKey.KeyIsAFCSupported,cameraIndex, lensType), isAFCSupportedProcessor);
         UXKey afcEnabledKey = UXKeys.create(GlobalPreferenceKeys.AFC_ENABLED);
         bindDataProcessor(afcEnabledKey, isAFCEnabledKeyProcessor);
+        isM30 = KeyManager.getInstance().getValue(DJIKey.create(FlightControllerKey.KeyDroneType)) == DroneType.M30_SERIES;
 
         controlModeKey = UXKeys.create(GlobalPreferenceKeys.CONTROL_MODE);
         bindDataProcessor(controlModeKey, controlModeProcessor);
@@ -153,22 +160,18 @@ public class FocusModeWidgetModel extends WidgetModel implements ICameraIndex {
 
     /**
      * Switch between focus modes
-     *
-     * @return Completable representing the success/failure of set action
      */
-    public Completable toggleFocusMode() {
+    public void toggleFocusMode() {
         final CameraFocusMode currentFocusMode = focusModeDataProcessor.getValue();
         final CameraFocusMode nextFocusMode = getNextFocusMode(currentFocusMode);
 
-        return djiSdkModel.setValue(focusModeKey, nextFocusMode)
-                .doOnComplete(() -> onFocusModeUpdate(nextFocusMode))
-                .doOnError(error -> focusModeDataProcessor.onNext(currentFocusMode));
+        UtilsKt.setValue(CameraKey.KeyCameraFocusMode, nextFocusMode, () -> onFocusModeUpdate(nextFocusMode), error -> focusModeDataProcessor.onNext(currentFocusMode));
     }
 
     private CameraFocusMode getNextFocusMode(CameraFocusMode currentFocusMode) {
         CameraFocusMode nextFocusMode;
         if (currentFocusMode == CameraFocusMode.MANUAL) {
-            if (isAFCEnabledProcessor.getValue()) {
+            if (isAFCEnabledProcessor.getValue() && !isM30) {
                 nextFocusMode = CameraFocusMode.AFC;
             } else {
                 nextFocusMode = CameraFocusMode.AF;
