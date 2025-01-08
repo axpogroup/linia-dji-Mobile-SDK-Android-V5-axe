@@ -25,8 +25,12 @@ package dji.v5.ux.core.widget.fpv
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
+import android.view.PixelCopy
 import android.view.Surface
 import android.view.SurfaceHolder
 import android.view.SurfaceView
@@ -342,6 +346,22 @@ open class FPVWidget @JvmOverloads constructor(
 
     fun setSurfaceViewZOrderOnTop(onTop: Boolean) {
         fpvSurfaceView.setZOrderOnTop(onTop)
+    }
+
+    private fun getBitmapFromSurface(surface: Surface, width: Int, height: Int, callback: (Bitmap?, String?) -> Unit) {
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+
+        PixelCopy.request(surface, bitmap, { result ->
+            if (result == PixelCopy.SUCCESS) {
+                callback(bitmap, null)
+            } else {
+                callback(null, "Failed to copy pixels: $result")
+            }
+        }, Handler(Looper.getMainLooper()))
+    }
+
+    fun getBitmap(callback: (Bitmap?, String?) -> Unit) {
+        surface?.let { getBitmapFromSurface(it, 200, 200, callback) }
     }
 
     fun setSurfaceViewZOrderMediaOverlay(isMediaOverlay: Boolean) {
