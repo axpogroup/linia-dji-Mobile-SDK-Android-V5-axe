@@ -912,6 +912,20 @@ open class SimulatorControlWidget @JvmOverloads constructor(
         windSpeedZSeekBar.enable(true)
         windSpeedZSeekBar.progress = WIND_SEEK_BAR_MAX / 2
 
+        setToFirstPreset()
+    }
+
+    private fun setToFirstPreset() {
+        val dataParts = SimulatorPresetUtils.presetList.values.firstOrNull()?.toString()?.split(" ")?.toTypedArray() ?: return
+        val latitude = dataParts[0].toDouble()
+        val longitude = dataParts[1].toDouble()
+        val satelliteCount = dataParts[2].toInt()
+        val frequency = dataParts[3].toInt()
+
+        onLoadPreset(SimulatorPresetData(latitude,
+            longitude,
+            satelliteCount,
+            frequency))
     }
 
     private fun normalizeWindValue(progress: Int): Int {
