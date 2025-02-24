@@ -62,10 +62,10 @@ dependencies {
     api deps.maplibreSdk
 
 
-    api deps.playservicesplaces
-    api deps.playservicesmaps
-    api deps.playserviceslocation
-    api deps.playservicesbase
+    //api deps.playservicesplaces
+    //api deps.playservicesmaps
+    //api deps.playserviceslocation
+    //api deps.playservicesbase
 
     compileOnly deps.aircraftProvided
     implementation deps.aircraft

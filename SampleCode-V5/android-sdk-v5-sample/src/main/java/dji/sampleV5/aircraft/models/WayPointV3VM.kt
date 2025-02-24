@@ -4,8 +4,6 @@ import android.R
 import android.content.Context
 import android.widget.ArrayAdapter
 import androidx.lifecycle.MutableLiveData
-import com.google.android.gms.common.ConnectionResult
-import com.google.android.gms.common.GoogleApiAvailability
 import dji.sampleV5.aircraft.data.FlightControlState
 import dji.sampleV5.aircraft.data.MissionUploadStateInfo
 import dji.sdk.keyvalue.key.DJIKey
@@ -273,12 +271,7 @@ class WayPointV3VM : DJIViewModel() {
         }
     }
 
-    fun isGoogleMapsSupported(): Boolean {
-        val googleApiAvailability = GoogleApiAvailability.getInstance()
-        val resultCode =
-            googleApiAvailability.isGooglePlayServicesAvailable(ContextUtil.getContext())
-        return resultCode == ConnectionResult.SUCCESS
-    }
+    fun isGoogleMapsSupported(): Boolean { return false   }
 
 }
 data class MissionGlobalModel( var globalSpeed:Double = 5.0,

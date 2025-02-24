@@ -22,7 +22,7 @@ ext {
     deps.lottie = 'com.airbnb.android:lottie:3.3.1'//RTK扫描页中使用，用于实现动画效果
     deps.cardview = 'androidx.cardview:cardview:1.0.0'//PopoverView中使用
     deps.material = 'com.google.android.material:material:1.0.0'//AvoidanceShortcutWidget使用
-    deps.lynx = 'com.github.pedrovgs:lynx:1.1.0'// app显示logcat
+    deps.lynx = 'com.github.pedrovgs:lynx:1.6'// app显示logcat
 
     /*RTK设置页面使用-start*/
     deps.mikepenzCommunityMaterial = "com.mikepenz:community-material-typeface:3.5.95.1-kotlin@aar"
@@ -64,14 +64,14 @@ ext {
     deps.ktxNavigationUi = "androidx.navigation:navigation-ui-ktx:2.5.3"
     deps.documentfile = 'androidx.documentfile:documentfile:1.0.1'
     //解析xml
-    deps.dom = 'org.dom4j:dom4j:2.1.1'
+    deps.dom = 'org.dom4j:dom4j:2.2.0'
 
     //kotlin
     deps.kotlinLib = "org.jetbrains.kotlin:kotlin-stdlib"
 
     //glide
-    deps.glide = 'com.github.bumptech.glide:glide:4.9.0'
-    deps.glidecompiler = 'com.github.bumptech.glide:compiler:4.9.0'
+    deps.glide = 'com.github.bumptech.glide:glide:5.0.5'
+    deps.glidecompiler = 'com.github.bumptech.glide:compiler:5.0.5'
 
 
     //wpmz 航线文件解析

@@ -74,7 +74,7 @@ import dji.v5.ux.mapkit.core.models.annotations.DJIMarker;
 import dji.v5.ux.mapkit.core.models.annotations.DJIMarkerOptions;
 import dji.v5.ux.mapkit.core.models.annotations.DJIPolyline;
 import dji.v5.ux.mapkit.core.models.annotations.DJIPolylineOptions;
-import dji.v5.ux.mapkit.gmap.provider.GoogleProvider;
+//import dji.v5.ux.mapkit.gmap.provider.GoogleProvider;
 import dji.v5.ux.mapkit.maplibre.provider.MaplibreProvider;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Single;
@@ -409,9 +409,9 @@ public class MapWidget extends ConstraintLayoutWidget<Object> implements View.On
             case MAPLIBRE:
                 initMapLibreMap(getContext(), null);
                 break;
-            case GOOGLE:
-                initGoogleMap(null);
-                break;
+//            case GOOGLE:
+//                initGoogleMap(null);
+//                break;
             default:
                 // do nothing
         }
@@ -881,15 +881,15 @@ public class MapWidget extends ConstraintLayoutWidget<Object> implements View.On
      * @param listener The OnMapReadyListener which will invoke the onMapReady method when the map has finished
      *                 initializing.
      */
-    public void initGoogleMap(@Nullable final OnMapReadyListener listener) {
-        mapView = new GoogleProvider().dispatchMapViewRequest(getContext(), null);
-        addView((ViewGroup) mapView, 0);
-        mapView.getDJIMapAsync(map -> {
-            MapWidget.this.map = map;
-            postInit(listener);
-            flyZoneHelper.initializeMap(map);
-        });
-    }
+//    public void initGoogleMap(@Nullable final OnMapReadyListener listener) {
+//        mapView = new GoogleProvider().dispatchMapViewRequest(getContext(), null);
+//        addView((ViewGroup) mapView, 0);
+//        mapView.getDJIMapAsync(map -> {
+//            MapWidget.this.map = map;
+//            postInit(listener);
+//            flyZoneHelper.initializeMap(map);
+//        });
+//    }
 
 
     /**
