@@ -30,7 +30,6 @@
             android:layout_marginBottom="@dimen/uxsdk_4_dp"
             android:text="无法起飞:电池固件版本错误，请更换电池或将电池升级到最新版本"
             android:textColor="@color/uxsdk_white"
-            android:fontFamily="@font/noto_sans_cjk_sc_medium"
             android:includeFontPadding="false"
             android:textSize="@dimen/uxsdk_10_dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_warning_message_time"

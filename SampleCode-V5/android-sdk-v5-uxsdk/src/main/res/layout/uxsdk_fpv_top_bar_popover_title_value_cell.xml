@@ -30,7 +30,6 @@
         android:textStyle="normal"
         android:textColor="@color/uxsdk_white_45_percent"
         android:layout_marginTop="@dimen/uxsdk_4_dp"
-        android:fontFamily="@font/noto_sans_cjk_sc_medium"
         android:includeFontPadding="false"
         tools:text="GPS信号"
         android:gravity="center"/>
