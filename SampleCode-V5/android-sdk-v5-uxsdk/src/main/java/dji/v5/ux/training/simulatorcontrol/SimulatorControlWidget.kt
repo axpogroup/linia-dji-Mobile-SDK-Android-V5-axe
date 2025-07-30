@@ -889,7 +889,7 @@ open class SimulatorControlWidget @JvmOverloads constructor(
         satelliteCountSeekBar.max = 20
         satelliteCountSeekBar.addOnSeekBarChangeListener(seekBarChangeListener)
         satelliteCountSeekBar.enable(true)
-        satelliteCountSeekBar.progress = 1
+        satelliteCountSeekBar.progress = 14
 
         frequencySeekBar.valueTextSize = DisplayUtil.pxToDip(context, 35f)
         frequencySeekBar.max = 150
