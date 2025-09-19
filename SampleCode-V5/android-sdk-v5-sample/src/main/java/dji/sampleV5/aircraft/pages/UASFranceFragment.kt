@@ -66,7 +66,7 @@ class UASFranceFragment : DJIFragment(), CompoundButton.OnCheckedChangeListener 
     }
 
 
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         uasFranceVM.setElectronicIDEnabled(isChecked, object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
                 ToastUtils.showToast("setElectronicIDEnabled success")

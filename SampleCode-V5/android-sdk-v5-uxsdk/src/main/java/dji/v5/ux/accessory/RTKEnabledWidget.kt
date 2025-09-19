@@ -190,7 +190,7 @@ open class RTKEnabledWidget @JvmOverloads constructor(
         super.onDetachedFromWindow()
     }
 
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         addDisposable(widgetModel.canEnableRTK.firstOrError()
                 .observeOn(SchedulerProvider.ui())
                 .subscribe({ canEnableRTK: Boolean ->

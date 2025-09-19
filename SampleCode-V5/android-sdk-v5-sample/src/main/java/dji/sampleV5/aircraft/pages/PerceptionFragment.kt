@@ -107,7 +107,7 @@ class PerceptionFragment : DJIFragment(), CompoundButton.OnCheckedChangeListener
     }
 
 
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         when (buttonView) {
             binding?.tbSetVisionPositioningEnableSwitch -> {
                 perceptionVM.setVisionPositioningEnabled(isChecked, object :

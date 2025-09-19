@@ -112,7 +112,7 @@ abstract class ListItemSwitchWidget<T : Any> @JvmOverloads constructor(
     }
 
 
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         if (buttonView == listItemSwitch) {
             uiUpdateStateProcessor.onNext(UIState.SwitchChanged)
             onSwitchToggle(isChecked)

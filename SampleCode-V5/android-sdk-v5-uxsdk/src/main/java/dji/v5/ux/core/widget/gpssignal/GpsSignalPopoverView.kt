@@ -235,7 +235,7 @@ class GpsSignalPopoverView @JvmOverloads constructor(
         return getString(R.string.uxsdk_widget_rtk_enabled_ratio)
     }
 
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         addDisposable(rtkEnabledWidgetModel.canEnableRTK.firstOrError()
             .observeOn(SchedulerProvider.ui())
             .subscribe({ canEnableRTK: Boolean ->

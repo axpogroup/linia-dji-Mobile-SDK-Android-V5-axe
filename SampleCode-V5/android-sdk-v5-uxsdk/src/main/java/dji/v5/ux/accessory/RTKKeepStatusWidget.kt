@@ -84,7 +84,7 @@ class RTKKeepStatusWidget @JvmOverloads constructor(
         return getString(R.string.uxsdk_widget_rtk_keep_status_ratio)
     }
 
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         widgetModel.setRTKKeepStatusEnable(isChecked)
             .observeOn(SchedulerProvider.ui())
             .subscribe(object : CompletableObserver {

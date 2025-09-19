@@ -221,7 +221,7 @@ abstract class ListItemRadioButtonWidget<T : Any> @JvmOverloads constructor(
 
     }
 
-    override fun onCheckedChanged(group: RadioGroup?, radioButtonId: Int) {
+    override fun onCheckedChanged(group: RadioGroup, radioButtonId: Int) {
         for (i in 0 until radioGroup.childCount) {
             if (radioGroup[i].id == radioButtonId) {
                 val radioButton: RadioButton? = findViewById(radioButtonId)

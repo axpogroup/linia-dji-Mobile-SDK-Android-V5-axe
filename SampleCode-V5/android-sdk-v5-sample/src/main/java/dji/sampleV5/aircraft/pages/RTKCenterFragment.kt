@@ -180,7 +180,7 @@ class RTKCenterFragment : DJIFragment(), CompoundButton.OnCheckedChangeListener,
 
 
     //基站开启状态和精度维持Listener
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         when (buttonView) {
             binding?.tbRtkKeepStatusSwitch -> {
                 if (mIsUpdatingKeepStatus) {

@@ -340,7 +340,7 @@ class SlidingDialog @JvmOverloads constructor(
         }
     }
 
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
         onEventListener?.onCheckBoxChecked(this, isChecked)
     }
     //endregion
