@@ -378,7 +378,7 @@ abstract class ListItemEditTextButtonWidget<T : Any> @JvmOverloads constructor(
 
 
     private fun initEditText() {
-        listItemEditTextView.id = ViewIDGenerator.generateViewId()
+        listItemEditTextView.id = R.id.uxsdk_text_view_list_item_edit_text
         listItemEditTextView.gravity = Gravity.CENTER
         listItemEditTextView.width = getDimension(R.dimen.uxsdk_list_item_edit_min_width).toInt()
         listItemEditTextView.inputType = InputType.TYPE_CLASS_PHONE

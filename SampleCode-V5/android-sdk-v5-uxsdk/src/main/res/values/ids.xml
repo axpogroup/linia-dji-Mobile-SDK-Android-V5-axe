@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="uxsdk_tag_view_lifecycle" type="id"/>
+    <item name="uxsdk_text_view_list_item_edit_text" type="id" />
 </resources>
