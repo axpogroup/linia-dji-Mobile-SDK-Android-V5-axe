@@ -26,13 +26,22 @@ package dji.v5.ux.core.panel.topbar
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
+import android.util.TypedValue
+import android.view.Gravity
+import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.core.content.res.use
+import dji.sdk.keyvalue.value.airlink.WlmLinkQualityLevel
 import dji.v5.utils.common.LogUtils
 import dji.v5.ux.R
 import dji.v5.ux.core.base.WidgetSizeDescription
 import dji.v5.ux.core.base.panel.BarPanelWidget
 import dji.v5.ux.core.base.panel.PanelItem
 import dji.v5.ux.core.base.panel.PanelWidgetConfiguration
+import dji.v5.ux.core.extension.getColor
 import dji.v5.ux.core.extension.getDimension
 import dji.v5.ux.core.extension.getIntegerAndUse
 import dji.v5.ux.core.widget.airsense.AirSenseWidget
@@ -143,6 +152,8 @@ open class TopBarPanelWidget @JvmOverloads constructor(
      */
     val settingWidget: SettingWidget?
 
+    val lteConnectionWidget: LinearLayout
+
     /**
      * Getter for [ConnectionWidget]. Null when excluded from the bar panel.
      */
@@ -218,6 +229,57 @@ open class TopBarPanelWidget @JvmOverloads constructor(
         } else {
             videoSignalWidget = null
         }
+
+        // Parent Horizontal LinearLayout
+        lteConnectionWidget = LinearLayout(context).apply {
+            orientation = LinearLayout.HORIZONTAL
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            setPadding(0, 0, 0, 0)
+            gravity = Gravity.CENTER_VERTICAL
+        }
+
+        // LTE label
+        val label = TextView(context).apply {
+            text = "LTE:"
+            setTextColor(getColor(R.color.uxsdk_white))
+            setTextSize(TypedValue.COMPLEX_UNIT_SP, 7f)
+            gravity = Gravity.CENTER_VERTICAL or Gravity.END
+            background = null
+            includeFontPadding = false
+            setPadding(0, 0, 0, 0)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(0, 0, 0, 0) // no margins
+            }
+        }
+
+        // ImageButton
+        val signal = ImageButton(context).apply {
+            setImageResource(R.drawable.uxsdk_ic_topbar_signal_level_0)
+            background = null
+            scaleType = ImageView.ScaleType.CENTER_INSIDE
+            adjustViewBounds = true
+            setPadding(0, 0, 0, 0)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(0, 0, 0, 0) // no margins
+            }
+        }
+
+        // Add views in order (no drawablePadding on TextView)
+        label.compoundDrawablePadding = 0
+        lteConnectionWidget.addView(label)
+        lteConnectionWidget.addView(signal)
+
+        rightPanelItems.add(PanelItem(lteConnectionWidget))
+
         if (!WidgetValue.BATTERY.isItemExcluded(excludedItemsValue)) {
             batteryWidget = BatteryWidget(context, attrs)
             rightPanelItems.add(PanelItem(batteryWidget))
@@ -282,5 +344,27 @@ open class TopBarPanelWidget @JvmOverloads constructor(
         fun isItemExcluded(excludeItems: Int): Boolean {
             return excludeItems and this.value == this.value
         }
+    }
+
+    fun updateLTEWidget(linkQuality: WlmLinkQualityLevel?) {
+        if (linkQuality == null) {
+            lteConnectionWidget.visibility = GONE
+            return
+        } else {
+            lteConnectionWidget.visibility = VISIBLE
+        }
+
+        val drawable = when(linkQuality) {
+            WlmLinkQualityLevel.NO_SIGNAL, WlmLinkQualityLevel.UNKNOWN -> R.drawable.uxsdk_ic_topbar_signal_level_0
+            WlmLinkQualityLevel.LEVEL_1 -> R.drawable.uxsdk_ic_topbar_signal_level_1
+            WlmLinkQualityLevel.LEVEL_2 -> R.drawable.uxsdk_ic_topbar_signal_level_2
+            WlmLinkQualityLevel.LEVEL_3 -> R.drawable.uxsdk_ic_topbar_signal_level_3
+            WlmLinkQualityLevel.LEVEL_4 -> R.drawable.uxsdk_ic_topbar_signal_level_4
+            WlmLinkQualityLevel.LEVEL_5 -> R.drawable.uxsdk_ic_topbar_signal_level_5
+        }
+
+        val signalIcon: ImageButton? = lteConnectionWidget.getChildAt(1) as? ImageButton
+
+        signalIcon?.setImageResource(drawable)
     }
 }
