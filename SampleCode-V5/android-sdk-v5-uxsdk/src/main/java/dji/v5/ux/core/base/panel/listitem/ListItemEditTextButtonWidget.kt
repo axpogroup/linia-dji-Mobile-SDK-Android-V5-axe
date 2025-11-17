@@ -279,7 +279,9 @@ abstract class ListItemEditTextButtonWidget<T : Any> @JvmOverloads constructor(
      */
     var listItemEditTextValue: String?
         get() = listItemEditTextView.text.toString()
-        set(value) = listItemEditTextView.setText(value)
+        set(value) {
+            if (value != listItemEditTextView.text.toString()) listItemEditTextView.setText(value)
+        }
 
     /**
      * Text size of edit text
