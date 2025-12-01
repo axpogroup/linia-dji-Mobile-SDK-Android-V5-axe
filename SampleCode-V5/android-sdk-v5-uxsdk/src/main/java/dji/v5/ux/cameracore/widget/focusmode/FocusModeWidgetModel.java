@@ -165,7 +165,7 @@ public class FocusModeWidgetModel extends WidgetModel implements ICameraIndex {
         final CameraFocusMode currentFocusMode = focusModeDataProcessor.getValue();
         final CameraFocusMode nextFocusMode = getNextFocusMode(currentFocusMode);
 
-        UtilsKt.setValue(CameraKey.KeyCameraFocusMode, nextFocusMode, () -> onFocusModeUpdate(nextFocusMode), error -> focusModeDataProcessor.onNext(currentFocusMode));
+        UtilsKt.setValue(CameraKey.KeyCameraFocusMode, nextFocusMode, cameraIndex, () -> onFocusModeUpdate(nextFocusMode), error -> focusModeDataProcessor.onNext(currentFocusMode));
     }
 
     private CameraFocusMode getNextFocusMode(CameraFocusMode currentFocusMode) {

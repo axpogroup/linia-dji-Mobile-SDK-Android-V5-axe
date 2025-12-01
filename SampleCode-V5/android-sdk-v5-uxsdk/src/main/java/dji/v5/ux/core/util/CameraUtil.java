@@ -394,7 +394,11 @@ public final class CameraUtil {
     public static List<ComponentIndexType> getConnectionCameraList(
             boolean cameraConnection1,
             boolean cameraConnection2,
-            boolean cameraConnection3
+            boolean cameraConnection3,
+            boolean cameraConnection4,
+            boolean cameraConnection5,
+            boolean cameraConnection6,
+            boolean cameraConnection7
     ) {
         List<ComponentIndexType> list = new ArrayList<>();
         if (cameraConnection1) {
@@ -405,6 +409,18 @@ public final class CameraUtil {
         }
         if (cameraConnection3) {
             list.add(ComponentIndexType.UP);
+        }
+        if (cameraConnection4) {
+            list.add(ComponentIndexType.PORT_1);
+        }
+        if (cameraConnection5) {
+            list.add(ComponentIndexType.PORT_2);
+        }
+        if (cameraConnection6) {
+            list.add(ComponentIndexType.PORT_3);
+        }
+        if (cameraConnection7) {
+            list.add(ComponentIndexType.PORT_4);
         }
         return list;
     }

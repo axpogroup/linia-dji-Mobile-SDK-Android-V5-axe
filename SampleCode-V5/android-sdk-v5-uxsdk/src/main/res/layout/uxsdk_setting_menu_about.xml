@@ -56,6 +56,12 @@
             android:layout_height="@dimen/uxsdk_58_dp"
             android:visibility="gone" />
 
+        <dji.v5.ux.core.base.TextCell
+            android:id="@+id/common_menu_camera4_sn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/uxsdk_58_dp"
+            android:visibility="gone" />
+
         <LinearLayout
             android:id="@+id/common_menu_battery_version_layout"
             android:layout_width="match_parent"

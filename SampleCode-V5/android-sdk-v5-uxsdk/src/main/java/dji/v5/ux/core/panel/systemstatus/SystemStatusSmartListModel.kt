@@ -26,6 +26,7 @@ package dji.v5.ux.core.panel.systemstatus
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import dji.sdk.keyvalue.value.common.ComponentIndexType
 import dji.sdk.keyvalue.value.product.ProductType
 import dji.v5.ux.core.base.panel.SmartListModel
 import dji.v5.ux.core.base.panel.WidgetID
@@ -160,6 +161,10 @@ open class SystemStatusSmartListModel @JvmOverloads constructor(
         } else {
             updateListPlus(SSD_STATUS.widgetID)
         }
+    }
+
+    fun onCameraSourceUpdated(cameraIndex: ComponentIndexType) {
+        (getWidget(SD_CARD_STATUS.widgetID) as? SDCardStatusListItemWidget)?.onCameraSourceUpdated(cameraIndex)
     }
     //endregion
 

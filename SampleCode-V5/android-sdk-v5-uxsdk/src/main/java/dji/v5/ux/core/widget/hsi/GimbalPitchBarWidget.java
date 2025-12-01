@@ -509,7 +509,7 @@ public class GimbalPitchBarWidget extends FrameLayoutWidget<Boolean> implements 
 
     public void setGimbalDrawable(ComponentIndexType cameraIndex) {
         int resId;
-        if (cameraIndex == ComponentIndexType.LEFT_OR_MAIN) {
+        if (cameraIndex == ComponentIndexType.PORT_1 || cameraIndex == ComponentIndexType.LEFT_OR_MAIN) {
             resId = R.drawable.uxsdk_fpv_hsi_pitch_guide_gimbal_3;
         } else if (cameraIndex == ComponentIndexType.RIGHT) {
             resId = R.drawable.uxsdk_fpv_hsi_pitch_guide_gimbal_1;
@@ -548,7 +548,8 @@ public class GimbalPitchBarWidget extends FrameLayoutWidget<Boolean> implements 
 
 
     private void startListener() {
-        if (getCameraIndex().value() >= 3 || widgetModel.getGimbalAttitudeInDegreesProcessorList().size() <= 0) {
+        var cameraIndexValue = getCameraIndex().value();
+        if ((cameraIndexValue > ComponentIndexType.PORT_4.value() || (cameraIndexValue > ComponentIndexType.UP.value() && cameraIndexValue < ComponentIndexType.PORT_1.value())) || widgetModel.getGimbalAttitudeInDegreesProcessorList().size() <= 0) {
             return;
         }
 

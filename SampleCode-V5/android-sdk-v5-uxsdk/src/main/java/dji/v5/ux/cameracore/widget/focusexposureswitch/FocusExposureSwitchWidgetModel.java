@@ -191,7 +191,7 @@ public class FocusExposureSwitchWidgetModel extends WidgetModel implements ICame
                         }
 
     private void setMeteringMode() {
-        UtilsKt.setValue(CameraKey.KeyCameraMeteringMode, CameraMeteringMode.REGION, this::onModeComplete, error -> setFocusMode());
+        UtilsKt.setValue(CameraKey.KeyCameraMeteringMode, CameraMeteringMode.REGION, cameraIndex, this::onModeComplete, error -> setFocusMode());
     }
 
     private void setFocusMode() {

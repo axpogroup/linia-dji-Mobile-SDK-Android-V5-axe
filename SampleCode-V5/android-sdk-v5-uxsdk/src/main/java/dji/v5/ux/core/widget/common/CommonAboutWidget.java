@@ -51,6 +51,7 @@ public class CommonAboutWidget extends FrameLayoutWidget<Object> {
     protected TextCell camera1SnCell;
     protected TextCell camera2SnCell;
     protected TextCell camera3SnCell;
+    protected TextCell camera4SnCell;
     protected TextCell flycSerialCell;
     protected TextCell rcSerialCell;
     protected TextCell rtkSerialCell;
@@ -88,6 +89,7 @@ public class CommonAboutWidget extends FrameLayoutWidget<Object> {
         camera1SnCell = findViewById(R.id.common_menu_camera1_sn);
         camera2SnCell = findViewById(R.id.common_menu_camera2_sn);
         camera3SnCell = findViewById(R.id.common_menu_camera3_sn);
+        camera4SnCell = findViewById(R.id.common_menu_camera4_sn);
         flycSerialCell = findViewById(R.id.common_menu_flyc_serial);
         rcSerialCell = findViewById(R.id.common_menu_rc_serial);
         rtkSerialCell = findViewById(R.id.common_menu_rtk_serial);
@@ -106,6 +108,10 @@ public class CommonAboutWidget extends FrameLayoutWidget<Object> {
                 widgetModel.gimbal1ConnectionProcessor.toObservableOnUI(),
                 widgetModel.gimbal2ConnectionProcessor.toObservableOnUI(),
                 widgetModel.gimbal3ConnectionProcessor.toObservableOnUI(),
+                widgetModel.gimbal4ConnectionProcessor.toObservableOnUI(),
+                widgetModel.gimbal5ConnectionProcessor.toObservableOnUI(),
+                widgetModel.gimbal6ConnectionProcessor.toObservableOnUI(),
+                widgetModel.gimbal7ConnectionProcessor.toObservableOnUI(),
                 CameraUtil::getConnectionCameraList
         ).subscribe(this::updateGimbalVersion));
 
@@ -113,6 +119,10 @@ public class CommonAboutWidget extends FrameLayoutWidget<Object> {
                 widgetModel.camera1ConnectionProcessor.toObservableOnUI(),
                 widgetModel.camera2ConnectionProcessor.toObservableOnUI(),
                 widgetModel.camera3ConnectionProcessor.toObservableOnUI(),
+                widgetModel.camera4ConnectionProcessor.toObservableOnUI(),
+                widgetModel.camera5ConnectionProcessor.toObservableOnUI(),
+                widgetModel.camera6ConnectionProcessor.toObservableOnUI(),
+                widgetModel.camera7ConnectionProcessor.toObservableOnUI(),
                 CameraUtil::getConnectionCameraList
         ).subscribe(this::updateCameraView));
 
@@ -144,7 +154,7 @@ public class CommonAboutWidget extends FrameLayoutWidget<Object> {
             }
         }));
 
-        if (ProductUtil.isM350Product() || ProductUtil.isM400Product() || ProductUtil.isM300Product()) {
+        if (ProductUtil.isM350Product() || ProductUtil.isM300Product()) {
             addDisposable(Observable.combineLatest(
                     widgetModel.camera1SerialNumberProcessor.toObservableOnUI(),
                     widgetModel.camera2SerialNumberProcessor.toObservableOnUI(),
@@ -156,7 +166,20 @@ public class CommonAboutWidget extends FrameLayoutWidget<Object> {
                         return new Object();
                     }
             ).subscribe());
-        }
+        } else if (ProductUtil.isM400Product()) {
+            addDisposable(Observable.combineLatest(
+                    widgetModel.camera4SerialNumberProcessor.toObservableOnUI(),
+                    widgetModel.camera5SerialNumberProcessor.toObservableOnUI(),
+                    widgetModel.camera6SerialNumberProcessor.toObservableOnUI(),
+                    widgetModel.camera7SerialNumberProcessor.toObservableOnUI(),
+                    (c4, c5, c6, c7) -> {
+                        updateCameraSerialNumber(camera1SnCell, c4, ComponentIndexType.PORT_1);
+                        updateCameraSerialNumber(camera2SnCell, c5, ComponentIndexType.PORT_2);
+                        updateCameraSerialNumber(camera3SnCell, c6, ComponentIndexType.PORT_3);
+                        updateCameraSerialNumber(camera4SnCell, c7, ComponentIndexType.PORT_4);
+                        return new Object();
+                    }
+            ).subscribe());        }
     }
 
     private void updateRCVersion() {

@@ -54,6 +54,16 @@ public class HSIWidgetModel extends WidgetModel implements LocationListener {
     private final DataProcessor<Double> gimbalYawInDegrees1Processor = DataProcessor.create(0.0);
     private final DataProcessor<Double> gimbalYawInDegrees2Processor = DataProcessor.create(0.0);
 
+    private final DataProcessor<Boolean> gimbalConnection3Processor = DataProcessor.create(false);
+    private final DataProcessor<Boolean> gimbalConnection4Processor = DataProcessor.create(false);
+    private final DataProcessor<Boolean> gimbalConnection5Processor = DataProcessor.create(false);
+    private final DataProcessor<Boolean> gimbalConnection6Processor = DataProcessor.create(false);
+
+    private final DataProcessor<Double> gimbalYawInDegrees3Processor = DataProcessor.create(0.0);
+    private final DataProcessor<Double> gimbalYawInDegrees4Processor = DataProcessor.create(0.0);
+    private final DataProcessor<Double> gimbalYawInDegrees5Processor = DataProcessor.create(0.0);
+    private final DataProcessor<Double> gimbalYawInDegrees6Processor = DataProcessor.create(0.0);
+
     /**
      * 新增
      */
@@ -98,6 +108,36 @@ public class HSIWidgetModel extends WidgetModel implements LocationListener {
                 RxUtil.addListener(KeyTools.createKey(FlightControllerKey.KeyImuCoordinateTran), this),
                 (attitude, aDouble) -> attitude.getYaw() + aDouble * RAD_TO_DEG).subscribe(gimbalYawInDegrees2Processor::onNext);
 
+        Flowable.combineLatest(
+                        RxUtil.addListener(KeyTools.createKey(GimbalKey.KeyGimbalAttitude, ComponentIndexType.PORT_1), this),
+                        RxUtil.addListener(KeyTools.createKey(FlightControllerKey.KeyImuCoordinateTran), this),
+                        (attitude, aDouble) -> attitude.getYaw() + aDouble * RAD_TO_DEG)
+                .subscribe(gimbalYawInDegrees3Processor::onNext);
+
+        Flowable.combineLatest(
+                        RxUtil.addListener(KeyTools.createKey(GimbalKey.KeyGimbalAttitude, ComponentIndexType.PORT_2), this),
+                        RxUtil.addListener(KeyTools.createKey(FlightControllerKey.KeyImuCoordinateTran), this),
+                        (attitude, aDouble) -> attitude.getYaw() + aDouble * RAD_TO_DEG)
+                .subscribe(gimbalYawInDegrees4Processor::onNext);
+
+        Flowable.combineLatest(
+                        RxUtil.addListener(KeyTools.createKey(GimbalKey.KeyGimbalAttitude, ComponentIndexType.PORT_3), this),
+                        RxUtil.addListener(KeyTools.createKey(FlightControllerKey.KeyImuCoordinateTran), this),
+                        (attitude, aDouble) -> attitude.getYaw() + aDouble * RAD_TO_DEG)
+                .subscribe(gimbalYawInDegrees5Processor::onNext);
+
+        Flowable.combineLatest(
+                        RxUtil.addListener(KeyTools.createKey(GimbalKey.KeyGimbalAttitude, ComponentIndexType.PORT_4), this),
+                        RxUtil.addListener(KeyTools.createKey(FlightControllerKey.KeyImuCoordinateTran), this),
+                        (attitude, aDouble) -> attitude.getYaw() + aDouble * RAD_TO_DEG)
+                .subscribe(gimbalYawInDegrees6Processor::onNext);
+
+        gimbalYawInDegreesProcessorList.add(gimbalYawInDegrees3Processor);
+        gimbalYawInDegreesProcessorList.add(gimbalYawInDegrees4Processor);
+        gimbalYawInDegreesProcessorList.add(gimbalYawInDegrees5Processor);
+        gimbalYawInDegreesProcessorList.add(gimbalYawInDegrees6Processor);
+
+
         gimbalYawInDegreesProcessorList.add(gimbalYawInDegrees0Processor);
         gimbalYawInDegreesProcessorList.add(gimbalYawInDegrees1Processor);
         gimbalYawInDegreesProcessorList.add(gimbalYawInDegrees2Processor);
@@ -116,6 +156,17 @@ public class HSIWidgetModel extends WidgetModel implements LocationListener {
         bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.LEFT_OR_MAIN), gimbalConnection0Processor);
         bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.RIGHT), gimbalConnection1Processor);
         bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.UP), gimbalConnection2Processor);
+
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_1), gimbalConnection3Processor);
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_2), gimbalConnection4Processor);
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_3), gimbalConnection5Processor);
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_4), gimbalConnection6Processor);
+
+        gimbalConnectionProcessorList.add(gimbalConnection3Processor);
+        gimbalConnectionProcessorList.add(gimbalConnection4Processor);
+        gimbalConnectionProcessorList.add(gimbalConnection5Processor);
+        gimbalConnectionProcessorList.add(gimbalConnection6Processor);
+
         gimbalConnectionProcessorList.add(gimbalConnection0Processor);
         gimbalConnectionProcessorList.add(gimbalConnection1Processor);
         gimbalConnectionProcessorList.add(gimbalConnection2Processor);

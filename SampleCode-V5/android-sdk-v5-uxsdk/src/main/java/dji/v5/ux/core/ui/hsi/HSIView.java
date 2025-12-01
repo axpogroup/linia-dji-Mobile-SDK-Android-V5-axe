@@ -92,8 +92,8 @@ public class HSIView extends View implements HSIContract.HSIContainer {
     private float mCurrentDegree;
     private String mCurrentDegreeText;
 
-    private boolean[] mGimbalConnected = new boolean[3];
-    private float[] mGimbalCurrentDegree = new float[3];
+    private boolean[] mGimbalConnected = new boolean[7];
+    private float[] mGimbalCurrentDegree = new float[7];
 
     private boolean mIsRadarConnected;
 
@@ -340,7 +340,7 @@ public class HSIView extends View implements HSIContract.HSIContainer {
         }));
 
         //云台Yaw夹角
-        mCompositeDisposable.add(Flowable.fromArray(new Integer[]{0, 1, 2})
+        mCompositeDisposable.add(Flowable.fromArray(new Integer[]{0, 1, 2, 3, 4, 5, 6})
                 .flatMap(cameraIndex -> Flowable.combineLatest(
                         //云台连接状态
                         widgetModel.getGimbalConnectionProcessorList().get(cameraIndex).toFlowable(),
@@ -536,13 +536,26 @@ public class HSIView extends View implements HSIContract.HSIContainer {
         Drawable drawable = DrawUtils.getDrawable(R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_3);
         float gimbalPadding = (float) (mGimbalIndicatorMaxScope - drawable.getMinimumHeight()) / (MAX_GIMBAL_COUNT - 1);
         drawEachGimbalIndicator(canvas, getGimbalYawDegreeWithAircraft(mGimbalCurrentDegree[0], mYaw),
-                mGimbalConnected[0], compassSize / 2f, mBitmapOffset, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_3);
+                mGimbalConnected[0], compassSize / 2f,
+                mBitmapOffset, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_3);
         drawEachGimbalIndicator(canvas, getGimbalYawDegreeWithAircraft(mGimbalCurrentDegree[1], mYaw),
                 mGimbalConnected[1], compassSize / 2f,
                 mBitmapOffset + gimbalPadding, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_1);
         drawEachGimbalIndicator(canvas, getGimbalYawDegreeWithAircraft(mGimbalCurrentDegree[2], mYaw),
                 mGimbalConnected[2], compassSize / 2f,
                 mBitmapOffset + gimbalPadding * 2, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_2);
+        drawEachGimbalIndicator(canvas, getGimbalYawDegreeWithAircraft(mGimbalCurrentDegree[3], mYaw),
+                mGimbalConnected[3], compassSize/2f,
+                mBitmapOffset, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_3);
+        drawEachGimbalIndicator(canvas, getGimbalYawDegreeWithAircraft(mGimbalCurrentDegree[4], mYaw),
+                mGimbalConnected[4], compassSize/2f,
+                mBitmapOffset + gimbalPadding, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_1);
+        drawEachGimbalIndicator(canvas, getGimbalYawDegreeWithAircraft(mGimbalCurrentDegree[5], mYaw),
+                mGimbalConnected[5], compassSize/2f,
+                mBitmapOffset + gimbalPadding*2, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_2);
+        drawEachGimbalIndicator(canvas, getGimbalYawDegreeWithAircraft(mGimbalCurrentDegree[6], mYaw),
+                mGimbalConnected[6], compassSize/2f,
+                mBitmapOffset + gimbalPadding*3, R.drawable.uxsdk_fpv_hsi_outer_guide_gimbal_3);
         canvas.restore();
     }
 

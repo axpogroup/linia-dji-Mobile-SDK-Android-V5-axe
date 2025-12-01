@@ -17,6 +17,7 @@
         android:descendantFocusability="afterDescendants">
 
         <dji.v5.ux.gimbal.GimbalSettingWidget
+            android:id="@+id/gimbalSettingWidget"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

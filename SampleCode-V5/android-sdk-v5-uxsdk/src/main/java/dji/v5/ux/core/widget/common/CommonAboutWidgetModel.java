@@ -39,12 +39,25 @@ public class CommonAboutWidgetModel extends WidgetModel {
     public final DataProcessor<Boolean> gimbal1ConnectionProcessor = DataProcessor.create(false);
     public final DataProcessor<Boolean> gimbal2ConnectionProcessor = DataProcessor.create(false);
     public final DataProcessor<Boolean> gimbal3ConnectionProcessor = DataProcessor.create(false);
+    public final DataProcessor<Boolean> gimbal4ConnectionProcessor = DataProcessor.create(false);
+    public final DataProcessor<Boolean> gimbal5ConnectionProcessor = DataProcessor.create(false);
+    public final DataProcessor<Boolean> gimbal6ConnectionProcessor = DataProcessor.create(false);
+    public final DataProcessor<Boolean> gimbal7ConnectionProcessor = DataProcessor.create(false);
     public final DataProcessor<Boolean> camera1ConnectionProcessor = DataProcessor.create(false);
     public final DataProcessor<Boolean> camera2ConnectionProcessor = DataProcessor.create(false);
     public final DataProcessor<Boolean> camera3ConnectionProcessor = DataProcessor.create(false);
     public final DataProcessor<String> camera1SerialNumberProcessor = DataProcessor.create("");
     public final DataProcessor<String> camera2SerialNumberProcessor = DataProcessor.create("");
     public final DataProcessor<String> camera3SerialNumberProcessor = DataProcessor.create("");
+    public final DataProcessor<Boolean> camera4ConnectionProcessor = DataProcessor.create(false);
+    public final DataProcessor<Boolean> camera5ConnectionProcessor = DataProcessor.create(false);
+    public final DataProcessor<Boolean> camera6ConnectionProcessor = DataProcessor.create(false);
+    public final DataProcessor<Boolean> camera7ConnectionProcessor = DataProcessor.create(false);
+
+    public final DataProcessor<String> camera4SerialNumberProcessor = DataProcessor.create("");
+    public final DataProcessor<String> camera5SerialNumberProcessor = DataProcessor.create("");
+    public final DataProcessor<String> camera6SerialNumberProcessor = DataProcessor.create("");
+    public final DataProcessor<String> camera7SerialNumberProcessor = DataProcessor.create("");
 
     protected CommonAboutWidgetModel(
             @NonNull DJISDKModel djiSdkModel,
@@ -68,6 +81,21 @@ public class CommonAboutWidgetModel extends WidgetModel {
         bindDataProcessor(KeyTools.createKey(CameraKey.KeySerialNumber, ComponentIndexType.LEFT_OR_MAIN), camera1SerialNumberProcessor);
         bindDataProcessor(KeyTools.createKey(CameraKey.KeySerialNumber, ComponentIndexType.RIGHT), camera2SerialNumberProcessor);
         bindDataProcessor(KeyTools.createKey(CameraKey.KeySerialNumber, ComponentIndexType.UP), camera3SerialNumberProcessor);
+
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_1), gimbal4ConnectionProcessor);
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_2), gimbal5ConnectionProcessor);
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_3), gimbal6ConnectionProcessor);
+        bindDataProcessor(KeyTools.createKey(GimbalKey.KeyConnection, ComponentIndexType.PORT_4), gimbal7ConnectionProcessor);
+
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeyConnection, ComponentIndexType.PORT_1), camera4ConnectionProcessor);
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeyConnection, ComponentIndexType.PORT_2), camera5ConnectionProcessor);
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeyConnection, ComponentIndexType.PORT_3), camera6ConnectionProcessor);
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeyConnection, ComponentIndexType.PORT_4), camera7ConnectionProcessor);
+
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeySerialNumber, ComponentIndexType.PORT_1), camera4SerialNumberProcessor);
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeySerialNumber, ComponentIndexType.PORT_2), camera5SerialNumberProcessor);
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeySerialNumber, ComponentIndexType.PORT_3), camera6SerialNumberProcessor);
+        bindDataProcessor(KeyTools.createKey(CameraKey.KeySerialNumber, ComponentIndexType.PORT_4), camera7SerialNumberProcessor);
     }
 
     @Override

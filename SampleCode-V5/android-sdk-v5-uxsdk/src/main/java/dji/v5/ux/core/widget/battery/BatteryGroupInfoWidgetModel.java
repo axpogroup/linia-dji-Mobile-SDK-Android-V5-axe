@@ -43,8 +43,15 @@ public class BatteryGroupInfoWidgetModel extends WidgetModel {
 
         bindDataProcessor(KeyTools.createKey(ProductKey.KeyProductType), productTypeProcessor, productType -> {
             if (ProductUtil.isConsumeMachine()){
+                int component;
+                if (productType == ProductType.DJI_MATRICE_400) {
+                    component = ComponentIndexType.PORT_1.value();
+                } else {
+                    component = ComponentIndexType.LEFT_OR_MAIN.value();
+                }
+
                 batteryOverviewProcessor.onNext(Collections.singletonList(new BatteryOverviewValue(
-                        ComponentIndexType.LEFT_OR_MAIN.value(),
+                        component,
                         true,
                         0,
                         0,
@@ -52,10 +59,20 @@ public class BatteryGroupInfoWidgetModel extends WidgetModel {
                 )));
             }
         });
-        bindDataProcessor(KeyTools.createKey(BatteryKey.KeyChargeRemainingInPercent, ComponentIndexType.LEFT_OR_MAIN), batteryChargeRemainingProcessorForConsume, integer -> {
-            if (ProductUtil.isConsumeMachine()){
-                batteryChargeRemainingProcessor.onNext(integer);
+
+        bindDataProcessor(KeyTools.createKey(ProductKey.KeyProductType), productTypeProcessor, productType -> {
+            int component;
+            if (productType == ProductType.DJI_MATRICE_400) {
+                component = ComponentIndexType.PORT_1.value();
+            } else {
+                component = ComponentIndexType.LEFT_OR_MAIN.value();
             }
+
+            bindDataProcessor(KeyTools.createKey(BatteryKey.KeyChargeRemainingInPercent, component), batteryChargeRemainingProcessorForConsume, integer -> {
+                if (ProductUtil.isConsumeMachine()) {
+                    batteryChargeRemainingProcessor.onNext(integer);
+                }
+            });
         });
     }
 

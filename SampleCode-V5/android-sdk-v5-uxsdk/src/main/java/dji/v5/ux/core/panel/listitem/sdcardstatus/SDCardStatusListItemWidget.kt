@@ -31,6 +31,7 @@ import android.util.AttributeSet
 import androidx.annotation.StyleRes
 import androidx.core.content.res.use
 import dji.sdk.keyvalue.value.camera.CameraSDCardState
+import dji.sdk.keyvalue.value.common.ComponentIndexType
 import io.reactivex.rxjava3.core.Flowable
 import dji.v5.ux.R
 import dji.v5.ux.core.base.DJISDKModel
@@ -287,6 +288,10 @@ open class SDCardStatusListItemWidget @JvmOverloads constructor(
     @SuppressWarnings
     override fun getWidgetStateUpdate(): Flowable<ModelState> {
         return super.getWidgetStateUpdate()
+    }
+
+    fun onCameraSourceUpdated(cameraIndex: ComponentIndexType) {
+        widgetModel.cameraIndex = cameraIndex
     }
 
     /**
