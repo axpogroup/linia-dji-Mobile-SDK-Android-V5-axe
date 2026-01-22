@@ -111,6 +111,9 @@ public final class ViewUtil {
      * @param duration How long to display the toast.
      */
     public static void showToast(Context context, int resId, int duration) {
+        if (context == null) {
+            return;
+        }
         showToast(context, context.getString(resId), duration);
     }
 
