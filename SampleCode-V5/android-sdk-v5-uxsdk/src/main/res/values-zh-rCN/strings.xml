@@ -722,6 +722,10 @@
     <string name="uxsdk_rtk_setting_menu_setting_fail">设置失败</string>
     <string name="uxsdk_rtk_setting_menu_rtk_setting_fail_settings_invalid">设置失败，参数有误</string>
     <string name="uxsdk_rtk_setting_menu_customer_rtk_save_failed_tips">保存失败，可能原因：\n1.输入参数不正确，请检查输入参数\n2.账号过期，请确认账号是否有效\n3.无网络，请检查网络连接状态\n4.服务器故障，请联系RTK供应商确认服务器状态</string>
+    <string name="uxsdk_rtk_custom_status_connecting">正在连接…</string>
+    <string name="uxsdk_rtk_custom_status_connected">已连接</string>
+    <string name="uxsdk_rtk_custom_status_failed">连接失败（%1$s）</string>
+    <string name="uxsdk_rtk_custom_status_cancelled">已取消连接</string>
 
 
     <!--Lens Control Widget-->

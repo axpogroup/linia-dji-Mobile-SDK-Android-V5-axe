@@ -732,6 +732,10 @@
     <string name="uxsdk_rtk_setting_menu_setting_fail">Setting failed</string>
     <string name="uxsdk_rtk_setting_menu_rtk_setting_fail_settings_invalid">Setting failed. Invalid parameters</string>
     <string name="uxsdk_rtk_setting_menu_customer_rtk_save_failed_tips">Setting failed,possible reasons:\n1. Input parameter incorrect. Check input parameter\n2. Account expired. Check if account is valid\n3. Not network connection. Check network connection status\n4. Server error. Contact RTK supplier to check server status</string>
+    <string name="uxsdk_rtk_custom_status_connecting">Connecting…</string>
+    <string name="uxsdk_rtk_custom_status_connected">Connected</string>
+    <string name="uxsdk_rtk_custom_status_failed">Connection failed (%1$s)</string>
+    <string name="uxsdk_rtk_custom_status_cancelled">Connection cancelled</string>
 
 
     <!--Lens Control Widget-->
