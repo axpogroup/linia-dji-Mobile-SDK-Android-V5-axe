@@ -51,6 +51,7 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
     private val edMountPoint: TextView = findViewById(R.id.net_rtk_ntrip_mountpoint)
     private val edPassword: TextView = findViewById(R.id.net_rtk_ntrip_pwd)
     private val btSaveRtkInfo: Button = findViewById(R.id.btn_set_net_rtk_info)
+    private val btDisconnectRtk: Button = findViewById(R.id.btn_disconnect_net_rtk)
     private val customSetting: LinearLayout = findViewById(R.id.ll_rtk_custom_detail_view)
 
     private var rtkSourceList: List<RTKReferenceStationSource> = ArrayList()
@@ -118,9 +119,11 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
                 saveRtkCustomUserInfo()
             }
         }
-        //读取默认的配置，并启动RTK
-        LogUtils.i(TAG, "RTKTypeSwitchWidget init,startRtkService now!(Thread.currentThread().name=${Thread.currentThread().name})")
-        RTKStartServiceHelper.startRtkService()
+        btDisconnectRtk.setOnClickListener {
+            if (!btDisconnectRtk.isFastClick()) {
+                RTKStartServiceHelper.stopRtkService(true)
+            }
+        }
     }
 
 

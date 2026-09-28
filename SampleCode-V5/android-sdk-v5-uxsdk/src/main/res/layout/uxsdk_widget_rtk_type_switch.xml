@@ -110,15 +110,32 @@
                 tools:text="RTCM32_GGB" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_set_net_rtk_info"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/uxsdk_bg_selector_blue_rect_mask"
-            android:text="@string/uxsdk_rtk_setting_menu_settting"
-            android:textAllCaps="false"
-            android:textColor="@color/uxsdk_setting_menu_rtk_tiny_green" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_set_net_rtk_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/uxsdk_bg_selector_blue_rect_mask"
+                android:text="@string/uxsdk_rtk_setting_menu_settting"
+                android:textAllCaps="false"
+                android:textColor="@color/uxsdk_setting_menu_rtk_tiny_green" />
+
+            <Button
+                android:id="@+id/btn_disconnect_net_rtk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uxsdk_12_dp"
+                android:layout_weight="1"
+                android:background="@drawable/uxsdk_bg_selector_blue_rect_mask"
+                android:text="@string/uxsdk_rtk_setting_menu_disconnect"
+                android:textAllCaps="false"
+                android:textColor="@color/uxsdk_setting_menu_rtk_tiny_green" />
+        </LinearLayout>
 
     </LinearLayout>
 
