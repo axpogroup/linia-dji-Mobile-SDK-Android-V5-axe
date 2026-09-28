@@ -23,7 +23,6 @@ import dji.v5.ux.core.util.DataProcessor
 import dji.v5.ux.core.util.ViewUtil
 import io.reactivex.rxjava3.core.Flowable
 import java.util.concurrent.atomic.AtomicBoolean
-import kotlin.math.min
 
 
 /**
@@ -33,8 +32,8 @@ import kotlin.math.min
  * only started when it is not running or starting already. Automatic triggers (the aircraft
  * connecting, the RTK source becoming known, the flight screen opening) leave a running service
  * alone; only the pilot saving the settings or choosing a coordinate system restarts it. A failed
- * start is retried with a growing delay, one retry at a time. Once the pilot disconnects the
- * service, only the pilot starts it again.
+ * start is not retried, the pilot saves again instead. Once the pilot disconnects the service,
+ * only the pilot starts it again.
  *
  * @author: Byte.Cai
  *  date : 2022/8/16
@@ -44,8 +43,6 @@ import kotlin.math.min
 object RTKStartServiceHelper {
     private const val TAG = "RTKStartServiceHelper"
     private const val START_TIMEOUT_MS = 15_000L
-    private const val FIRST_RETRY_DELAY_MS = 5_000L
-    private const val MAX_RETRY_DELAY_MS = 60_000L
 
     private val rtkCenter = RTKCenter.getInstance()
     private val qxRTKManager = RTKCenter.getInstance().qxrtkManager
@@ -65,19 +62,16 @@ object RTKStartServiceHelper {
     /** The source the service was last started for, see [isHasStartRTK]. */
     private var serviceSource: RTKReferenceStationSource = RTKReferenceStationSource.UNKNOWN
     private var isStoppedByUser = false
-    /** The pilot asked for a restart while a start was in progress; it runs once that start is done. */
-    private var isRestartPending = false
-    private var retryDelayMs = FIRST_RETRY_DELAY_MS
     /** Identifies the latest start, so that the callbacks of an abandoned start are ignored. */
     private var startId = 0
-    private val startTimeout = Runnable { onStartTimeout() }
-    private val retry = Runnable {
-        log("Retrying to start the RTK service")
-        startRtkService()
+    /** A start whose callback never arrives must not block later starts. */
+    private val startTimeout = Runnable {
+        log("Starting the RTK service for $serviceSource timed out")
+        isStartRTKing.set(false)
     }
 
     /**
-     * Receives a description of every start, stop and retry of the RTK service, including why it
+     * Receives a description of every start and stop of the RTK service, including why it
      * happened or was skipped. Called on arbitrary threads.
      */
     var connectionEventListener: ((String) -> Unit)? = null
@@ -157,8 +151,8 @@ object RTKStartServiceHelper {
     /**
      * Starts the RTK service for the current RTK source.
      *
-     * @param isStartByUser the pilot asked for it, e.g. by saving the settings: a running service
-     * is restarted so that it picks up new settings, and a disconnect by the pilot is lifted.
+     * @param isStartByUser the pilot asked for it, e.g. by saving the settings: the service is
+     * restarted so that it picks up new settings, and a disconnect by the pilot is lifted.
      * Otherwise a service that is running or starting is left alone, and nothing happens while
      * the pilot has disconnected the service.
      */
@@ -167,22 +161,14 @@ object RTKStartServiceHelper {
         log("RTK service start requested " + if (isStartByUser) "by the pilot" else "automatically")
         if (isStartByUser) {
             isStoppedByUser = false
-            retryDelayMs = FIRST_RETRY_DELAY_MS
-            handle.removeCallbacks(retry)
         } else if (isStoppedByUser) {
             log("Not starting the RTK service: the pilot disconnected it")
             return
+        } else if (isStartRTKing.get()) {
+            log("Not starting the RTK service: a start is already in progress")
+            return
         } else if (isHasStartRTK.get() && serviceSource == rtkSource) {
             log("Not starting the RTK service: it is already running")
-            return
-        }
-        if (isStartRTKing.get()) {
-            if (isStartByUser) {
-                isRestartPending = true
-                log("RTK service start in progress, restarting once it is done")
-            } else {
-                log("Not starting the RTK service: a start is already in progress")
-            }
             return
         }
         this.isStartByUser =isStartByUser
@@ -220,8 +206,6 @@ object RTKStartServiceHelper {
         if (isStopByUser) {
             isStoppedByUser = true
         }
-        handle.removeCallbacks(retry)
-        isRestartPending = false
         val isActive = isHasStartRTK.get() || isStartRTKing.get()
         startId++
         setStartRTKState(false)
@@ -230,10 +214,18 @@ object RTKStartServiceHelper {
             log("Not stopping the RTK service: it is not running")
             return
         }
-        val source = if (isActive) serviceSource else rtkSource
-        val manager = networkRTKManager(source) ?: run {
-            log("Not stopping the RTK service: $source is no network RTK source")
-            return
+        stopService(if (isActive) serviceSource else rtkSource)
+    }
+
+    private fun stopService(source: RTKReferenceStationSource) {
+        val manager = when (source) {
+            RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE -> customManager
+            RTKReferenceStationSource.QX_NETWORK_SERVICE -> qxRTKManager
+            RTKReferenceStationSource.NTRIP_NETWORK_SERVICE -> cmccRtkManager
+            else -> {
+                log("Not stopping the RTK service: $source is no network RTK source")
+                return
+            }
         }
         manager.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
@@ -244,13 +236,6 @@ object RTKStartServiceHelper {
                 log("Stopping the RTK service for $source failed: $error")
             }
         })
-    }
-
-    private fun networkRTKManager(source: RTKReferenceStationSource): INetworkRTKManager? = when (source) {
-        RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE -> customManager
-        RTKReferenceStationSource.QX_NETWORK_SERVICE -> qxRTKManager
-        RTKReferenceStationSource.NTRIP_NETWORK_SERVICE -> cmccRtkManager
-        else -> null
     }
 
 
@@ -340,35 +325,20 @@ object RTKStartServiceHelper {
         setStartRTKState(true)
         log("Stopping the RTK service for $source before starting it")
         manager.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
-            override fun onSuccess() {
-                startAfterStop(id, source, failureTip, start)
+            override fun onSuccess() = synchronized(this@RTKStartServiceHelper) {
+                if (id != startId) {
+                    log("Not starting the RTK service for $source: the start was abandoned")
+                    return
+                }
+                log("Starting the RTK service for $source")
+                start(object : CommonCallbacks.CompletionCallback {
+                    override fun onSuccess() = onStartFinished(id, source, null, failureTip)
+                    override fun onFailure(error: IDJIError) = onStartFinished(id, source, error.toString(), failureTip)
+                })
             }
 
             override fun onFailure(error: IDJIError) {
                 onStartFinished(id, source, "stopping the running service failed: $error", failureTip)
-            }
-        })
-    }
-
-    @Synchronized
-    private fun startAfterStop(
-        id: Int,
-        source: RTKReferenceStationSource,
-        failureTip: String,
-        start: (CommonCallbacks.CompletionCallback) -> Unit,
-    ) {
-        if (id != startId) {
-            log("Not starting the RTK service for $source: the start was abandoned")
-            return
-        }
-        log("Starting the RTK service for $source")
-        start(object : CommonCallbacks.CompletionCallback {
-            override fun onSuccess() {
-                onStartFinished(id, source, null, failureTip)
-            }
-
-            override fun onFailure(error: IDJIError) {
-                onStartFinished(id, source, error.toString(), failureTip)
             }
         })
     }
@@ -381,15 +351,7 @@ object RTKStartServiceHelper {
             if (error == null && !isStartRTKing.get() && !isHasStartRTK.get()) {
                 // The service was stopped while this start was under way, and it came up anyway
                 log("Stopping the RTK service for $source again, it started after it was stopped")
-                networkRTKManager(source)?.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
-                    override fun onSuccess() {
-                        log("RTK service for $source stopped")
-                    }
-
-                    override fun onFailure(error: IDJIError) {
-                        log("Stopping the RTK service for $source failed: $error")
-                    }
-                })
+                stopService(source)
             }
             return
         }
@@ -397,43 +359,13 @@ object RTKStartServiceHelper {
         if (error == null) {
             log("RTK service for $source started")
             isHasStartRTK.set(true)
-            handle.removeCallbacks(retry)
-            retryDelayMs = FIRST_RETRY_DELAY_MS
         } else {
             log("Starting the RTK service for $source failed: $error")
             isHasStartRTK.set(false)
             if (isStartByUser) {
                 showToast(failureTip)
             }
-            scheduleRetry()
         }
-        runPendingRestart()
-    }
-
-    @Synchronized
-    private fun onStartTimeout() {
-        if (!isStartRTKing.get()) return
-        // The start stays valid: if it still succeeds, the retry is cancelled
-        log("Starting the RTK service for $serviceSource timed out")
-        setStartRTKState(false)
-        isHasStartRTK.set(false)
-        scheduleRetry()
-        runPendingRestart()
-    }
-
-    private fun runPendingRestart() {
-        if (isRestartPending) {
-            isRestartPending = false
-            startRtkService(true)
-        }
-    }
-
-    private fun scheduleRetry() {
-        if (isStoppedByUser) return
-        log("Retrying to start the RTK service in ${retryDelayMs / 1000} s")
-        handle.removeCallbacks(retry)
-        handle.postDelayed(retry, retryDelayMs)
-        retryDelayMs = min(retryDelayMs * 2, MAX_RETRY_DELAY_MS)
     }
 
     private fun log(message: String) {
@@ -452,7 +384,6 @@ object RTKStartServiceHelper {
                 && NetworkUtils.isNetworkAvailable()
                 && !isChannelB()
                 && rtkModuleAvailableProcessor.value)
-                && !isStartRTKing.get()
     }
 
 
