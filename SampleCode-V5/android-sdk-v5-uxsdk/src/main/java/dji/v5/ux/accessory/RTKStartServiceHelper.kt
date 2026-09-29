@@ -22,6 +22,7 @@ import dji.v5.ux.R
 import dji.v5.ux.core.util.DataProcessor
 import dji.v5.ux.core.util.ViewUtil
 import io.reactivex.rxjava3.core.Flowable
+import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
 
 
@@ -81,6 +82,12 @@ object RTKStartServiceHelper {
      * happened or was skipped. Called on arbitrary threads.
      */
     var connectionEventListener: ((String) -> Unit)? = null
+
+    /** Host and port of the NTRIP caster the custom network service was last started for. */
+    @Volatile
+    private var startedCaster: Pair<String, Int>? = null
+    /** Runs [NtripConnections] off the main thread, one call after the other. */
+    private val casterConnectionExecutor = Executors.newSingleThreadExecutor()
 
 
     private val rtkSystemStateListener = RTKSystemStateListener {
@@ -227,6 +234,7 @@ object RTKStartServiceHelper {
         manager.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
                 log("RTK service for $source stopped")
+                releaseCasterConnections(source)
             }
 
             override fun onFailure(error: IDJIError) {
@@ -301,6 +309,7 @@ object RTKStartServiceHelper {
                     "user=${rtkCustomNetworkSetting.userName}"
         )
         restartService(customManager, StringUtils.getResStr(R.string.uxsdk_rtk_setting_menu_customer_rtk_save_failed_tips)) { callback ->
+            startedCaster = rtkCustomNetworkSetting.serverAddress to rtkCustomNetworkSetting.port
             customManager.customNetworkRTKSettings = rtkCustomNetworkSetting
             customManager.startNetworkRTKService(callback)
         }
@@ -324,19 +333,21 @@ object RTKStartServiceHelper {
         manager.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
                 log("RTK service for $source stopped, starting it in ${RESTART_DELAY_MS / 1000} s")
-                handle.postDelayed({
-                    synchronized(this@RTKStartServiceHelper) {
-                        if (id != startId) {
-                            log("Not starting the RTK service for $source: the start was abandoned")
-                            return@postDelayed
+                releaseCasterConnections(source) {
+                    handle.postDelayed({
+                        synchronized(this@RTKStartServiceHelper) {
+                            if (id != startId) {
+                                log("Not starting the RTK service for $source: the start was abandoned")
+                                return@postDelayed
+                            }
+                            log("Starting the RTK service for $source")
+                            start(object : CommonCallbacks.CompletionCallback {
+                                override fun onSuccess() = onStartFinished(id, source, null, failureTip)
+                                override fun onFailure(error: IDJIError) = onStartFinished(id, source, error.toString(), failureTip)
+                            })
                         }
-                        log("Starting the RTK service for $source")
-                        start(object : CommonCallbacks.CompletionCallback {
-                            override fun onSuccess() = onStartFinished(id, source, null, failureTip)
-                            override fun onFailure(error: IDJIError) = onStartFinished(id, source, error.toString(), failureTip)
-                        })
-                    }
-                }, RESTART_DELAY_MS)
+                    }, RESTART_DELAY_MS)
+                }
             }
 
             override fun onFailure(error: IDJIError) {
@@ -358,6 +369,7 @@ object RTKStartServiceHelper {
             return
         }
         setStartRTKState(false)
+        logCasterConnections(source)
         if (error == null) {
             log("RTK service for $source started")
             isHasStartRTK.set(true)
@@ -366,6 +378,38 @@ object RTKStartServiceHelper {
             if (isStartByUser) {
                 showToast(failureTip)
             }
+        }
+    }
+
+    /**
+     * Shuts down the connections to the caster that a stopped custom network service left open,
+     * see [NtripConnections], and then runs [then].
+     */
+    private fun releaseCasterConnections(source: RTKReferenceStationSource, then: () -> Unit = {}) {
+        val caster = startedCaster.takeIf { source == RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE }
+        casterConnectionExecutor.execute {
+            if (caster != null) {
+                val (host, port) = caster
+                runCatching { NtripConnections.shutDown(host, port) }
+                    .onSuccess {
+                        log(
+                            if (it.isEmpty()) "No connection to $host:$port left open"
+                            else "Shut down ${it.size} connection(s) to $host:$port left open: ${it.joinToString()}"
+                        )
+                    }
+                    .onFailure { log("Looking for connections to $host:$port failed: $it") }
+            }
+            then()
+        }
+    }
+
+    /** Logs the open connections to the caster of a custom network service. */
+    private fun logCasterConnections(source: RTKReferenceStationSource) {
+        val (host, port) = startedCaster.takeIf { source == RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE } ?: return
+        casterConnectionExecutor.execute {
+            runCatching { NtripConnections.find(host, port) }
+                .onSuccess { log("${it.size} connection(s) to $host:$port open: ${it.joinToString()}") }
+                .onFailure { log("Looking for connections to $host:$port failed: $it") }
         }
     }
 
