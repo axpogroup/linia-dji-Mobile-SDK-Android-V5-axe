@@ -47,7 +47,7 @@ object RTKStartServiceHelper {
      * Time between stopping and starting the service again, so that the RTK provider has noticed
      * the old connection is gone before the new one logs in with the same login.
      */
-    private const val RESTART_DELAY_MS = 10_000L
+    private const val RESTART_DELAY_MS = 1_000L
     /** Covers the [RESTART_DELAY_MS] plus the time the SDK takes to start the service. */
     private const val START_TIMEOUT_MS = RESTART_DELAY_MS + 15_000L
 
