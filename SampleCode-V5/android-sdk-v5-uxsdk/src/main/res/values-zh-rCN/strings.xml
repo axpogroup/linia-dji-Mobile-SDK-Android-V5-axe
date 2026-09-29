@@ -323,6 +323,11 @@
     <string name="uxsdk_rtk_type_cmcc_rtk">CMCC RTK</string>
     <string name="uxsdk_rtk_type_unknown_rtk">未知RTK类型</string>
     <string name="uxsdk_rtk_status_desc">%1$s 状态：</string>
+    <string name="uxsdk_rtk_state_correction_data_connected">已连接，正在接收差分数据</string>
+    <string name="uxsdk_rtk_positioning_status_desc">飞行器RTK定位：</string>
+    <string name="uxsdk_rtk_positioning_in_use">RTK数据使用中</string>
+    <string name="uxsdk_rtk_positioning_not_in_use">RTK数据未使用</string>
+    <string name="uxsdk_rtk_positioning_off">RTK定位已关闭</string>
 
 
     <!--精度保持-->
