@@ -159,25 +159,22 @@ object RTKStartServiceHelper {
     @Synchronized
     fun startRtkService(isStartByUser:Boolean=false) {
         log("RTK service start requested " + if (isStartByUser) "by the pilot" else "automatically")
-        if (isStartByUser) {
-            isStoppedByUser = false
-        } else if (isStoppedByUser) {
-            log("Not starting the RTK service: the pilot disconnected it")
-            return
-        } else if (isStartRTKing.get()) {
-            log("Not starting the RTK service: a start is already in progress")
-            return
-        } else if (isHasStartRTK.get() && serviceSource == rtkSource) {
-            log("Not starting the RTK service: it is already running")
-            return
+        if (!isStartByUser) {
+            val reason = when {
+                isStoppedByUser -> "the pilot disconnected it"
+                isStartRTKing.get() -> "a start is already in progress"
+                isHasStartRTK.get() && serviceSource == rtkSource -> "it is already running"
+                else -> null
+            }
+            if (reason != null) {
+                log("Not starting the RTK service: $reason")
+                return
+            }
         }
+        isStoppedByUser = false
         this.isStartByUser =isStartByUser
-        if (!rtkModuleAvailableProcessor.value) {
-            log("Not starting the RTK service: the RTK module is unavailable")
-            return
-        }
         if (!isNeedStartRtkNetworkService()) {
-            log("Not starting the RTK service: no network RTK source, network or aircraft connection (source=$rtkSource)")
+            log("Not starting the RTK service: no RTK module, network RTK source, network or aircraft connection (source=$rtkSource)")
             return
         }
         LogUtils.i(TAG, "rtkSource=$rtkSource")
@@ -198,23 +195,17 @@ object RTKStartServiceHelper {
      * Stops the RTK service, which frees the login at the RTK provider.
      *
      * @param isStopByUser the pilot disconnected the service: it stays stopped until the pilot
-     * starts it again. Otherwise the next automatic trigger may start it again.
+     * starts it again. Otherwise the next automatic trigger may start it again, also after the
+     * pilot disconnected it.
      */
     @Synchronized
     fun stopRtkService(isStopByUser: Boolean = false) {
         log("RTK service stop requested " + if (isStopByUser) "by the pilot" else "automatically")
-        if (isStopByUser) {
-            isStoppedByUser = true
-        }
-        val isActive = isHasStartRTK.get() || isStartRTKing.get()
+        isStoppedByUser = isStopByUser
         startId++
         setStartRTKState(false)
         isHasStartRTK.set(false)
-        if (!isActive && !isStopByUser) {
-            log("Not stopping the RTK service: it is not running")
-            return
-        }
-        stopService(if (isActive) serviceSource else rtkSource)
+        stopService(rtkSource)
     }
 
     private fun stopService(source: RTKReferenceStationSource) {
@@ -361,7 +352,6 @@ object RTKStartServiceHelper {
             isHasStartRTK.set(true)
         } else {
             log("Starting the RTK service for $source failed: $error")
-            isHasStartRTK.set(false)
             if (isStartByUser) {
                 showToast(failureTip)
             }
