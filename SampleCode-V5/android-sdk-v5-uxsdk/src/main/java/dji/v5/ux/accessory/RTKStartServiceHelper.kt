@@ -43,6 +43,11 @@ import java.util.concurrent.atomic.AtomicBoolean
 object RTKStartServiceHelper {
     private const val TAG = "RTKStartServiceHelper"
     private const val START_TIMEOUT_MS = 15_000L
+    /**
+     * Time between stopping and starting the service again, so that the RTK provider has noticed
+     * the old connection is gone before the new one logs in with the same login.
+     */
+    private const val RESTART_DELAY_MS = 3_000L
 
     private val rtkCenter = RTKCenter.getInstance()
     private val qxRTKManager = RTKCenter.getInstance().qxrtkManager
@@ -316,16 +321,21 @@ object RTKStartServiceHelper {
         setStartRTKState(true)
         log("Stopping the RTK service for $source before starting it")
         manager.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
-            override fun onSuccess() = synchronized(this@RTKStartServiceHelper) {
-                if (id != startId) {
-                    log("Not starting the RTK service for $source: the start was abandoned")
-                    return
-                }
-                log("Starting the RTK service for $source")
-                start(object : CommonCallbacks.CompletionCallback {
-                    override fun onSuccess() = onStartFinished(id, source, null, failureTip)
-                    override fun onFailure(error: IDJIError) = onStartFinished(id, source, error.toString(), failureTip)
-                })
+            override fun onSuccess() {
+                log("RTK service for $source stopped, starting it in ${RESTART_DELAY_MS / 1000} s")
+                handle.postDelayed({
+                    synchronized(this@RTKStartServiceHelper) {
+                        if (id != startId) {
+                            log("Not starting the RTK service for $source: the start was abandoned")
+                            return@postDelayed
+                        }
+                        log("Starting the RTK service for $source")
+                        start(object : CommonCallbacks.CompletionCallback {
+                            override fun onSuccess() = onStartFinished(id, source, null, failureTip)
+                            override fun onFailure(error: IDJIError) = onStartFinished(id, source, error.toString(), failureTip)
+                        })
+                    }
+                }, RESTART_DELAY_MS)
             }
 
             override fun onFailure(error: IDJIError) {
