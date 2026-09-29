@@ -14,7 +14,6 @@ import dji.v5.common.error.IDJIError
 import dji.v5.common.utils.RxUtil
 import dji.v5.et.create
 import dji.v5.et.get
-import dji.v5.et.set
 import dji.v5.manager.aircraft.rtk.RTKCenter
 import dji.v5.manager.aircraft.rtk.RTKSystemStateListener
 import dji.v5.manager.interfaces.INetworkRTKManager
@@ -69,8 +68,6 @@ object RTKStartServiceHelper {
     /** The source the service was last started for, see [isHasStartRTK]. */
     private var serviceSource: RTKReferenceStationSource = RTKReferenceStationSource.UNKNOWN
     private var isStoppedByUser = false
-    /** RTK positioning was switched off by [restartService] and is not switched on again yet. */
-    private var isRtkSwitchedOffByHelper = false
     /** Identifies the latest start, so that the callbacks of an abandoned start are ignored. */
     private var startId = 0
     /** A start whose callback never arrives must not block later starts. */
@@ -134,17 +131,9 @@ object RTKStartServiceHelper {
             if (fcConnected != it) {
                 LogUtils.i(TAG, "fcConnected=$it")
                 fcConnected = it
-                if (it) switchRtkBackOn()
                 updateData()
             }
 
-        }
-
-        // The aircraft must not take off without RTK positioning because of a restart
-        RxUtil.addListener(
-            KeyTools.createKey(
-                FlightControllerKey.KeyAreMotorsOn), this).subscribe {
-            if (it) switchRtkBackOn()
         }
     }
 
@@ -320,12 +309,6 @@ object RTKStartServiceHelper {
     /**
      * Stops the service of [manager] and then starts it through [start], so that there is never
      * more than one connection. [failureTip] is shown to the pilot if a start they asked for fails.
-     *
-     * If the pilot asked for the restart, RTK positioning is switched off while the service is
-     * stopped, like the pilot would with the "RTK Positioning" switch, which resets the RTK module
-     * of the aircraft. This only happens while the motors are off and if RTK positioning was on.
-     * It is switched on again after the delay, also if the start is abandoned meanwhile, and
-     * earlier if the motors start. A failed attempt is repeated when the aircraft reconnects.
      */
     private fun restartService(
         manager: INetworkRTKManager,
@@ -337,69 +320,28 @@ object RTKStartServiceHelper {
         serviceSource = source
         isHasStartRTK.set(false)
         setStartRTKState(true)
-        if (isStartByUser && !isRtkSwitchedOffByHelper
-            && RtkMobileStationKey.KeyRTKEnable.create().get(false)
-            && !FlightControllerKey.KeyAreMotorsOn.create().get(false)
-        ) {
-            isRtkSwitchedOffByHelper = true
-            setRtkEnabled(false)
-        }
         log("Stopping the RTK service for $source before starting it")
         manager.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
                 log("RTK service for $source stopped, starting it in ${RESTART_DELAY_MS / 1000} s")
                 handle.postDelayed({
-                    switchRtkBackOn { startIfCurrent(id, source, failureTip, start) }
+                    synchronized(this@RTKStartServiceHelper) {
+                        if (id != startId) {
+                            log("Not starting the RTK service for $source: the start was abandoned")
+                            return@postDelayed
+                        }
+                        log("Starting the RTK service for $source")
+                        start(object : CommonCallbacks.CompletionCallback {
+                            override fun onSuccess() = onStartFinished(id, source, null, failureTip)
+                            override fun onFailure(error: IDJIError) = onStartFinished(id, source, error.toString(), failureTip)
+                        })
+                    }
                 }, RESTART_DELAY_MS)
             }
 
             override fun onFailure(error: IDJIError) {
-                switchRtkBackOn()
                 onStartFinished(id, source, "stopping the running service failed: $error", failureTip)
             }
-        })
-    }
-
-    @Synchronized
-    private fun startIfCurrent(
-        id: Int,
-        source: RTKReferenceStationSource,
-        failureTip: String,
-        start: (CommonCallbacks.CompletionCallback) -> Unit,
-    ) {
-        if (id != startId) {
-            log("Not starting the RTK service for $source: the start was abandoned")
-            return
-        }
-        log("Starting the RTK service for $source")
-        start(object : CommonCallbacks.CompletionCallback {
-            override fun onSuccess() = onStartFinished(id, source, null, failureTip)
-            override fun onFailure(error: IDJIError) = onStartFinished(id, source, error.toString(), failureTip)
-        })
-    }
-
-    /** Switches RTK positioning on again if [restartService] switched it off, then calls [onDone]. */
-    @Synchronized
-    private fun switchRtkBackOn(onDone: () -> Unit = {}) {
-        if (!isRtkSwitchedOffByHelper) {
-            onDone()
-            return
-        }
-        setRtkEnabled(true) { isSuccess ->
-            if (isSuccess) synchronized(this) { isRtkSwitchedOffByHelper = false }
-            onDone()
-        }
-    }
-
-    /** Switches RTK positioning on or off and then calls [onDone] with whether that worked. */
-    private fun setRtkEnabled(enabled: Boolean, onDone: (Boolean) -> Unit = {}) {
-        val state = if (enabled) "on" else "off"
-        RtkMobileStationKey.KeyRTKEnable.create().set(enabled, {
-            log("RTK positioning switched $state")
-            onDone(true)
-        }, {
-            log("Switching RTK positioning $state failed: $it")
-            onDone(false)
         })
     }
 
