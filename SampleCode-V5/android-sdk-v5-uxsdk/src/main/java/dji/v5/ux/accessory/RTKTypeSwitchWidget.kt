@@ -38,6 +38,22 @@ import dji.v5.ux.util.RtkSettingWatcher
  */
 private const val TAG = "RTKTypeSwitchWidget"
 
+/** NTRIP casters with a known host, port and mountpoint, so that the pilot only enters the login. */
+private enum class NtripCaster(val label: String, val host: String, val port: Int, val mountPoint: String) {
+    SWIPOS("swipos", "ntrip.swipos.ch", 2101, "MSM_GISGEO_LV95LHN95"),
+    REFNET("refnet", "v2.refnet.ch", 2101, "imaxchmsm4");
+
+    companion object {
+        /** The caster that [setting] connects to, or null for any other caster. */
+        fun of(setting: RTKCustomNetworkSetting?): NtripCaster? = values().firstOrNull {
+            setting != null && it.host == setting.serverAddress && it.port == setting.port && it.mountPoint == setting.mountPoint
+        }
+    }
+}
+
+/** An entry of the RTK type list. [caster] is set for the custom network RTK entries of a known caster. */
+private data class RtkType(val source: RTKReferenceStationSource, val caster: NtripCaster? = null)
+
 open class RTKTypeSwitchWidget @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -51,10 +67,12 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
     private val edMountPoint: TextView = findViewById(R.id.net_rtk_ntrip_mountpoint)
     private val edPassword: TextView = findViewById(R.id.net_rtk_ntrip_pwd)
     private val btSaveRtkInfo: Button = findViewById(R.id.btn_set_net_rtk_info)
-    private val btDisconnectRtk: Button = findViewById(R.id.btn_disconnect_net_rtk)
     private val customSetting: LinearLayout = findViewById(R.id.ll_rtk_custom_detail_view)
 
     private var rtkSourceList: List<RTKReferenceStationSource> = ArrayList()
+    private var rtkTypes: List<RtkType> = ArrayList()
+    /** The known caster whose connection details are shown, null if the pilot enters them. */
+    private var selectedCaster: NtripCaster? = null
     private var coordinateSystemList: List<CoordinateSystem> = arrayListOf()
     private var isMotorsOn = false
     private var currentRTKSource: RTKReferenceStationSource = RTKReferenceStationSource.UNKNOWN
@@ -76,7 +94,7 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
                 return
             }
             // B控不可以打开网络RTK。
-            if (RTKStartServiceHelper.isChannelB() && RTKStartServiceHelper.isNetworkRTK(rtkSourceList[position])) {
+            if (RTKStartServiceHelper.isChannelB() && RTKStartServiceHelper.isNetworkRTK(rtkTypes[position].source)) {
                 //回滚之前的选择,并提示用户
                 rtkTypeCell.select(lastSelectedRTKTypeIndex)
                 Toast.makeText(getContext(), getTip(position), Toast.LENGTH_SHORT).show()
@@ -89,7 +107,12 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
                 Toast.makeText(getContext(), tip, Toast.LENGTH_SHORT).show()
                 return
             }
-            setRTKType(position)
+            if (rtkTypes[position].source == currentRTKSource) {
+                lastSelectedRTKTypeIndex = position
+                showCaster(rtkTypes[position].caster)
+            } else {
+                setRTKType(position)
+            }
         }
 
     }
@@ -117,11 +140,6 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
         btSaveRtkInfo.setOnClickListener {
             if (!btSaveRtkInfo.isFastClick()) {
                 saveRtkCustomUserInfo()
-            }
-        }
-        btDisconnectRtk.setOnClickListener {
-            if (!btDisconnectRtk.isFastClick()) {
-                RTKStartServiceHelper.stopRtkService(true)
             }
         }
     }
@@ -167,8 +185,14 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
             if (it.isNotEmpty() && !rtkSourceList.containsAll(it)) {
                 LogUtils.i(TAG, "supportReferenceStationList=$it")
                 rtkSourceList = it
-                val referenceStationSourceNames = getReferenceStationSourceNames(it)
-                rtkTypeCell.setEntries(referenceStationSourceNames)
+                rtkTypes = it.flatMap { source ->
+                    if (source == RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE) {
+                        listOf(RtkType(source)) + NtripCaster.values().map { caster -> RtkType(source, caster) }
+                    } else {
+                        listOf(RtkType(source))
+                    }
+                }
+                rtkTypeCell.setEntries(getRtkTypeNames(rtkTypes))
                 rtkTypeCell.addOnItemSelectedListener(rtkTypeSelectListener)
                 initDefaultNetRtkUI()
             }
@@ -197,12 +221,14 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
     }
 
     private fun setRTKType(position: Int) {
-        if (rtkSourceList.isEmpty() || position >= rtkSourceList.size || position < 0) {
+        if (rtkTypes.isEmpty() || position >= rtkTypes.size || position < 0) {
             return
         }
-        val rtkSource: RTKReferenceStationSource = rtkSourceList[position]
+        val rtkSource: RTKReferenceStationSource = rtkTypes[position].source
         LogUtils.i(TAG, "selected $rtkSource")
         rtkTypeCell.isEnabled = false
+        val previousCaster = selectedCaster
+        showCaster(rtkTypes[position].caster)
 
         RTKCenter.getInstance().setRTKReferenceStationSource(rtkSource, object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
@@ -213,11 +239,8 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
             override fun onFailure(error: IDJIError) {
                 rtkTypeCell.isEnabled = true
                 //切换RTK服务类型失败，回滚到上次选择
-                for ((index, source) in rtkSourceList.withIndex()) {
-                    if (source == currentRTKSource) {
-                        rtkTypeCell.select(index)
-                    }
-                }
+                showCaster(previousCaster)
+                selectCurrentRtkType()
             }
 
         })
@@ -267,9 +290,10 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
         }
     }
 
-    private fun getReferenceStationSourceNames(list: List<RTKReferenceStationSource>): List<String> {
-        return list.map {
-            val res = when (it) {
+    private fun getRtkTypeNames(list: List<RtkType>): List<String> {
+        return list.map { type ->
+            type.caster?.let { return@map it.label }
+            val res = when (type.source) {
                 RTKReferenceStationSource.BASE_STATION ->
                     R.string.uxsdk_rtk_setting_menu_type_rtk_station
                 RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE ->
@@ -303,7 +327,8 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
     }
 
     private fun getTip(position: Int): String {
-        return if (rtkSourceList[position] == RTKReferenceStationSource.QX_NETWORK_SERVICE || rtkSourceList[position] == RTKReferenceStationSource.NTRIP_NETWORK_SERVICE) {
+        val source = rtkTypes[position].source
+        return if (source == RTKReferenceStationSource.QX_NETWORK_SERVICE || source == RTKReferenceStationSource.NTRIP_NETWORK_SERVICE) {
             StringUtils.getResStr(R.string.uxsdk_rtk_channel_b_not_support_net_rtk)
         } else {
             StringUtils.getResStr(R.string.uxsdk_rtk_channel_b_not_support_net_custom_rtk)
@@ -419,18 +444,41 @@ open class RTKTypeSwitchWidget @JvmOverloads constructor(
             edUser.text = userName
             edPort.text = port.toString()
         }
+        showCaster(NtripCaster.of(RTKUtil.getRtkCustomNetworkSetting()))
         isTextEmptyChanged()
+    }
+
+    /**
+     * Shows the connection details of [caster] and locks them, or unlocks them for the pilot to
+     * enter if [caster] is null.
+     */
+    private fun showCaster(caster: NtripCaster?) {
+        selectedCaster = caster
+        if (caster != null) {
+            edHost.text = caster.host
+            edPort.text = caster.port.toString()
+            edMountPoint.text = caster.mountPoint
+        }
+        listOf(edHost, edPort, edMountPoint).forEach {
+            it.isEnabled = caster == null
+            it.alpha = if (caster == null) 1f else 0.5f
+        }
+    }
+
+    /** Selects the entry of the RTK type list for the current RTK source and [selectedCaster]. */
+    private fun selectCurrentRtkType() {
+        val caster = selectedCaster.takeIf { currentRTKSource == RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE }
+        val index = rtkTypes.indexOf(RtkType(currentRTKSource, caster))
+        if (index >= 0) {
+            lastSelectedRTKTypeIndex = index
+            rtkTypeCell.select(index)
+        }
     }
 
     private fun initDefaultNetRtkUI() {
         //初始化用户上次选择的RTK服务类型
-        if (currentRTKSource != RTKReferenceStationSource.UNKNOWN && rtkSourceList.isNotEmpty()) {
-            for ((index, rtkSource) in rtkSourceList.withIndex()) {
-                if (rtkSource == currentRTKSource) {
-                    lastSelectedRTKTypeIndex = index
-                    rtkTypeCell.select(index)
-                }
-            }
+        if (currentRTKSource != RTKReferenceStationSource.UNKNOWN) {
+            selectCurrentRtkType()
         }
 
         //初始化用户上次选择的坐标系

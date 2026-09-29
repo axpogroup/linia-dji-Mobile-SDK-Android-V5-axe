@@ -723,7 +723,6 @@
     <string name="uxsdk_rtk_setting_menu_base_gps_input_desc"> 请确保D-RTK 2 移动站处于空旷地带，切勿挪动架设位置。起桨后不支持扫描和对频RTK基站。</string>
     <string name="uxsdk_rtk_setting_menu_station_net_rtk_desc">你正在接收RTK网络信号，请确保网络连接正常</string>
     <string name="uxsdk_rtk_setting_menu_settting">设置</string>
-    <string name="uxsdk_rtk_setting_menu_disconnect">断开连接</string>
     <string name="uxsdk_rtk_setting_menu_rtk_setting_success">设置成功</string>
     <string name="uxsdk_rtk_setting_menu_setting_fail">设置失败</string>
     <string name="uxsdk_rtk_setting_menu_rtk_setting_fail_settings_invalid">设置失败，参数有误</string>

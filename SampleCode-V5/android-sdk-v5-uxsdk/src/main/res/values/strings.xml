@@ -733,7 +733,6 @@
     <string name="uxsdk_rtk_setting_menu_base_gps_input_desc">Make sure D-RTK 2 Mobile Station is in open area and do not adjust position after setup. Unable to connect to mobile station after starting aircraft propellers</string>
     <string name="uxsdk_rtk_setting_menu_station_net_rtk_desc">Receiving RTK signal. Ensure network connection is stable</string>
     <string name="uxsdk_rtk_setting_menu_settting">Save</string>
-    <string name="uxsdk_rtk_setting_menu_disconnect">Disconnect</string>
     <string name="uxsdk_rtk_setting_menu_rtk_setting_success">Set successfully</string>
     <string name="uxsdk_rtk_setting_menu_setting_fail">Setting failed</string>
     <string name="uxsdk_rtk_setting_menu_rtk_setting_fail_settings_invalid">Setting failed. Invalid parameters</string>
