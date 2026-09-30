@@ -69,10 +69,26 @@ object RTKStartServiceHelper {
     private var serviceSource: RTKReferenceStationSource = RTKReferenceStationSource.UNKNOWN
     /** Identifies the latest start, so that the callbacks of an abandoned start are ignored. */
     private var startId = 0
-    /** A start whose callback never arrives must not block later starts. */
-    private val startTimeout = Runnable {
-        log("Starting the RTK service for $serviceSource timed out")
-        isStartRTKing.set(false)
+    /**
+     * A start whose callback never arrives must not block later starts. The start is abandoned and
+     * its service stopped, and later starts stay blocked until that stop has finished, so that a
+     * late success of the timed-out start cannot run next to its replacement. A stop that does not
+     * finish in time either is tried again.
+     */
+    private val startTimeout: Runnable = Runnable {
+        synchronized(this@RTKStartServiceHelper) {
+            val source = serviceSource
+            log("Starting the RTK service for $source timed out, stopping it")
+            val id = ++startId
+            handle.postDelayed(startTimeout, START_TIMEOUT_MS)
+            stopService(source) {
+                synchronized(this@RTKStartServiceHelper) {
+                    if (id == startId) {
+                        setStartRTKState(false)
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -218,24 +234,27 @@ object RTKStartServiceHelper {
         stopService(source)
     }
 
-    private fun stopService(source: RTKReferenceStationSource) {
+    /** Stops the service of [source] and then runs [then], whether the stop succeeded or not. */
+    private fun stopService(source: RTKReferenceStationSource, then: () -> Unit = {}) {
         val manager = when (source) {
             RTKReferenceStationSource.CUSTOM_NETWORK_SERVICE -> customManager
             RTKReferenceStationSource.QX_NETWORK_SERVICE -> qxRTKManager
             RTKReferenceStationSource.NTRIP_NETWORK_SERVICE -> cmccRtkManager
             else -> {
                 log("Not stopping the RTK service: $source is no network RTK source")
+                then()
                 return
             }
         }
         manager.stopNetworkRTKService(object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
                 log("RTK service for $source stopped")
-                releaseCasterConnections(source)
+                releaseCasterConnections(source, then)
             }
 
             override fun onFailure(error: IDJIError) {
                 log("Stopping the RTK service for $source failed: $error")
+                then()
             }
         })
     }
