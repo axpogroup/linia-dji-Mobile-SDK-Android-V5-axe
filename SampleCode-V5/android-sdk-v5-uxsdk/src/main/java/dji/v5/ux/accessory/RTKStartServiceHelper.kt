@@ -105,6 +105,10 @@ object RTKStartServiceHelper {
     private fun onRtkSourceChanged(source: RTKReferenceStationSource) {
         rtkSource = source
         log("RTK source changed to $rtkSource")
+        if ((isStartRTKing.get() || isHasStartRTK.get()) && serviceSource != source) {
+            log("Stopping the RTK service for $serviceSource, the RTK source changed")
+            abandonService(serviceSource)
+        }
         startRtkService()
     }
 
@@ -203,10 +207,15 @@ object RTKStartServiceHelper {
     @Synchronized
     fun stopRtkService() {
         log("RTK service stop requested")
+        abandonService(rtkSource)
+    }
+
+    /** Stops the service of [source] and ignores the result of a start that is under way. */
+    private fun abandonService(source: RTKReferenceStationSource) {
         startId++
         setStartRTKState(false)
         isHasStartRTK.set(false)
-        stopService(rtkSource)
+        stopService(source)
     }
 
     private fun stopService(source: RTKReferenceStationSource) {
@@ -349,8 +358,9 @@ object RTKStartServiceHelper {
     private fun onStartFinished(id: Int, source: RTKReferenceStationSource, error: String?, failureTip: String) {
         if (id != startId) {
             log("Ignoring the result of an abandoned RTK service start for $source: ${error ?: "success"}")
-            if (error == null && !isStartRTKing.get() && !isHasStartRTK.get()) {
-                // The service was stopped while this start was under way, and it came up anyway
+            if (error == null && (source != serviceSource || (!isStartRTKing.get() && !isHasStartRTK.get()))) {
+                // The service was stopped or the RTK source changed while this start was under
+                // way, and it came up anyway
                 log("Stopping the RTK service for $source again, it started after it was stopped")
                 stopService(source)
             }
