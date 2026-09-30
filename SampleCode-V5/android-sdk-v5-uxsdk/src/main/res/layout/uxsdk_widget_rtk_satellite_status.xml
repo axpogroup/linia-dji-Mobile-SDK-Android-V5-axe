@@ -54,6 +54,30 @@
         tools:text="RTK Connected. RTK data not in use"
         tools:textColor="@color/uxsdk_rtk_status_connected_not_in_use" />
 
+    <TextView
+        android:id="@+id/textview_rtk_positioning_status_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/uxsdk_rtk_positioning_status_desc"
+        android:textColor="@color/uxsdk_white"
+        android:textSize="@dimen/uxsdk_text_size_normal"
+        app:layout_constraintBottom_toBottomOf="@id/textview_rtk_positioning_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_rtk_status" />
+
+    <TextView
+        android:id="@+id/textview_rtk_positioning_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_rtk_positioning_status_title"
+        app:layout_constraintTop_toBottomOf="@id/textview_rtk_status"
+        tools:text="RTK data in use"
+        tools:textColor="@color/uxsdk_rtk_status_connected_in_use" />
+
     <ImageView
         android:id="@+id/imageview_connect_arrow"
         android:layout_width="@dimen/uxsdk_16_dp"
@@ -77,7 +101,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_rtk_status"
+        app:layout_constraintTop_toBottomOf="@id/textview_rtk_positioning_status"
         tools:ignore="ContentDescription" />
 
     <TextView

@@ -53,6 +53,7 @@ open class RTKSatelliteStatusWidget @JvmOverloads constructor(
     //region Fields
     private val rtkStatusTitleTextView: TextView = findViewById(R.id.textview_rtk_status_title)
     private val rtkStatusTextView: TextView = findViewById(R.id.textview_rtk_status)
+    private val rtkPositioningStatusTextView: TextView = findViewById(R.id.textview_rtk_positioning_status)
     private val baseStationConnectImageView: ImageView = findViewById(R.id.imageview_connect_arrow)
     private val tableBackgroundImageView: ImageView = findViewById(R.id.imageview_table_background)
     private val antenna1TitleTextView: TextView = findViewById(R.id.textview_ant1_title)
@@ -777,13 +778,11 @@ open class RTKSatelliteStatusWidget @JvmOverloads constructor(
 
     private fun updateBaseStationStatus(connectionState: RTKSatelliteStatusWidgetModel.RTKBaseStationState) {
         when (connectionState) {
-            RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE -> {
-                rtkStatusTextView.setText(R.string.uxsdk_rtk_state_connect)
-                rtkStatusTextView.setTextColor(getRTKConnectionStatusLabelTextColor(RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE))
-            }
+            // Whether the aircraft uses the correction data is shown by the positioning status
+            RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE,
             RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_NOT_IN_USE -> {
-                rtkStatusTextView.setText(R.string.uxsdk_rtk_state_connect_not_healthy)
-                rtkStatusTextView.setTextColor(getRTKConnectionStatusLabelTextColor(RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_NOT_IN_USE))
+                rtkStatusTextView.setText(R.string.uxsdk_rtk_state_correction_data_connected)
+                rtkStatusTextView.setTextColor(getRTKConnectionStatusLabelTextColor(RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE))
             }
             RTKSatelliteStatusWidgetModel.RTKBaseStationState.DISCONNECTED -> {
                 rtkStatusTextView.setText(R.string.uxsdk_rtk_state_disconnect)
@@ -811,16 +810,12 @@ open class RTKSatelliteStatusWidget @JvmOverloads constructor(
             RTKServiceState.RTCM_USER_ACCOUNT_EXPIRES_SOON,
             RTKServiceState.RTCM_USE_DEFAULT_MOUNT_POINT,
             RTKServiceState.TRANSMITTING,
-            ->
-                if (networkServiceState.isRTKBeingUsed == true) {
-                    rtkStatusColor =
-                        getRTKConnectionStatusLabelTextColor(RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE)
-                    rtkStatusStr = getString(R.string.uxsdk_rtk_state_connect)
-                } else {
-                    rtkStatusColor =
-                        getRTKConnectionStatusLabelTextColor(RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_NOT_IN_USE)
-                    rtkStatusStr = getString(R.string.uxsdk_rtk_state_connect_not_healthy)
-                }
+            -> {
+                // Whether the aircraft uses the correction data is shown by the positioning status
+                rtkStatusColor =
+                    getRTKConnectionStatusLabelTextColor(RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE)
+                rtkStatusStr = getString(R.string.uxsdk_rtk_state_correction_data_connected)
+            }
 
             RTKServiceState.RTCM_AUTH_FAILED -> rtkStatusStr = getString(R.string.uxsdk_rtk_state_auth_failed)
             RTKServiceState.RTCM_USER_NOT_BOUNDED -> rtkStatusStr = getString(R.string.uxsdk_rtk_state_not_bind)
@@ -915,11 +910,6 @@ open class RTKSatelliteStatusWidget @JvmOverloads constructor(
             positioningTextView.setText(R.string.uxsdk_string_default_value)
         } else {
             positioningTextView.text = RTKUtil.getRTKStatusName(this, positioningSolution)
-        }
-
-        if (positioningSolution == RTKPositioningSolution.FIXED_POINT ) {
-            rtkStatusTextView.setText(R.string.uxsdk_rtk_state_connect)
-            rtkStatusTextView.setTextColor(getRTKConnectionStatusLabelTextColor(RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE))
         }
 
     }
@@ -1022,6 +1012,28 @@ open class RTKSatelliteStatusWidget @JvmOverloads constructor(
         }
 
         updateBaseStationUI(rtkSystemState?.rtkReferenceStationSource)
+        updatePositioningStatus(rtkSystemState)
+    }
+
+    /**
+     * Shows whether the aircraft positions itself with RTK. This is separate from the connection
+     * to the correction data source, because the aircraft keeps its RTK accuracy for a while after
+     * the correction data stops.
+     */
+    private fun updatePositioningStatus(rtkSystemState: RTKSystemState?) {
+        val state = when {
+            rtkSystemState?.isRTKEnabled != true -> RTKSatelliteStatusWidgetModel.RTKBaseStationState.DISCONNECTED
+            rtkSystemState.rtkHealthy -> RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE
+            else -> RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_NOT_IN_USE
+        }
+        rtkPositioningStatusTextView.setText(
+            when (state) {
+                RTKSatelliteStatusWidgetModel.RTKBaseStationState.DISCONNECTED -> R.string.uxsdk_rtk_positioning_off
+                RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_IN_USE -> R.string.uxsdk_rtk_positioning_in_use
+                RTKSatelliteStatusWidgetModel.RTKBaseStationState.CONNECTED_NOT_IN_USE -> R.string.uxsdk_rtk_positioning_not_in_use
+            }
+        )
+        rtkPositioningStatusTextView.setTextColor(getRTKConnectionStatusLabelTextColor(state))
     }
 
     private fun updateBaseStationUI(stationSource: RTKReferenceStationSource?) {

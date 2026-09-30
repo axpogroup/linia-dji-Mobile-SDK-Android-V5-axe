@@ -326,6 +326,11 @@
     <string name="uxsdk_rtk_type_cmcc_rtk">CMCC RTK</string>
     <string name="uxsdk_rtk_type_unknown_rtk">Unknown RTK</string>
     <string name="uxsdk_rtk_status_desc">%1$s Status:</string>
+    <string name="uxsdk_rtk_state_correction_data_connected">Connected. Receiving correction data</string>
+    <string name="uxsdk_rtk_positioning_status_desc">Aircraft RTK Positioning:</string>
+    <string name="uxsdk_rtk_positioning_in_use">RTK data in use</string>
+    <string name="uxsdk_rtk_positioning_not_in_use">RTK data not in use</string>
+    <string name="uxsdk_rtk_positioning_off">RTK positioning off</string>
 
     <!--RTK keep Status-->
     <string name="uxsdk_rtk_keep_status_mode">Maintain Positioning Accuracy Mode</string>
