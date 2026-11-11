@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
@@ -39,8 +39,8 @@
           </div>
         </div>
         <div class="nav scrollable js-tree-menu">
-          <dl>
-            <dt>Manager Classes
+          <dl class="sidebar-group sidebar-group--common">
+            <dt>Common APIs
             </dt>
                   <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">ISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -256,6 +256,8 @@
                                       </dd>
                                       <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_StreamDataListener.html">StreamDataListener</a>
+                                                </dd>
                                                 <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html">VideoChannelStateChangeListener</a>
                                                 </dd>
                                         </ul>
@@ -276,6 +278,14 @@
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ICameraStreamManager.html" class="sub-toggle">ICameraStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_VisionAssistStatusListener.html">VisionAssistStatusListener</a>
+                                      </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
@@ -399,6 +409,8 @@
                             <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfo.html">AutoSensingInfo</a>
                             </dd>
                             <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a>
+                            </dd>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a>
                             </dd>
                             <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html" class="sub-toggle">ISmartTrackMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -578,6 +590,16 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../IPayloadCenter/IIntelligentBoxManager.html" class="sub-toggle">IIntelligentBoxManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfoListener.html">IntelligentBoxInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfo.html">IntelligentBoxInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxAppInfo.html">IntelligentBoxAppInfo</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../IMegaphoneManager/IMegaphoneManager.html" class="sub-toggle">IMegaphoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -665,24 +687,132 @@
                     </ul>
                   </dd>
           </dl>
-          <dl>
-            <dt>Open Pilot Classes
+          <dl class="sidebar-group sidebar-group--plugins">
+            <dt>Plugin APIs
             </dt>
-                  <dd><a href="../IFileTransferManager/IFileTransferManager.html">IFileTransferManager</a>
+                  <dd><a data-href="../IARManager/IARManager.html" class="sub-toggle">IARManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IARManager/IARManager_ARCircleInfo.html">ARCircleInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistAlpha.html">ARDistAlpha</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistLineWidth.html">ARDistLineWidth</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARFaceStroke.html">ARFaceStroke</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconOrthographicConfig.html">ARIconOrthographicConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconPerspectiveConfig.html">ARIconPerspectiveConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARLineInfo.html">ARLineInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointConfig.html">ARPointConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointInfo.html">ARPointInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonFace.html">ARPolygonFace</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonInfo.html">ARPolygonInfo</a>
+                            </dd>
+                            <dd><a data-href="../IARManager/IARManager_ARRadarConfig.html" class="sub-toggle">ARRadarConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IARManager/IARManager_ARRadarConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARStrokeInfo.html">ARStrokeInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARTextConfig.html">ARTextConfig</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager.html" class="sub-toggle">IRemoteViewPageManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnClickListener.html">IRemoteViewOnClickListener</a>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ActivityConfig.html">ActivityConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_DividerConfig.html">DividerConfig</a>
                             </dd>
                             <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnCheckedChangeListener.html">IRemoteViewOnCheckedChangeListener</a>
                             </dd>
-                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_RemoteView.html">RemoteView</a>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnClickListener.html">IRemoteViewOnClickListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnItemSelectedListener.html">IRemoteViewOnItemSelectedListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewTextWatcher.html">IRemoteViewTextWatcher</a>
                             </dd>
                             <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_LayoutParam.html">LayoutParam</a>
                             </dd>
-                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ActivityConfig.html">ActivityConfig</a>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemData.html">ListItemData</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemOperation.html">ListItemOperation</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_RemoteView.html">RemoteView</a>
+                            </dd>
+                            <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor.html" class="sub-toggle">ShapeDescriptor<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_TextSpanSeparatorConfig.html">TextSpanSeparatorConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_WidgetLayoutParam.html">WidgetLayoutParam</a>
                             </dd>
                     </ul>
+                  </dd>
+                  <dd><a data-href="../ICameraViewDrawingManager/ICameraViewDrawingManager.html" class="sub-toggle">ICameraViewDrawingManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingBoxInfo.html">DrawingBoxInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingPolygonInfo.html">DrawingPolygonInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingTextInfo.html">DrawingTextInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenDoubleRect.html">OpenDoubleRect</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenPoint.html">OpenPoint</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager.html" class="sub-toggle">IRemoteDialogManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig.html" class="sub-toggle">DialogConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogElementConfig.html">DialogElementConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogMessage.html">DialogMessage</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_IDialogMessageListener.html">IDialogMessageListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="IMapWidgetManager.html" class="sub-toggle">IMapWidgetManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="IMapWidgetManager_MapCircleOptions.html">MapCircleOptions</a>
+                            </dd>
+                            <dd><a href="IMapWidgetManager_MapElement.html">MapElement</a>
+                            </dd>
+                            <dd><a href="IMapWidgetManager_MapMarkerOptions.html">MapMarkerOptions</a>
+                            </dd>
+                            <dd><a href="IMapWidgetManager_MapPolygonOptions.html">MapPolygonOptions</a>
+                            </dd>
+                            <dd><a href="IMapWidgetManager_MapPolylineOptions.html">MapPolylineOptions</a>
+                            </dd>
+                            <dd><a href="" class="active">MapWidget</a>
+                            </dd>
+                            <dd><a href="IMapWidgetManager_MapWidgetItem.html">MapWidgetItem</a>
+                            </dd>
+                            <dd><a href="IMapWidgetManager_MapWidgetLayer.html">MapWidgetLayer</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IRemoteServerConfigManager/IRemoteServerConfigManager.html">IRemoteServerConfigManager</a>
+                  </dd>
+                  <dd><a href="../IFileTransferManager/IFileTransferManager.html">IFileTransferManager</a>
                   </dd>
                   <dd><a data-href="../INavigateManager/INavigateManager.html" class="sub-toggle">INavigateManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -690,27 +820,13 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="IMapWidgetManager.html" class="sub-toggle">IMapWidgetManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a href="IMapWidgetManager_MapPolygonOptions.html">MapPolygonOptions</a>
-                            </dd>
-                            <dd><a href="IMapWidgetManager_MapPolylineOptions.html">MapPolylineOptions</a>
-                            </dd>
-                            <dd><a href="IMapWidgetManager_MapCircleOptions.html">MapCircleOptions</a>
-                            </dd>
-                            <dd><a href="IMapWidgetManager_MapMarkerOptions.html">MapMarkerOptions</a>
-                            </dd>
-                            <dd><a href="" class="active">MapWidget</a>
-                            </dd>
-                            <dd><a href="IMapWidgetManager_MapWidgetItem.html">MapWidgetItem</a>
-                            </dd>
-                            <dd><a href="IMapWidgetManager_MapElement.html">MapElement</a>
-                            </dd>
-                    </ul>
+                  <dd><a href="../IDisconnectActionManager/IDisconnectActionManager.html">IDisconnectActionManager</a>
+                  </dd>
+                  <dd><a href="../IRemoteControlManager/IRemoteControlManager.html">IRemoteControlManager</a>
                   </dd>
           </dl>
-          <dl>
-            <dt>Misc Classes
+          <dl class="sidebar-group sidebar-group--references">
+            <dt>References
             </dt>
                   <dd><a href="../DJIError/DJIError.html">IDJIError</a>
                   </dd>
@@ -730,7 +846,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">MapWidget</span> <span class="keyword">implements</span> <span class="title class_">Parcelable</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：">描述：</h5>
-<p><font color="#666">地图控件。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">地图控件。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="类成员">类成员:</h5>
 <div class="api-row" id="imapwidgetmanager_mapwidget_getid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getid_inline">getId</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getid_inline"
 <blockquote>
@@ -739,9 +855,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getId</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-2">描述：</h5>
-<p><font color="#666">获取地图控件ID，唯一标识。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">获取地图控件 ID，唯一标识。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="返回值：">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>返回地图控件ID。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>地图控件 ID。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_getdrawertype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getdrawertype_inline">getDrawerType</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getdrawertype_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getDrawerType</h6></div>
@@ -749,9 +865,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MapDrawerType <span class="title function_">getDrawerType</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-3">描述：</h5>
-<p><font color="#666">获取地图控件类型。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">获取地图控件类型。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="返回值：-2">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager.html#imapwidgetmanager_mapdrawertype">MapDrawerType</a></td><td><font color="#666"><i>返回地图控件类型。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager.html#imapwidgetmanager_mapdrawertype">MapDrawerType</a></td><td><font color="#666"><i>地图控件类型。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_setdrawertype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setdrawertype_inline">setDrawerType</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setdrawertype_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setDrawerType</h6></div>
@@ -759,7 +875,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setDrawerType</span><span class="params">(MapDrawerType drawerType)</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-4">描述：</h5>
-<p><font color="#666">设置地图控件类型。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">设置地图控件类型。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="输入参数：">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager.html#imapwidgetmanager_mapdrawertype">MapDrawerType</a> <font color="#000">drawerType</td><td><font color="#666"><i>地图控件类型。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_getassociateditem"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getassociateditem_inline">getAssociatedItem</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getassociateditem_inline"
@@ -769,9 +885,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MapWidgetItem <span class="title function_">getAssociatedItem</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-5">描述：</h5>
-<p><font color="#666">获取伴生地图控件元素。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">获取伴生地图控件元素。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="返回值：-3">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html#imapwidgetmanager_mapwidgetitem">MapWidgetItem</a></td><td><font color="#666"><i>返回地图控件元素。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html#imapwidgetmanager_mapwidgetitem">MapWidgetItem</a></td><td><font color="#666"><i>地图控件元素。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_setassociateditem"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setassociateditem_inline">setAssociatedItem</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setassociateditem_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setAssociatedItem</h6></div>
@@ -779,7 +895,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setAssociatedItem</span><span class="params">(MapWidgetItem associatedItem)</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-6">描述：</h5>
-<p><font color="#666">设置伴生地图控件元素。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">设置伴生地图控件元素。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="输入参数：-2">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html#imapwidgetmanager_mapwidgetitem">MapWidgetItem</a> <font color="#000">associatedItem</td><td><font color="#666"><i>地图控件元素。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_getcircleoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getcircleoptions_inline">getCircleOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getcircleoptions_inline"
@@ -789,9 +905,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MapCircleOptions <span class="title function_">getCircleOptions</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-7">描述：</h5>
-<p><font color="#666">获取地图控件圆形配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">获取地图控件圆形配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="返回值：-4">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html#imapwidgetmanager_mapcircleoptions">MapCircleOptions</a></td><td><font color="#666"><i>返回地图控件圆形配置。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html#imapwidgetmanager_mapcircleoptions">MapCircleOptions</a></td><td><font color="#666"><i>地图控件圆形配置。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_setcircleoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setcircleoptions_inline">setCircleOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setcircleoptions_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setCircleOptions</h6></div>
@@ -799,7 +915,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setCircleOptions</span><span class="params">(MapCircleOptions circleOptions)</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-8">描述：</h5>
-<p><font color="#666">设置地图控件圆形配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">设置地图控件圆形配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="输入参数：-3">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html#imapwidgetmanager_mapcircleoptions">MapCircleOptions</a> <font color="#000">circleOptions</td><td><font color="#666"><i>地图控件圆形配置。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_getmarkeroptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getmarkeroptions_inline">getMarkerOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getmarkeroptions_inline"
@@ -809,9 +925,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MapMarkerOptions <span class="title function_">getMarkerOptions</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-9">描述：</h5>
-<p><font color="#666">获取地图控件标注配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">获取地图控件标注配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="返回值：-5">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html#imapwidgetmanager_mapmarkeroptions">MapMarkerOptions</a></td><td><font color="#666"><i>返回地图控件标注配置。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html#imapwidgetmanager_mapmarkeroptions">MapMarkerOptions</a></td><td><font color="#666"><i>地图控件标注配置。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_setmarkeroptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setmarkeroptions_inline">setMarkerOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setmarkeroptions_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setMarkerOptions</h6></div>
@@ -819,9 +935,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setMarkerOptions</span><span class="params">(MapMarkerOptions markerOptions)</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-10">描述：</h5>
-<p><font color="#666">设置地图控件标注配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">设置地图控件标注配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="输入参数：-4">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">SOURCE_DIFFERENT <font color="#000">btnContent</td><td><font color="#666"><i>地图控件标注配置。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html#imapwidgetmanager_mapmarkeroptions">MapMarkerOptions</a> <font color="#000">markerOptions</td><td><font color="#666"><i>地图控件标注配置。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_getpolygonoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getpolygonoptions_inline">getPolygonOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getpolygonoptions_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getPolygonOptions</h6></div>
@@ -829,9 +945,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MapPolygonOptions <span class="title function_">getPolygonOptions</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-11">描述：</h5>
-<p><font color="#666">获取地图控件多边形配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">获取地图控件多边形配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="返回值：-6">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html#imapwidgetmanager_mappolygonoptions">MapPolygonOptions</a></td><td><font color="#666"><i>返回地图控件多边形配置。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html#imapwidgetmanager_mappolygonoptions">MapPolygonOptions</a></td><td><font color="#666"><i>地图控件多边形配置。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_setpolygonoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setpolygonoptions_inline">setPolygonOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setpolygonoptions_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setPolygonOptions</h6></div>
@@ -839,9 +955,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setPolygonOptions</span><span class="params">(MapPolygonOptions polygonOptions)</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-12">描述：</h5>
-<p><font color="#666">设置地图控件多边形配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">设置地图控件多边形配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="输入参数：-5">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">SOURCE_DIFFERENT <font color="#000">onClickListener</td><td><font color="#666"><i>地图控件多边形配置。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html#imapwidgetmanager_mappolygonoptions">MapPolygonOptions</a> <font color="#000">polygonOptions</td><td><font color="#666"><i>地图控件多边形配置。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_getpolylineoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getpolylineoptions_inline">getPolylineOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getpolylineoptions_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getPolylineOptions</h6></div>
@@ -849,9 +965,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MapPolylineOptions <span class="title function_">getPolylineOptions</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-13">描述：</h5>
-<p><font color="#666">获取地图控件折线配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">获取地图控件折线配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="返回值：-7">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html#imapwidgetmanager_mappolylineoptions">MapPolylineOptions</a></td><td><font color="#666"><i>返回地图控件折线配置。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html#imapwidgetmanager_mappolylineoptions">MapPolylineOptions</a></td><td><font color="#666"><i>地图控件折线配置。</i></td></tr></table></html></div>
 <div class="api-row" id="imapwidgetmanager_mapwidget_setpolylineoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setpolylineoptions_inline">setPolylineOptions</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setpolylineoptions_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setPolylineOptions</h6></div>
@@ -859,10 +975,56 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setPolylineOptions</span><span class="params">(MapPolylineOptions polylineOptions)</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
 <h5 id="描述：-14">描述：</h5>
-<p><font color="#666">设置地图控件折线配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<p><font color="#666">设置地图控件折线配置。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
 <h5 id="输入参数：-6">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">SOURCE_DIFFERENT <font color="#000">onClickListener</td><td><font color="#666"><i>地图控件折线配置。</i></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html#imapwidgetmanager_mappolylineoptions">MapPolylineOptions</a> <font color="#000">polylineOptions</td><td><font color="#666"><i>地图控件折线配置。</i></td></tr></table></html></div>
+<div class="api-row" id="imapwidgetmanager_mapwidget_getlayerid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getlayerid_inline">getLayerId</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getlayerid_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLayerId</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getLayerId</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
+<h5 id="描述：-15">描述：</h5>
+<p><font color="#666">获取所属图层 ID。 <br><br> 默认空串表示归入默认层。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
+<h5 id="返回值：-8">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>图层 ID。</i></td></tr></table></html></div>
+<div class="api-row" id="imapwidgetmanager_mapwidget_setlayerid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setlayerid_inline">setLayerId</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setlayerid_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setLayerId</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setLayerId</span><span class="params">(String layerId)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
+<h5 id="描述：-16">描述：</h5>
+<p><font color="#666">设置所属图层 ID。 <br><br> 用于将控件归入指定的 MapWidgetLayer。不设置则归入默认层。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
+<h5 id="输入参数：-7">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">layerId</td><td><font color="#666"><i>图层 ID，由 MapWidgetLayer.getId() 获取。</i></td></tr></table></html></div>
+<div class="api-row" id="imapwidgetmanager_mapwidget_getname"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_getname_inline">getName</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_getname_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getName</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getName</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
+<h5 id="描述：-17">描述：</h5>
+<p><font color="#666">获取地图控件名称。 <br><br> 业务标识用，便于日志/调试/查询时识别 widget。不会展示在地图上（与 MapMarkerOptions.getTitle() / MapWidgetItem.getTitle() 不同）。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
+<h5 id="返回值：-9">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>地图控件名称。</i></td></tr></table></html></div>
+<div class="api-row" id="imapwidgetmanager_mapwidget_setname"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imapwidgetmanager_mapwidget_setname_inline">setName</a></div></div><div class="inline-doc" id="imapwidgetmanager_mapwidget_setname_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setName</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager.map</td></tr></table></html>
+<h5 id="描述：-18">描述：</h5>
+<p><font color="#666">设置地图控件名称。 <br><br> 业务标识用（如 “火点-A12”、“人员-张三”），不会展示在地图上。如需在地图上显示文字，请使用 MapMarkerOptions.setTitle(String)（marker 标题）或 MapWidgetItem.setTitle(String)（点击弹窗标题）。 <br><br><code><i>MSDK 5.20.1开始支持</i></code></p>
+<h5 id="输入参数：-8">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">name</td><td><font color="#666"><i>地图控件名称。</i></td></tr></table></html></div>
 
+        </div>
+      </div>
+      <div class="site-toc">
+        <div class="site-toc-inner">
+          <div class="site-toc-title">本页目录</div>
+          <ul class="site-toc-list"></ul>
         </div>
       </div>
     </div>

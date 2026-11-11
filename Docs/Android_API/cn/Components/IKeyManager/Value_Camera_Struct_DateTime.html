@@ -39,12 +39,20 @@
           </div>
         </div>
         <div class="nav scrollable js-tree-menu">
-          <dl>
-            <dt>Manager Classes
+          <dl class="sidebar-group sidebar-group--common">
+            <dt>Common APIs
             </dt>
                   <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">ISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../SDKManager/ISDKManager_SDKManagerCallback.html">SDKManagerCallback</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_InitSettings.html">InitSettings</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_PluginAPPConfig.html">PluginAPPConfig</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_APPVersion.html">APPVersion</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_OpenLocation.html">OpenLocation</a>
                             </dd>
                     </ul>
                   </dd>
@@ -248,6 +256,8 @@
                                       </dd>
                                       <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_StreamDataListener.html">StreamDataListener</a>
+                                                </dd>
                                                 <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html">VideoChannelStateChangeListener</a>
                                                 </dd>
                                         </ul>
@@ -268,6 +278,14 @@
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ICameraStreamManager.html" class="sub-toggle">ICameraStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_VisionAssistStatusListener.html">VisionAssistStatusListener</a>
+                                      </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
@@ -669,8 +687,146 @@
                     </ul>
                   </dd>
           </dl>
-          <dl>
-            <dt>Misc Classes
+          <dl class="sidebar-group sidebar-group--plugins">
+            <dt>Plugin APIs
+            </dt>
+                  <dd><a data-href="../IARManager/IARManager.html" class="sub-toggle">IARManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IARManager/IARManager_ARCircleInfo.html">ARCircleInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistAlpha.html">ARDistAlpha</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistLineWidth.html">ARDistLineWidth</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARFaceStroke.html">ARFaceStroke</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconOrthographicConfig.html">ARIconOrthographicConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconPerspectiveConfig.html">ARIconPerspectiveConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARLineInfo.html">ARLineInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointConfig.html">ARPointConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointInfo.html">ARPointInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonFace.html">ARPolygonFace</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonInfo.html">ARPolygonInfo</a>
+                            </dd>
+                            <dd><a data-href="../IARManager/IARManager_ARRadarConfig.html" class="sub-toggle">ARRadarConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IARManager/IARManager_ARRadarConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARStrokeInfo.html">ARStrokeInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARTextConfig.html">ARTextConfig</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager.html" class="sub-toggle">IRemoteViewPageManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ActivityConfig.html">ActivityConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_DividerConfig.html">DividerConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnCheckedChangeListener.html">IRemoteViewOnCheckedChangeListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnClickListener.html">IRemoteViewOnClickListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnItemSelectedListener.html">IRemoteViewOnItemSelectedListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewTextWatcher.html">IRemoteViewTextWatcher</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_LayoutParam.html">LayoutParam</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemData.html">ListItemData</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemOperation.html">ListItemOperation</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_RemoteView.html">RemoteView</a>
+                            </dd>
+                            <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor.html" class="sub-toggle">ShapeDescriptor<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_TextSpanSeparatorConfig.html">TextSpanSeparatorConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_WidgetLayoutParam.html">WidgetLayoutParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../ICameraViewDrawingManager/ICameraViewDrawingManager.html" class="sub-toggle">ICameraViewDrawingManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingBoxInfo.html">DrawingBoxInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingPolygonInfo.html">DrawingPolygonInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingTextInfo.html">DrawingTextInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenDoubleRect.html">OpenDoubleRect</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenPoint.html">OpenPoint</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager.html" class="sub-toggle">IRemoteDialogManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig.html" class="sub-toggle">DialogConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogElementConfig.html">DialogElementConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogMessage.html">DialogMessage</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_IDialogMessageListener.html">IDialogMessageListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IMapWidgetManager/IMapWidgetManager.html" class="sub-toggle">IMapWidgetManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html">MapCircleOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapElement.html">MapElement</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html">MapMarkerOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html">MapPolygonOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html">MapPolylineOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidget.html">MapWidget</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html">MapWidgetItem</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetLayer.html">MapWidgetLayer</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IRemoteServerConfigManager/IRemoteServerConfigManager.html">IRemoteServerConfigManager</a>
+                  </dd>
+                  <dd><a href="../IFileTransferManager/IFileTransferManager.html">IFileTransferManager</a>
+                  </dd>
+                  <dd><a data-href="../INavigateManager/INavigateManager.html" class="sub-toggle">INavigateManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../INavigateManager/INavigateManager_NavigateAction.html">NavigateAction</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IDisconnectActionManager/IDisconnectActionManager.html">IDisconnectActionManager</a>
+                  </dd>
+                  <dd><a href="../IRemoteControlManager/IRemoteControlManager.html">IRemoteControlManager</a>
+                  </dd>
+          </dl>
+          <dl class="sidebar-group sidebar-group--references">
+            <dt>References
             </dt>
                   <dd><a href="../DJIError/DJIError.html">IDJIError</a>
                   </dd>
@@ -686,122 +842,140 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DateTime</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DateTime</span> <span class="keyword">implements</span> <span class="title">DJIValue</span>, <span class="title">JNIProguardKeepTag</span>, <span class="title">ByteStream</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>DateTime</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DateTime</span> <span class="keyword">implements</span> <span class="title class_">DJIValue</span>, JNIProguardKeepTag, ByteStream</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
 <h5 id="描述：">描述：</h5>
-<p><font color="#666">时间数据。</font></p>
+<p><font color="#666">时间数据。</p>
 <h5 id="类成员">类成员:</h5>
-<h4 id="members">Members</h4>
-<div class="api-row" id="value_camera_struct_datetime_getyear"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getyear_inline">getYear</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getyear_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getYear</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getYear</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v2">描述：</h5>
-<p><font color="#666">获取年。</font></p>
+<h4 id="Members">Members</h4>
+<div class="api-row" id="value_camera_struct_datetime_getyear"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getyear_inline">getYear</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getyear_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getYear</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer <span class="title function_">getYear</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-2">描述：</h5>
+<p><font color="#666">获取年。</p>
 <h5 id="返回值：">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回年。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_setyear"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setyear_inline">setYear</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setyear_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setYear</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setYear</span><span class="params">(Integer year)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">设置年。</font></p>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</td><td><font color="#666"><i>返回年。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_setyear"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setyear_inline">setYear</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setyear_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setYear</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setYear</span><span class="params">(Integer year)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-3">描述：</h5>
+<p><font color="#666">设置年。</p>
 <h5 id="输入参数：">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">year</font></font></td><td><font color="#666"><i>年。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_getmonth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getmonth_inline">getMonth</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getmonth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getMonth</h6></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">year</td><td><font color="#666"><i>年。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_getmonth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getmonth_inline">getMonth</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getmonth_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getMonth</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer <span class="title function_">getMonth</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-4">描述：</h5>
+<p><font color="#666">获取月。</p>
+<h5 id="返回值：-2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</td><td><font color="#666"><i>返回月。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_setmonth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setmonth_inline">setMonth</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setmonth_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setMonth</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setMonth</span><span class="params">(Integer month)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-5">描述：</h5>
+<p><font color="#666">设置月。</p>
+<h5 id="输入参数：-2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">month</td><td><font color="#666"><i>月。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_getday"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getday_inline">getDay</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getday_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getDay</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer <span class="title function_">getDay</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-6">描述：</h5>
+<p><font color="#666">获取日。</p>
+<h5 id="返回值：-3">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</td><td><font color="#666"><i>返回日。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_setday"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setday_inline">setDay</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setday_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setDay</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setDay</span><span class="params">(Integer day)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-7">描述：</h5>
+<p><font color="#666">设置日。</p>
+<h5 id="输入参数：-3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">day</td><td><font color="#666"><i>日。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_gethour"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_gethour_inline">getHour</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_gethour_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getHour</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer <span class="title function_">getHour</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-8">描述：</h5>
+<p><font color="#666">获取时。</p>
+<h5 id="返回值：-4">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</td><td><font color="#666"><i>返回时。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_sethour"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_sethour_inline">setHour</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_sethour_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setHour</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setHour</span><span class="params">(Integer hour)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-9">描述：</h5>
+<p><font color="#666">设置时。</p>
+<h5 id="输入参数：-4">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">hour</td><td><font color="#666"><i>时。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_getminute"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getminute_inline">getMinute</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getminute_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getMinute</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer <span class="title function_">getMinute</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-10">描述：</h5>
+<p><font color="#666">获取分。</p>
+<h5 id="返回值：-5">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</td><td><font color="#666"><i>返回分。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_setminute"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setminute_inline">setMinute</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setminute_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setMinute</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setMinute</span><span class="params">(Integer minute)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-11">描述：</h5>
+<p><font color="#666">设置分。</p>
+<h5 id="输入参数：-5">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">minute</td><td><font color="#666"><i>分。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_getsecond"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getsecond_inline">getSecond</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getsecond_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSecond</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer <span class="title function_">getSecond</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-12">描述：</h5>
+<p><font color="#666">获取秒。</p>
+<h5 id="返回值：-6">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</td><td><font color="#666"><i>返回秒。</i></td></tr></table></html></div>
+<div class="api-row" id="value_camera_struct_datetime_setsecond"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setsecond_inline">setSecond</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setsecond_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setSecond</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setSecond</span><span class="params">(Integer second)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="描述：-13">描述：</h5>
+<p><font color="#666">设置秒。</p>
+<h5 id="输入参数：-6">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">second</td><td><font color="#666"><i>秒。</i></td></tr></table></html></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getMonth</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v4">描述：</h5>
-<p><font color="#666">获取月。</font></p>
-<h5 id="返回值：-v2">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回月。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_setmonth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setmonth_inline">setMonth</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setmonth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setMonth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMonth</span><span class="params">(Integer month)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v5">描述：</h5>
-<p><font color="#666">设置月。</font></p>
-<h5 id="输入参数：-v2">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">month</font></font></td><td><font color="#666"><i>月。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_getday"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getday_inline">getDay</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getday_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getDay</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getDay</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v6">描述：</h5>
-<p><font color="#666">获取日。</font></p>
-<h5 id="返回值：-v3">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回日。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_setday"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setday_inline">setDay</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setday_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setDay</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDay</span><span class="params">(Integer day)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v7">描述：</h5>
-<p><font color="#666">设置日。</font></p>
-<h5 id="输入参数：-v3">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">day</font></font></td><td><font color="#666"><i>日。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_gethour"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_gethour_inline">getHour</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_gethour_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getHour</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getHour</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v8">描述：</h5>
-<p><font color="#666">获取时。</font></p>
-<h5 id="返回值：-v4">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回时。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_sethour"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_sethour_inline">setHour</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_sethour_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setHour</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHour</span><span class="params">(Integer hour)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v9">描述：</h5>
-<p><font color="#666">设置时。</font></p>
-<h5 id="输入参数：-v4">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">hour</font></font></td><td><font color="#666"><i>时。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_getminute"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getminute_inline">getMinute</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getminute_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getMinute</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getMinute</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v10">描述：</h5>
-<p><font color="#666">获取分。</font></p>
-<h5 id="返回值：-v5">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回分。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_setminute"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setminute_inline">setMinute</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setminute_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setMinute</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMinute</span><span class="params">(Integer minute)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v11">描述：</h5>
-<p><font color="#666">设置分。</font></p>
-<h5 id="输入参数：-v5">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">minute</font></font></td><td><font color="#666"><i>分。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_getsecond"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_getsecond_inline">getSecond</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_getsecond_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getSecond</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getSecond</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v12">描述：</h5>
-<p><font color="#666">获取秒。</font></p>
-<h5 id="返回值：-v6">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回秒。</i></font></td></tr></table></html></div>
-<div class="api-row" id="value_camera_struct_datetime_setsecond"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_datetime_setsecond_inline">setSecond</a></div></div><div class="inline-doc" id="value_camera_struct_datetime_setsecond_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setSecond</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecond</span><span class="params">(Integer second)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="描述：-v13">描述：</h5>
-<p><font color="#666">设置秒。</font></p>
-<h5 id="输入参数：-v6">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer <font color="#000">second</font></font></td><td><font color="#666"><i>秒。</i></font></td></tr></table></html></div>
-
+        </div>
+      </div>
+      <div class="site-toc">
+        <div class="site-toc-inner">
+          <div class="site-toc-title">本页目录</div>
+          <ul class="site-toc-list"></ul>
         </div>
       </div>
     </div>

@@ -44,6 +44,8 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.ImageViewCompat;
 
+import dji.v5.ux.util.ToastUtils;
+
 /**
  * Utility class for converting and applying changes to Views.
  */
@@ -125,7 +127,7 @@ public final class ViewUtil {
         if (context == null) {
             return;
         }
-        Runnable runnable = () -> Toast.makeText(context, message, duration).show();
+        Runnable runnable = () -> ToastUtils.INSTANCE.showToast(message, duration);
         if (UI_Handler.getLooper().isCurrentThread()) {
             runnable.run();
         } else {

@@ -39,12 +39,20 @@
           </div>
         </div>
         <div class="nav scrollable js-tree-menu">
-          <dl>
-            <dt>Manager Classes
+          <dl class="sidebar-group sidebar-group--common">
+            <dt>Common APIs
             </dt>
                   <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">ISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../SDKManager/ISDKManager_SDKManagerCallback.html">SDKManagerCallback</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_InitSettings.html">InitSettings</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_PluginAPPConfig.html">PluginAPPConfig</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_APPVersion.html">APPVersion</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_OpenLocation.html">OpenLocation</a>
                             </dd>
                     </ul>
                   </dd>
@@ -248,6 +256,8 @@
                                       </dd>
                                       <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_StreamDataListener.html">StreamDataListener</a>
+                                                </dd>
                                                 <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html">VideoChannelStateChangeListener</a>
                                                 </dd>
                                         </ul>
@@ -268,6 +278,14 @@
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ICameraStreamManager.html" class="sub-toggle">ICameraStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_VisionAssistStatusListener.html">VisionAssistStatusListener</a>
+                                      </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
@@ -669,8 +687,146 @@
                     </ul>
                   </dd>
           </dl>
-          <dl>
-            <dt>Misc Classes
+          <dl class="sidebar-group sidebar-group--plugins">
+            <dt>Plugin APIs
+            </dt>
+                  <dd><a data-href="../IARManager/IARManager.html" class="sub-toggle">IARManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IARManager/IARManager_ARCircleInfo.html">ARCircleInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistAlpha.html">ARDistAlpha</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistLineWidth.html">ARDistLineWidth</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARFaceStroke.html">ARFaceStroke</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconOrthographicConfig.html">ARIconOrthographicConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconPerspectiveConfig.html">ARIconPerspectiveConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARLineInfo.html">ARLineInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointConfig.html">ARPointConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointInfo.html">ARPointInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonFace.html">ARPolygonFace</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonInfo.html">ARPolygonInfo</a>
+                            </dd>
+                            <dd><a data-href="../IARManager/IARManager_ARRadarConfig.html" class="sub-toggle">ARRadarConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IARManager/IARManager_ARRadarConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARStrokeInfo.html">ARStrokeInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARTextConfig.html">ARTextConfig</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager.html" class="sub-toggle">IRemoteViewPageManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ActivityConfig.html">ActivityConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_DividerConfig.html">DividerConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnCheckedChangeListener.html">IRemoteViewOnCheckedChangeListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnClickListener.html">IRemoteViewOnClickListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnItemSelectedListener.html">IRemoteViewOnItemSelectedListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewTextWatcher.html">IRemoteViewTextWatcher</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_LayoutParam.html">LayoutParam</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemData.html">ListItemData</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemOperation.html">ListItemOperation</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_RemoteView.html">RemoteView</a>
+                            </dd>
+                            <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor.html" class="sub-toggle">ShapeDescriptor<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_TextSpanSeparatorConfig.html">TextSpanSeparatorConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_WidgetLayoutParam.html">WidgetLayoutParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../ICameraViewDrawingManager/ICameraViewDrawingManager.html" class="sub-toggle">ICameraViewDrawingManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingBoxInfo.html">DrawingBoxInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingPolygonInfo.html">DrawingPolygonInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingTextInfo.html">DrawingTextInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenDoubleRect.html">OpenDoubleRect</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenPoint.html">OpenPoint</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager.html" class="sub-toggle">IRemoteDialogManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig.html" class="sub-toggle">DialogConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogElementConfig.html">DialogElementConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogMessage.html">DialogMessage</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_IDialogMessageListener.html">IDialogMessageListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IMapWidgetManager/IMapWidgetManager.html" class="sub-toggle">IMapWidgetManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html">MapCircleOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapElement.html">MapElement</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html">MapMarkerOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html">MapPolygonOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html">MapPolylineOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidget.html">MapWidget</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html">MapWidgetItem</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetLayer.html">MapWidgetLayer</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IRemoteServerConfigManager/IRemoteServerConfigManager.html">IRemoteServerConfigManager</a>
+                  </dd>
+                  <dd><a href="../IFileTransferManager/IFileTransferManager.html">IFileTransferManager</a>
+                  </dd>
+                  <dd><a data-href="../INavigateManager/INavigateManager.html" class="sub-toggle">INavigateManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../INavigateManager/INavigateManager_NavigateAction.html">NavigateAction</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IDisconnectActionManager/IDisconnectActionManager.html">IDisconnectActionManager</a>
+                  </dd>
+                  <dd><a href="../IRemoteControlManager/IRemoteControlManager.html">IRemoteControlManager</a>
+                  </dd>
+          </dl>
+          <dl class="sidebar-group sidebar-group--references">
+            <dt>References
             </dt>
                   <dd><a href="../DJIError/DJIError.html">IDJIError</a>
                   </dd>
@@ -686,59 +842,70 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>IRadarManager</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IRadarManager</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>IRadarManager</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">IRadarManager</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
 <h5 id="描述：">描述：</h5>
-<p><font color="#666">此类是雷达管理类，用于开启、关闭雷达避障开关，获取障碍物测距数据。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
+<p><font color="#666">此类是雷达管理类，用于开启、关闭雷达避障开关，获取障碍物测距数据。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></p>
 <h5 id="类成员">类成员:</h5>
-<div class="api-row" id="iradarmanager_setobstacleavoidanceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_setobstacleavoidanceenabled_inline">setObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="iradarmanager_setobstacleavoidanceenabled_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setObstacleAvoidanceEnabled</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setObstacleAvoidanceEnabled</span><span class="params">(<span class="keyword">boolean</span> isEnabled, @NonNull</span></span></span><br><span class="line"><span class="function"><span class="params">        PerceptionDirection direction, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v2">描述：</h5>
-<p><font color="#666">开启或者关闭雷达避障子开关。只有当总开关<code><a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_setoverallobstacleavoidanceenabled">setOverallObstacleAvoidanceEnabled</a></code>开启后，子开关才能被开启。毫米波雷达不支持下视避障。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
+<div class="api-row" id="iradarmanager_setobstacleavoidanceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_setobstacleavoidanceenabled_inline">setObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="iradarmanager_setobstacleavoidanceenabled_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setObstacleAvoidanceEnabled</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setObstacleAvoidanceEnabled</span><span class="params">(<span class="type">boolean</span> isEnabled, <span class="meta">@NonNull</span></span></span><br><span class="line"><span class="params">        PerceptionDirection direction, CommonCallbacks.CompletionCallback callback)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-2">描述：</h5>
+<p><font color="#666">开启或者关闭雷达避障子开关。只有当总开关<code><a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_setoverallobstacleavoidanceenabled">setOverallObstacleAvoidanceEnabled</a></code>开启后，子开关才能被开启。毫米波雷达不支持下视避障。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></p>
 <h5 id="输入参数：">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</font></font></td><td><font color="#666"><i><code>true</code>表示开启雷达避障子开关。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull             <a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_perceptiondirection">PerceptionDirection</a> <font color="#000">direction</font></font></td><td><font color="#666"><i>雷达避障子开关的方向。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iradarmanager_getobstacleavoidanceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_getobstacleavoidanceenabled_inline">getObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="iradarmanager_getobstacleavoidanceenabled_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getObstacleAvoidanceEnabled</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getObstacleAvoidanceEnabled</span><span class="params">(@NonNull PerceptionDirection direction, @NonNull CommonCallbacks.CompletionCallbackWithParam&lt;Boolean&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">返回是否开启雷达避障子开关。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v2">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_perceptiondirection">PerceptionDirection</a> <font color="#000">direction</font></font></td><td><font color="#666"><i>雷达避障子开关的方向。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iradarmanager_addradarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_addradarinformationlistener_inline">addRadarInformationListener</a></div></div><div class="inline-doc" id="iradarmanager_addradarinformationlistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>addRadarInformationListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addRadarInformationListener</span><span class="params">(RadarInformationListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v4">描述：</h5>
-<p><font color="#666">设置雷达信息的监听器。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v3">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformationListener.html#iradarmanager_radarinformationlistener">RadarInformationListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>雷达信息的监听器</i></font></td></tr></table></html></div>
-<div class="api-row" id="iradarmanager_removeradarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_removeradarinformationlistener_inline">removeRadarInformationListener</a></div></div><div class="inline-doc" id="iradarmanager_removeradarinformationlistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>removeRadarInformationListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeRadarInformationListener</span><span class="params">(RadarInformationListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v5">描述：</h5>
-<p><font color="#666">移除雷达信息的监听器。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v4">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformationListener.html#iradarmanager_radarinformationlistener">RadarInformationListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>雷达信息的监听器</i></font></td></tr></table></html></div>
-<div class="api-row" id="iradarmanager_clearallradarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_clearallradarinformationlistener_inline">clearAllRadarInformationListener</a></div></div><div class="inline-doc" id="iradarmanager_clearallradarinformationlistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>clearAllRadarInformationListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllRadarInformationListener</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v6">描述：</h5>
-<p><font color="#666">移除所有雷达信息的监听器。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</td><td><font color="#666"><i><code>true</code>表示开启雷达避障子开关。</i></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull             <a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_perceptiondirection">PerceptionDirection</a> <font color="#000">direction</td><td><font color="#666"><i>雷达避障子开关的方向。</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>返回执行结果的回调。</i></td></tr></table></html></div>
+<div class="api-row" id="iradarmanager_getobstacleavoidanceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_getobstacleavoidanceenabled_inline">getObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="iradarmanager_getobstacleavoidanceenabled_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getObstacleAvoidanceEnabled</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">getObstacleAvoidanceEnabled</span><span class="params">(<span class="meta">@NonNull</span> PerceptionDirection direction, <span class="meta">@NonNull</span> CommonCallbacks.CompletionCallbackWithParam&lt;Boolean&gt; callback)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-3">描述：</h5>
+<p><font color="#666">返回是否开启雷达避障子开关。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></p>
+<h5 id="输入参数：-2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_perceptiondirection">PerceptionDirection</a> <font color="#000">direction</td><td><font color="#666"><i>雷达避障子开关的方向。</i></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Boolean&gt; <font color="#000">callback</td><td><font color="#666"><i>返回执行结果的回调。</i></td></tr></table></html></div>
+<div class="api-row" id="iradarmanager_addradarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_addradarinformationlistener_inline">addRadarInformationListener</a></div></div><div class="inline-doc" id="iradarmanager_addradarinformationlistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addRadarInformationListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">addRadarInformationListener</span><span class="params">(RadarInformationListener listener)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-4">描述：</h5>
+<p><font color="#666">设置雷达信息的监听器。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></p>
+<h5 id="输入参数：-3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformationListener.html#iradarmanager_radarinformationlistener">RadarInformationListener</a> <font color="#000">listener</td><td><font color="#666"><i>雷达信息的监听器</i></td></tr></table></html></div>
+<div class="api-row" id="iradarmanager_removeradarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_removeradarinformationlistener_inline">removeRadarInformationListener</a></div></div><div class="inline-doc" id="iradarmanager_removeradarinformationlistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeRadarInformationListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">removeRadarInformationListener</span><span class="params">(RadarInformationListener listener)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-5">描述：</h5>
+<p><font color="#666">移除雷达信息的监听器。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></p>
+<h5 id="输入参数：-4">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformationListener.html#iradarmanager_radarinformationlistener">RadarInformationListener</a> <font color="#000">listener</td><td><font color="#666"><i>雷达信息的监听器</i></td></tr></table></html></div>
+<div class="api-row" id="iradarmanager_clearallradarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iradarmanager_clearallradarinformationlistener_inline">clearAllRadarInformationListener</a></div></div><div class="inline-doc" id="iradarmanager_clearallradarinformationlistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>clearAllRadarInformationListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">clearAllRadarInformationListener</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-6">描述：</h5>
+<p><font color="#666">移除所有雷达信息的监听器。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></p>
 </div>
-<h5 id="related">Related:</h5>
-<div class="api-row" id="iradarmanager_radarinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a></div></div><div class="api-row" id="iradarmanager_radarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a></div></div>
+<h5 id="Related">Related:</h5>
+<div class="api-row" id="iradarmanager_radarinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a></div></div><div class="inline-doc class-inline-doc offline-class-inline-doc" id="iradarmanager_radarinformation_inline" data-class-href="../../Components/IPerceptionManager/IRadarManager_RadarInformation.html" data-class-name="RadarInformation"><blockquote><div class="article"><h6><font color="#AAA">class </font>RadarInformation <span class="class-jump-arrow">↗</span></h6></div></blockquote><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RadarInformation</span></span></pre></td></tr></table></figure><h5>描述</h5><p><font color="#666">雷达信息，用于获取雷达避障子开关状态。</font></p><p><code><i>MSDK 5.1.0开始支持</i></code></p></div><div class="api-row" id="iradarmanager_radarinformationlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a></div></div><div class="inline-doc class-inline-doc offline-class-inline-doc" id="iradarmanager_radarinformationlistener_inline" data-class-href="../../Components/IPerceptionManager/IRadarManager_RadarInformationListener.html" data-class-name="RadarInformationListener"><blockquote><div class="article"><h6><font color="#AAA">class </font>RadarInformationListener <span class="class-jump-arrow">↗</span></h6></div></blockquote><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">RadarInformationListener</span></span></pre></td></tr></table></figure><h5>描述</h5><p><font color="#666">雷达信息监听器。</font></p><p><code><i>MSDK 5.1.0开始支持</i></code></p></div>
 
+        </div>
+      </div>
+      <div class="site-toc">
+        <div class="site-toc-inner">
+          <div class="site-toc-title">本页目录</div>
+          <ul class="site-toc-list"></ul>
         </div>
       </div>
     </div>

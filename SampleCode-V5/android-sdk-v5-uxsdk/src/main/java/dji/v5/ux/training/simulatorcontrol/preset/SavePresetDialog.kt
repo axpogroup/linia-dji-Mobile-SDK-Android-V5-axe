@@ -39,6 +39,7 @@ import androidx.annotation.StyleRes
 import dji.v5.ux.core.extension.textColor
 import dji.v5.ux.core.extension.textColorStateList
 import dji.v5.ux.R
+import dji.v5.ux.util.ToastUtils
 import dji.v5.ux.training.util.SimulatorPresetUtils
 import dji.v5.ux.training.simulatorcontrol.SimulatorControlWidget
 
@@ -97,9 +98,7 @@ class SavePresetDialog (
 
     private fun savePreset(name: String) {
         if (TextUtils.isEmpty(name)) {
-            Toast.makeText(context,
-                    context.resources.getString(R.string.uxsdk_simulator_preset_name_empty_error),
-                    Toast.LENGTH_SHORT).show()
+            ToastUtils.showShortToast(context.resources.getString(R.string.uxsdk_simulator_preset_name_empty_error))
         } else {
             SimulatorPresetUtils.savePreset(name, simulatorPresetData)
             dismiss()

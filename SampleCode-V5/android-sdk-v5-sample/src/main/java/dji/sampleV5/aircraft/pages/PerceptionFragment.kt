@@ -6,19 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import androidx.fragment.app.viewModels
-import dji.sampleV5.aircraft.R
-import dji.sampleV5.aircraft.databinding.FragAppSilentlyUpgradePageBinding
 import dji.sampleV5.aircraft.databinding.FragPerceptionPageBinding
 import dji.sampleV5.aircraft.models.PerceptionVM
-import dji.sampleV5.aircraft.util.Helper
+import dji.v5.ux.util.Helper
 import dji.v5.common.callback.CommonCallbacks
 import dji.v5.common.error.IDJIError
+import dji.v5.manager.aircraft.perception.PerceptionManager
 import dji.v5.manager.aircraft.perception.data.ObstacleAvoidanceType
 import dji.v5.manager.aircraft.perception.data.PerceptionDirection
 import dji.v5.manager.aircraft.perception.data.PerceptionInfo
 import dji.v5.manager.aircraft.perception.data.ObstacleData
 import dji.v5.manager.aircraft.perception.radar.RadarInformation
-import dji.sampleV5.aircraft.util.ToastUtils
+import dji.v5.utils.common.LogPath
+import dji.v5.utils.common.LogUtils
+import dji.v5.ux.util.ToastUtils
 import dji.v5.ux.core.extension.hide
 import dji.v5.ux.core.extension.show
 
@@ -66,6 +67,58 @@ class PerceptionFragment : DJIFragment(), CompoundButton.OnCheckedChangeListener
         binding?.tvObstacleAvoidanceUpSwitch?.setOnCheckedChangeListener(this)
         binding?.tvObstacleAvoidanceDownSwitch?.setOnCheckedChangeListener(this)
         binding?.tvObstacleAvoidanceHorizontalSwitch?.setOnCheckedChangeListener(this)
+
+
+        binding?.tvReadUpward?.setOnClickListener {
+            perceptionVM.getObstacleAvoidanceEnabled(PerceptionDirection.UPWARD, object : CommonCallbacks.CompletionCallbackWithParam<Boolean>{
+                override fun onSuccess(t: Boolean?) {
+                    ToastUtils.showShortToast("UPWARD state : " + t + "\n" +
+                            "isUpwardObstacleAvoidanceEnabled:" + perceptionInfo?.isUpwardObstacleAvoidanceEnabled)
+                    LogUtils.i(LogPath.SAMPLE, "getObstacleAvoidanceEnabled UPWARD state: " + t)
+                    LogUtils.i(LogPath.SAMPLE, "isUpwardObstacleAvoidanceEnabled:" + perceptionInfo?.isUpwardObstacleAvoidanceEnabled)
+                }
+
+                override fun onFailure(error: IDJIError) {
+                    ToastUtils.showShortToast("Get UPWARD state filed , errorInfo: " + error.errorCode() + ", " + error.toString())
+                    LogUtils.i(LogPath.SAMPLE, "Get UPWARD state filed , errorInfo: " + error.errorCode() + ", " + error.toString())
+                }
+
+            })
+        }
+
+        binding?.tvReadDown?.setOnClickListener {
+            perceptionVM.getObstacleAvoidanceEnabled(PerceptionDirection.DOWNWARD, object : CommonCallbacks.CompletionCallbackWithParam<Boolean>{
+                override fun onSuccess(t: Boolean?) {
+                    ToastUtils.showShortToast("DOWNWARD state : " + t + "\n" +
+                        "isDownwardObstacleAvoidanceEnabled:" + perceptionInfo?.isDownwardObstacleAvoidanceEnabled)
+                    LogUtils.i(LogPath.SAMPLE, "getObstacleAvoidanceEnabled DOWNWARD state : " + t)
+                    LogUtils.i(LogPath.SAMPLE, "isDownwardObstacleAvoidanceEnabled:" + perceptionInfo?.isDownwardObstacleAvoidanceEnabled)
+                }
+
+                override fun onFailure(error: IDJIError) {
+                    ToastUtils.showShortToast("Get DOWNWARD state filed , errorInfo: " + error.errorCode() + ", " + error.toString())
+                    LogUtils.i(LogPath.SAMPLE, "Get DOWNWARD state filed , errorInfo: " + error.errorCode() + ", " + error.toString())
+                }
+
+            })
+        }
+
+        binding?.tvReadHorizontal?.setOnClickListener {
+            perceptionVM.getObstacleAvoidanceEnabled(PerceptionDirection.HORIZONTAL, object : CommonCallbacks.CompletionCallbackWithParam<Boolean>{
+                override fun onSuccess(t: Boolean?) {
+                    ToastUtils.showShortToast("HORIZONTAL state : " + t + "\n" +
+                            "isHorizontalObstacleAvoidanceEnabled:" + perceptionInfo?.isHorizontalObstacleAvoidanceEnabled)
+                    LogUtils.i(LogPath.SAMPLE, "getObstacleAvoidanceEnabled HORIZONTAL state : " + t)
+                    LogUtils.i(LogPath.SAMPLE, "isHorizontalObstacleAvoidanceEnabled:" + perceptionInfo?.isHorizontalObstacleAvoidanceEnabled)
+                }
+
+                override fun onFailure(error: IDJIError) {
+                    ToastUtils.showShortToast("Get HORIZONTAL state filed , errorInfo: " + error.errorCode() + ", " + error.toString())
+                    LogUtils.i(LogPath.SAMPLE, "Get HORIZONTAL state filed , errorInfo: " + error.errorCode() + ", " + error.toString())
+                }
+
+            })
+        }
 
         perceptionVM.addPerceptionInfoListener()
         observerPerceptionInfo()
@@ -376,7 +429,7 @@ class PerceptionFragment : DJIFragment(), CompoundButton.OnCheckedChangeListener
                 ).append("\n")
                 append("ObstacleAvoidanceWarningDistance:").append(" upward:$upwardObstacleAvoidanceWarningDistance,down:$downwardObstacleAvoidanceWarningDistance,horizontal:$horizontalObstacleAvoidanceWarningDistance")
                     .append("\n")
-                append("isUpwardObstacleAvoidanceWorking:$isUpwardObstacleAvoidanceEnabled").append("\n")
+                append("isUpwardObstacleAvoidanceWorking:$upwardObstacleAvoidanceWorking").append("\n")
                 append("isLeftSideObstacleAvoidanceWorking:$leftSideObstacleAvoidanceWorking").append("\n")
                 append("isRightSideObstacleAvoidanceWorking:$rightSideObstacleAvoidanceWorking").append("\n")
                 append("isBackwardObstacleAvoidanceWorking:$backwardObstacleAvoidanceWorking").append("\n")

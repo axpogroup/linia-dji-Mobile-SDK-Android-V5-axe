@@ -39,12 +39,20 @@
           </div>
         </div>
         <div class="nav scrollable js-tree-menu">
-          <dl>
-            <dt>Manager Classes
+          <dl class="sidebar-group sidebar-group--common">
+            <dt>Common APIs
             </dt>
                   <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">ISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../SDKManager/ISDKManager_SDKManagerCallback.html">SDKManagerCallback</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_InitSettings.html">InitSettings</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_PluginAPPConfig.html">PluginAPPConfig</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_APPVersion.html">APPVersion</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_OpenLocation.html">OpenLocation</a>
                             </dd>
                     </ul>
                   </dd>
@@ -248,6 +256,8 @@
                                       </dd>
                                       <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_StreamDataListener.html">StreamDataListener</a>
+                                                </dd>
                                                 <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html">VideoChannelStateChangeListener</a>
                                                 </dd>
                                         </ul>
@@ -268,6 +278,14 @@
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ICameraStreamManager.html" class="sub-toggle">ICameraStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_VisionAssistStatusListener.html">VisionAssistStatusListener</a>
+                                      </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
@@ -671,8 +689,146 @@
                     </ul>
                   </dd>
           </dl>
-          <dl>
-            <dt>Misc Classes
+          <dl class="sidebar-group sidebar-group--plugins">
+            <dt>Plugin APIs
+            </dt>
+                  <dd><a data-href="../IARManager/IARManager.html" class="sub-toggle">IARManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IARManager/IARManager_ARCircleInfo.html">ARCircleInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistAlpha.html">ARDistAlpha</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistLineWidth.html">ARDistLineWidth</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARFaceStroke.html">ARFaceStroke</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconOrthographicConfig.html">ARIconOrthographicConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconPerspectiveConfig.html">ARIconPerspectiveConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARLineInfo.html">ARLineInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointConfig.html">ARPointConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointInfo.html">ARPointInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonFace.html">ARPolygonFace</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonInfo.html">ARPolygonInfo</a>
+                            </dd>
+                            <dd><a data-href="../IARManager/IARManager_ARRadarConfig.html" class="sub-toggle">ARRadarConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IARManager/IARManager_ARRadarConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARStrokeInfo.html">ARStrokeInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARTextConfig.html">ARTextConfig</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager.html" class="sub-toggle">IRemoteViewPageManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ActivityConfig.html">ActivityConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_DividerConfig.html">DividerConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnCheckedChangeListener.html">IRemoteViewOnCheckedChangeListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnClickListener.html">IRemoteViewOnClickListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnItemSelectedListener.html">IRemoteViewOnItemSelectedListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewTextWatcher.html">IRemoteViewTextWatcher</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_LayoutParam.html">LayoutParam</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemData.html">ListItemData</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemOperation.html">ListItemOperation</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_RemoteView.html">RemoteView</a>
+                            </dd>
+                            <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor.html" class="sub-toggle">ShapeDescriptor<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_TextSpanSeparatorConfig.html">TextSpanSeparatorConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_WidgetLayoutParam.html">WidgetLayoutParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../ICameraViewDrawingManager/ICameraViewDrawingManager.html" class="sub-toggle">ICameraViewDrawingManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingBoxInfo.html">DrawingBoxInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingPolygonInfo.html">DrawingPolygonInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingTextInfo.html">DrawingTextInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenDoubleRect.html">OpenDoubleRect</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenPoint.html">OpenPoint</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager.html" class="sub-toggle">IRemoteDialogManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig.html" class="sub-toggle">DialogConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogElementConfig.html">DialogElementConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogMessage.html">DialogMessage</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_IDialogMessageListener.html">IDialogMessageListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IMapWidgetManager/IMapWidgetManager.html" class="sub-toggle">IMapWidgetManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html">MapCircleOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapElement.html">MapElement</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html">MapMarkerOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html">MapPolygonOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html">MapPolylineOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidget.html">MapWidget</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html">MapWidgetItem</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetLayer.html">MapWidgetLayer</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IRemoteServerConfigManager/IRemoteServerConfigManager.html">IRemoteServerConfigManager</a>
+                  </dd>
+                  <dd><a href="../IFileTransferManager/IFileTransferManager.html">IFileTransferManager</a>
+                  </dd>
+                  <dd><a data-href="../INavigateManager/INavigateManager.html" class="sub-toggle">INavigateManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../INavigateManager/INavigateManager_NavigateAction.html">NavigateAction</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IDisconnectActionManager/IDisconnectActionManager.html">IDisconnectActionManager</a>
+                  </dd>
+                  <dd><a href="../IRemoteControlManager/IRemoteControlManager.html">IRemoteControlManager</a>
+                  </dd>
+          </dl>
+          <dl class="sidebar-group sidebar-group--references">
+            <dt>References
             </dt>
                   <dd><a href="../DJIError/DJIError.html">IDJIError</a>
                   </dd>
@@ -688,136 +844,157 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>BatteryKey</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">BatteryKey</span> <span class="keyword">extends</span> <span class="title">DJIBatteryKey</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>DJIBatteryKey</code></font></td></tr></table></html>
-<h5 id="description">Description:</h5>
-<p><font color="#666"><code><a href="../../Components/IKeyManager/Key_Battery_BatteryKey.html#key_battery_batterykey">BatteryKey</a></code> provides a set of methods to manage aircraft battery information and the real-time status. Obtain the information and real-time status of the corresponding battery by setting componentIndex. Take M30 series aircraft as an example: 0 means battery 1(left) in the Pilot, 1 means battery 2(right) in the Pilot. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="class-members">Class Members:</h5>
-<h4 id="basic-information">Basic Information</h4>
-<div class="api-row" id="key_battery_connection"><div class="api-col left">Connection Status</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_connection_inline">KeyConnection</a></div></div><div class="inline-doc" id="key_battery_connection_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyConnection</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyConnection = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"Connection"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that the battery on the aircraft is connected. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>BatteryKey</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">BatteryKey</span> <span class="keyword">extends</span> <span class="title class_">DJIBatteryKey</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr><tr valign="top"><td width=15%><font color="#999"><i>Inherits From:</i></td><td width=85%><font color="#999"><code>DJIBatteryKey</code></td></tr></table></html>
+<h5 id="Description">Description:</h5>
+<p><font color="#666"><code><a href="../../Components/IKeyManager/Key_Battery_BatteryKey.html#key_battery_batterykey">BatteryKey</a></code> provides a set of methods to manage aircraft battery information and the real-time status. Obtain the information and real-time status of the corresponding battery by setting componentIndex. Take M30 series aircraft as an example: 0 means battery 1(left) in the Pilot, 1 means battery 2(right) in the Pilot. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
+<h5 id="Class-Members">Class Members:</h5>
+<h4 id="Basic-Information">Basic Information</h4>
+<div class="api-row" id="key_battery_connection"><div class="api-col left">Connection Status</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_connection_inline">KeyConnection</a></div></div><div class="inline-doc" id="key_battery_connection_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyConnection</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyConnection = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;Connection&quot;</span>, SingleValueConverter.BooleanConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-2">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that the battery on the aircraft is connected. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_fullchargecapacity"><div class="api-col left">Fully Charged</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_fullchargecapacity_inline">KeyFullChargeCapacity</a></div></div><div class="inline-doc" id="key_battery_fullchargecapacity_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyFullChargeCapacity</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyFullChargeCapacity = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"FullChargeCapacity"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the battery capacity when the battery is fully charged. Unit: mAh. As the battery is continuously used, the capacity of the battery when fully charged will decrease over time. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_fullchargecapacity"><div class="api-col left">Fully Charged</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_fullchargecapacity_inline">KeyFullChargeCapacity</a></div></div><div class="inline-doc" id="key_battery_fullchargecapacity_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyFullChargeCapacity</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyFullChargeCapacity = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;FullChargeCapacity&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-3">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the battery capacity when the battery is fully charged. Unit: mAh. As the battery is continuously used, the capacity of the battery when fully charged will decrease over time. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_chargeremaining"><div class="api-col left">Remaining Battery</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_chargeremaining_inline">KeyChargeRemaining</a></div></div><div class="inline-doc" id="key_battery_chargeremaining_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyChargeRemaining</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyChargeRemaining = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"ChargeRemaining"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> To get remaining battery capacity. Unit: mAh. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_chargeremaining"><div class="api-col left">Remaining Battery</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_chargeremaining_inline">KeyChargeRemaining</a></div></div><div class="inline-doc" id="key_battery_chargeremaining_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyChargeRemaining</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyChargeRemaining = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;ChargeRemaining&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-4">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> To get remaining battery capacity. Unit: mAh. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_chargeremaininginpercent"><div class="api-col left">Percentage of Remaining Battery</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_chargeremaininginpercent_inline">KeyChargeRemainingInPercent</a></div></div><div class="inline-doc" id="key_battery_chargeremaininginpercent_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyChargeRemainingInPercent</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyChargeRemainingInPercent = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"ChargeRemainingInPercent"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the percentage of remaining battery power. If you need to get the total power percentage of all batteries, you can get all the remaining battery power and battery capacity by setting different componentIndex for calculation. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_chargeremaininginpercent"><div class="api-col left">Percentage of Remaining Battery</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_chargeremaininginpercent_inline">KeyChargeRemainingInPercent</a></div></div><div class="inline-doc" id="key_battery_chargeremaininginpercent_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyChargeRemainingInPercent</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyChargeRemainingInPercent = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;ChargeRemainingInPercent&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-5">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the percentage of remaining battery power. If you need to get the total power percentage of all batteries, you can get all the remaining battery power and battery capacity by setting different componentIndex for calculation. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_batteryhighvoltagestoragesec"><div class="api-col left">Store at High Battery Level</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batteryhighvoltagestoragesec_inline">KeyBatteryHighVoltageStorageTime</a></div></div><div class="inline-doc" id="key_battery_batteryhighvoltagestoragesec_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyBatteryHighVoltageStorageTime</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Long&gt; KeyBatteryHighVoltageStorageTime = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"BatteryHighVoltageStorageTime"</span>, SingleValueConverter.LongConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"BatteryHighVoltageStorageSec"</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Long<br><br> Store at High Battery Level means storing battery when it has 90% or higher battery level. If high battery level storage time in total is less than 120 days in 12 months, battery can be charged for up to 400 cycles. Change Time to Battery Self-Discharge to adjust time of battery storage at high level. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<div class="api-row" id="key_battery_batteryhighvoltagestoragesec"><div class="api-col left">Store at High Battery Level</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batteryhighvoltagestoragesec_inline">KeyBatteryHighVoltageStorageTime</a></div></div><div class="inline-doc" id="key_battery_batteryhighvoltagestoragesec_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyBatteryHighVoltageStorageTime</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Long&gt; KeyBatteryHighVoltageStorageTime = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;BatteryHighVoltageStorageTime&quot;</span>, SingleValueConverter.LongConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>).setInnerIdentifier(<span class="string">&quot;BatteryHighVoltageStorageSec&quot;</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-6">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Long<br><br> Store at High Battery Level means storing battery when it has 90% or higher battery level. If high battery level storage time in total is less than 120 days in 12 months, battery can be charged for up to 400 cycles. Change Time to Battery Self-Discharge to adjust time of battery storage at high level. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_batterytemperature"><div class="api-col left">Temperature</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batterytemperature_inline">KeyBatteryTemperature</a></div></div><div class="inline-doc" id="key_battery_batterytemperature_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyBatteryTemperature</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Double&gt; KeyBatteryTemperature = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"BatteryTemperature"</span>, SingleValueConverter.DoubleConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Double<br><br> Get the battery temperature. Unit: Celsius. Range interval: [-128, 127]. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_batterytemperature"><div class="api-col left">Temperature</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batterytemperature_inline">KeyBatteryTemperature</a></div></div><div class="inline-doc" id="key_battery_batterytemperature_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyBatteryTemperature</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Double&gt; KeyBatteryTemperature = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;BatteryTemperature&quot;</span>, SingleValueConverter.DoubleConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-7">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Double<br><br> Get the battery temperature. Unit: Celsius. Range interval: [-128, 127]. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_voltage"><div class="api-col left">Voltage</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_voltage_inline">KeyVoltage</a></div></div><div class="inline-doc" id="key_battery_voltage_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyVoltage</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyVoltage = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"Voltage"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the voltage of a single battery. Unit: mV. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_voltage"><div class="api-col left">Voltage</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_voltage_inline">KeyVoltage</a></div></div><div class="inline-doc" id="key_battery_voltage_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyVoltage</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyVoltage = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;Voltage&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-8">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the voltage of a single battery. Unit: mV. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_current"><div class="api-col left">Current</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_current_inline">KeyCurrent</a></div></div><div class="inline-doc" id="key_battery_current_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyCurrent</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyCurrent = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"Current"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the real-time current consumption of the battery. Unit: mA. Negative values indicate that the battery is discharging, and positive values indicate that it is charging. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_current"><div class="api-col left">Current</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_current_inline">KeyCurrent</a></div></div><div class="inline-doc" id="key_battery_current_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyCurrent</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyCurrent = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;Current&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-9">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the real-time current consumption of the battery. Unit: mA. Negative values indicate that the battery is discharging, and positive values indicate that it is charging. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_numberofdischarges"><div class="api-col left">Number of Discharges</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_numberofdischarges_inline">KeyNumberOfDischarges</a></div></div><div class="inline-doc" id="key_battery_numberofdischarges_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyNumberOfDischarges</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyNumberOfDischarges = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"NumberOfDischarges"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> Gets the total number of discharges that a battery has experienced during its lifetime. The total number of discharges includes discharges that occur through normal use and those that are manually set. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_numberofdischarges"><div class="api-col left">Number of Discharges</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_numberofdischarges_inline">KeyNumberOfDischarges</a></div></div><div class="inline-doc" id="key_battery_numberofdischarges_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyNumberOfDischarges</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyNumberOfDischarges = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;NumberOfDischarges&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-10">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> Gets the total number of discharges that a battery has experienced during its lifetime. The total number of discharges includes discharges that occur through normal use and those that are manually set. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_numberofcells"><div class="api-col left">Cell Information</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_numberofcells_inline">KeyNumberOfCells</a></div></div><div class="inline-doc" id="key_battery_numberofcells_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyNumberOfCells</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyNumberOfCells = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"NumberOfCells"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the number of cells contained in the battery. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_numberofcells"><div class="api-col left">Cell Information</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_numberofcells_inline">KeyNumberOfCells</a></div></div><div class="inline-doc" id="key_battery_numberofcells_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyNumberOfCells</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyNumberOfCells = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;NumberOfCells&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-11">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the number of cells contained in the battery. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_cellvoltages"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_cellvoltages_inline">KeyCellVoltages</a></div></div><div class="inline-doc" id="key_battery_cellvoltages_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyCellVoltages</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;List&lt;Integer&gt;&gt; KeyCellVoltages = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"CellVoltages"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;((Class)List<span class="class">.<span class="keyword">class</span>,<span class="title">BatteryCellVoltages</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>List<integer><br><br> Get the voltage of each cell contained in the battery.Unit: mV. <br><br><code><i>Supported since MSDK 5.0.0</i></code></integer></font></p>
+<div class="api-row" id="key_battery_cellvoltages"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_cellvoltages_inline">KeyCellVoltages</a></div></div><div class="inline-doc" id="key_battery_cellvoltages_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyCellVoltages</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;List&lt;Integer&gt;&gt; KeyCellVoltages = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;CellVoltages&quot;</span>, <span class="keyword">new</span> <span class="title class_">SingleValueConverter</span>&lt;&gt;((Class)List.class,BatteryCellVoltages.class)).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-12">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>List<Integer><br><br> Get the voltage of each cell contained in the battery.Unit: mV. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_batterymanufactureddate"><div class="api-col left">Production Date</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batterymanufactureddate_inline">KeyBatteryManufacturedDate</a></div></div><div class="inline-doc" id="key_battery_batterymanufactureddate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyBatteryManufacturedDate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Date&gt; KeyBatteryManufacturedDate = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"BatteryManufacturedDate"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(Date<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
-<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_Date.html#value_common_struct_date">Date</a></code><br><br> Get the production date of battery. <br><b>Note:<br> This interface is deprecated starting from MSDK 5.9.0. </b>             <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_batterymanufactureddate"><div class="api-col left">Production Date</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batterymanufactureddate_inline">KeyBatteryManufacturedDate</a></div></div><div class="inline-doc" id="key_battery_batterymanufactureddate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyBatteryManufacturedDate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Date&gt; KeyBatteryManufacturedDate = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;BatteryManufacturedDate&quot;</span>, <span class="keyword">new</span> <span class="title class_">DJIValueConverter</span>&lt;&gt;(Date.class)).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-13">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_Date.html#value_common_struct_date">Date</a></code><br><br> Get the production date of battery. <br><b>Note:<br> This interface is deprecated starting from MSDK 5.9.0. </b>             <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_serialnumber"><div class="api-col left">Serial Number</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_serialnumber_inline">KeySerialNumber</a></div></div><div class="inline-doc" id="key_battery_serialnumber_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeySerialNumber</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;String&gt; KeySerialNumber = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"SerialNumber"</span>, SingleValueConverter.StringConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>String<br><br> Get the serial number of battery. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_serialnumber"><div class="api-col left">Serial Number</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_serialnumber_inline">KeySerialNumber</a></div></div><div class="inline-doc" id="key_battery_serialnumber_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeySerialNumber</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;String&gt; KeySerialNumber = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;SerialNumber&quot;</span>, SingleValueConverter.StringConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-14">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>String<br><br> Get the serial number of battery. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
-<div class="api-row" id="key_battery_firmwareversion"><div class="api-col left">Firmware Version</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_firmwareversion_inline">KeyFirmwareVersion</a></div></div><div class="inline-doc" id="key_battery_firmwareversion_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyFirmwareVersion</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;String&gt; KeyFirmwareVersion = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"FirmwareVersion"</span>, SingleValueConverter.StringConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>String<br><br> Get the firmware version of battery. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<div class="api-row" id="key_battery_firmwareversion"><div class="api-col left">Firmware Version</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_firmwareversion_inline">KeyFirmwareVersion</a></div></div><div class="inline-doc" id="key_battery_firmwareversion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyFirmwareVersion</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;String&gt; KeyFirmwareVersion = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;FirmwareVersion&quot;</span>, SingleValueConverter.StringConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">false</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-15">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>String<br><br> Get the firmware version of battery. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
 <html><p><br></p></html>
-<h4 id="basic-setting">Basic Setting</h4>
-<div class="api-row" id="key_battery_batteryselfdischargeindays"><div class="api-col left">Self Discharge</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batteryselfdischargeindays_inline">KeyBatterySelfDischargeInDays</a></div></div><div class="inline-doc" id="key_battery_batteryselfdischargeindays_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyBatterySelfDischargeInDays</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyBatterySelfDischargeInDays = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"BatterySelfDischargeInDays"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> Set and get the battery self-discharge days. The range interval: [1, 10]. In order to ensure the safety of the battery, when the number of days of placing the battery for a long time exceeds the number of self-discharge days, the battery will automatically discharge to the safely placing power. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h4 id="Basic-Setting">Basic Setting</h4>
+<div class="api-row" id="key_battery_batteryselfdischargeindays"><div class="api-col left">Self Discharge</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_battery_batteryselfdischargeindays_inline">KeyBatterySelfDischargeInDays</a></div></div><div class="inline-doc" id="key_battery_batteryselfdischargeindays_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>KeyBatterySelfDischargeInDays</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyBatterySelfDischargeInDays = <span class="keyword">new</span> <span class="title class_">DJIKeyInfo</span>&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">&quot;BatterySelfDischargeInDays&quot;</span>, SingleValueConverter.IntegerConverter).canGet(<span class="literal">true</span>).canSet(<span class="literal">true</span>).canListen(<span class="literal">true</span>).canPerformAction(<span class="literal">false</span>).setIsEvent(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.key</td></tr></table></html>
+<h5 id="Description-16">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> Set and get the battery self-discharge days. The range interval: [1, 10]. In order to ensure the safety of the battery, when the number of days of placing the battery for a long time exceeds the number of self-discharge days, the battery will automatically discharge to the safely placing power. <br><br><code><i>Supported since MSDK 5.0.0</i></code></p>
 </div>
 
+        </div>
+      </div>
+      <div class="site-toc">
+        <div class="site-toc-inner">
+          <div class="site-toc-title">On this page</div>
+          <ul class="site-toc-list"></ul>
         </div>
       </div>
     </div>
@@ -825,22 +1002,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">Search Mobile SDK Document
+            <h2 class="title">搜索 Mobile SDK 文档
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
-            <div v-show="searchLoading" class="text-center">Loading...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
+            <div v-show="searchLoading" class="text-center">加载中...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
             </div>
           </div>
         </div>

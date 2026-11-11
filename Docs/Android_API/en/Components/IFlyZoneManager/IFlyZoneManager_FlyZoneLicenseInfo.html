@@ -39,12 +39,20 @@
           </div>
         </div>
         <div class="nav scrollable js-tree-menu">
-          <dl>
-            <dt>Manager Classes
+          <dl class="sidebar-group sidebar-group--common">
+            <dt>Common APIs
             </dt>
                   <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">ISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../SDKManager/ISDKManager_SDKManagerCallback.html">SDKManagerCallback</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_InitSettings.html">InitSettings</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_PluginAPPConfig.html">PluginAPPConfig</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_APPVersion.html">APPVersion</a>
+                            </dd>
+                            <dd><a href="../SDKManager/ISDKManager_OpenLocation.html">OpenLocation</a>
                             </dd>
                     </ul>
                   </dd>
@@ -248,6 +256,8 @@
                                       </dd>
                                       <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_StreamDataListener.html">StreamDataListener</a>
+                                                </dd>
                                                 <dd><a href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html">VideoChannelStateChangeListener</a>
                                                 </dd>
                                         </ul>
@@ -268,6 +278,14 @@
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ICameraStreamManager.html" class="sub-toggle">ICameraStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_VisionAssistStatusListener.html">VisionAssistStatusListener</a>
+                                      </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
@@ -671,8 +689,146 @@
                     </ul>
                   </dd>
           </dl>
-          <dl>
-            <dt>Misc Classes
+          <dl class="sidebar-group sidebar-group--plugins">
+            <dt>Plugin APIs
+            </dt>
+                  <dd><a data-href="../IARManager/IARManager.html" class="sub-toggle">IARManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IARManager/IARManager_ARCircleInfo.html">ARCircleInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistAlpha.html">ARDistAlpha</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARDistLineWidth.html">ARDistLineWidth</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARFaceStroke.html">ARFaceStroke</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconOrthographicConfig.html">ARIconOrthographicConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconPerspectiveConfig.html">ARIconPerspectiveConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARLineInfo.html">ARLineInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointConfig.html">ARPointConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointInfo.html">ARPointInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonFace.html">ARPolygonFace</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPolygonInfo.html">ARPolygonInfo</a>
+                            </dd>
+                            <dd><a data-href="../IARManager/IARManager_ARRadarConfig.html" class="sub-toggle">ARRadarConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IARManager/IARManager_ARRadarConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARStrokeInfo.html">ARStrokeInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARTextConfig.html">ARTextConfig</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager.html" class="sub-toggle">IRemoteViewPageManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ActivityConfig.html">ActivityConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_DividerConfig.html">DividerConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnCheckedChangeListener.html">IRemoteViewOnCheckedChangeListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnClickListener.html">IRemoteViewOnClickListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnItemSelectedListener.html">IRemoteViewOnItemSelectedListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewTextWatcher.html">IRemoteViewTextWatcher</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_LayoutParam.html">LayoutParam</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemData.html">ListItemData</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemOperation.html">ListItemOperation</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_RemoteView.html">RemoteView</a>
+                            </dd>
+                            <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor.html" class="sub-toggle">ShapeDescriptor<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_TextSpanSeparatorConfig.html">TextSpanSeparatorConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_WidgetLayoutParam.html">WidgetLayoutParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../ICameraViewDrawingManager/ICameraViewDrawingManager.html" class="sub-toggle">ICameraViewDrawingManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingBoxInfo.html">DrawingBoxInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingPolygonInfo.html">DrawingPolygonInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingTextInfo.html">DrawingTextInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenDoubleRect.html">OpenDoubleRect</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenPoint.html">OpenPoint</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager.html" class="sub-toggle">IRemoteDialogManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig.html" class="sub-toggle">DialogConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogElementConfig.html">DialogElementConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogMessage.html">DialogMessage</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_IDialogMessageListener.html">IDialogMessageListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IMapWidgetManager/IMapWidgetManager.html" class="sub-toggle">IMapWidgetManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html">MapCircleOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapElement.html">MapElement</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html">MapMarkerOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html">MapPolygonOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html">MapPolylineOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidget.html">MapWidget</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html">MapWidgetItem</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetLayer.html">MapWidgetLayer</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IRemoteServerConfigManager/IRemoteServerConfigManager.html">IRemoteServerConfigManager</a>
+                  </dd>
+                  <dd><a href="../IFileTransferManager/IFileTransferManager.html">IFileTransferManager</a>
+                  </dd>
+                  <dd><a data-href="../INavigateManager/INavigateManager.html" class="sub-toggle">INavigateManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../INavigateManager/INavigateManager_NavigateAction.html">NavigateAction</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../IDisconnectActionManager/IDisconnectActionManager.html">IDisconnectActionManager</a>
+                  </dd>
+                  <dd><a href="../IRemoteControlManager/IRemoteControlManager.html">IRemoteControlManager</a>
+                  </dd>
+          </dl>
+          <dl class="sidebar-group sidebar-group--references">
+            <dt>References
             </dt>
                   <dd><a href="../DJIError/DJIError.html">IDJIError</a>
                   </dd>
@@ -688,180 +844,203 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>FlyZoneLicenseInfo</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyZoneLicenseInfo</span> <span class="keyword">implements</span> <span class="title">KeepProguard</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
-<p><font color="#666">Restricted fly zone licenses class. Including the basic information of the unlocking licenses, such as license type, validity period, flight controller SN bound to the license, enabling status, etc. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="class-members">Class Members:</h5>
-<h4 id="basic-information">Basic Information</h4>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlicensetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlicensetype_inline">getLicenseType</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlicensetype_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getLicenseType</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">FlySafeLicenseType <span class="title">getLicenseType</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">Gets the type of the restricted fly zone licnese.
-<br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlySafeLicenseType</font></td><td><font color="#666"><i>Returns the type of the restricted fly zone licnese.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getsn"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getsn_inline">getSN</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getsn_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getSN</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getSN</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">Gets the flight controller SN of the aircraft that is bound to the licnese. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>Returns the flight controller SN of the aircraft that is bound to the licnese.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getstarttimestamp"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getstarttimestamp_inline">getStartTimeStamp</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getstarttimestamp_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getStartTimeStamp</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getStartTimeStamp</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">Gets the start timestamp of the validity period of the restricted fly zone license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>Returns the start timestamp of the validity period of the restricted fly zone license.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getendtimestamp"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getendtimestamp_inline">getEndTimeStamp</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getendtimestamp_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getEndTimeStamp</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getEndTimeStamp</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">Gets the end timestamp of the validity period of the restricted fly zone license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>Returns the send timestamp of the validity period of the restricted fly zone license.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlicenseid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlicenseid_inline">getLicenseId</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlicenseid_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getLicenseId</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLicenseId</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">Gets the ID of the restricted fly zone release license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the ID of the restricted fly zone release license.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_isenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_isenabled_inline">isEnabled</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_isenabled_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>isEnabled</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
-<p><font color="#666">Gets whether the restricted fly zone license is valid. You can call <code><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_setflyzonelicensesenabled">setFlyZoneLicensesEnabled</a></code> to enable or disable the licnese. After enabling the license, the aircraft will be able to take off normally in the restricted fly zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>Returns whether the restricted fly zone license is valid.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_isvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_isvalid_inline">isValid</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_isvalid_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>isValid</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
-<p><font color="#666">Gets whether the restricted fly zone licnese is valid. If the licnese has expired, please re-apply the license on the DJI official website. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>Returns whether the restricted fly zone licnese is valid.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getdescription"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getdescription_inline">getDescription</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getdescription_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getDescription</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
-<p><font color="#666">Gets the description of the restricted fly zone licnese. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>Returns the description of the restricted fly zone licnese.</i></font></td></tr></table></html></div>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>FlyZoneLicenseInfo</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">FlyZoneLicenseInfo</span> <span class="keyword">implements</span> <span class="title class_">KeepProguard</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description">Description:</h5>
+<p><font color="#666">Restricted fly zone licenses class. Including the basic information of the unlocking licenses, such as license type, validity period, flight controller SN bound to the license, enabling status, etc. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Class-Members">Class Members:</h5>
+<h4 id="Basic-Information">Basic Information</h4>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlicensetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlicensetype_inline">getLicenseType</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlicensetype_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLicenseType</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FlySafeLicenseType <span class="title function_">getLicenseType</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-2">Description:</h5>
+<p><font color="#666">Gets the type of the restricted fly zone licnese.<br>
+<br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_flysafelicensetype">FlySafeLicenseType</a></td><td><font color="#666"><i>Returns the type of the restricted fly zone licnese.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getsn"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getsn_inline">getSN</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getsn_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSN</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getSN</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-3">Description:</h5>
+<p><font color="#666">Gets the flight controller SN of the aircraft that is bound to the licnese. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>Returns the flight controller SN of the aircraft that is bound to the licnese.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getstarttimestamp"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getstarttimestamp_inline">getStartTimeStamp</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getstarttimestamp_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getStartTimeStamp</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="title function_">getStartTimeStamp</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-4">Description:</h5>
+<p><font color="#666">Gets the start timestamp of the validity period of the restricted fly zone license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-3">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</td><td><font color="#666"><i>Returns the start timestamp of the validity period of the restricted fly zone license.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getendtimestamp"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getendtimestamp_inline">getEndTimeStamp</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getendtimestamp_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getEndTimeStamp</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="title function_">getEndTimeStamp</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-5">Description:</h5>
+<p><font color="#666">Gets the end timestamp of the validity period of the restricted fly zone license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</td><td><font color="#666"><i>Returns the send timestamp of the validity period of the restricted fly zone license.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlicenseid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlicenseid_inline">getLicenseId</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlicenseid_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLicenseId</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getLicenseId</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-6">Description:</h5>
+<p><font color="#666">Gets the ID of the restricted fly zone release license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>Returns the ID of the restricted fly zone release license.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_isenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_isenabled_inline">isEnabled</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_isenabled_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isEnabled</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">isEnabled</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-7">Description:</h5>
+<p><font color="#666">Gets whether the restricted fly zone license is valid. You can call <code><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_setflyzonelicensesenabled">setFlyZoneLicensesEnabled</a></code> to enable or disable the licnese. After enabling the license, the aircraft will be able to take off normally in the restricted fly zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-6">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i>Returns whether the restricted fly zone license is valid.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_isvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_isvalid_inline">isValid</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_isvalid_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isValid</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-8">Description:</h5>
+<p><font color="#666">Gets whether the restricted fly zone licnese is valid. If the licnese has expired, please re-apply the license on the DJI official website. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-7">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i>Returns whether the restricted fly zone licnese is valid.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getdescription"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getdescription_inline">getDescription</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getdescription_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getDescription</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getDescription</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-9">Description:</h5>
+<p><font color="#666">Gets the description of the restricted fly zone licnese. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-8">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>Returns the description of the restricted fly zone licnese.</i></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="restricted-fly-zone-unlock-information">Restricted Fly Zone Unlock information</h4>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getflyzoneids"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getflyzoneids_inline">getFlyZoneIDs</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getflyzoneids_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getFlyZoneIDs</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">List&lt;Integer&gt; <span class="title">getFlyZoneIDs</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
-<p><font color="#666">Gets the ID of unlock restricted fly zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v9">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;Integer&gt;</font></td><td><font color="#666"><i>Returns the ID of unlock restricted fly zone.</i></font></td></tr></table></html></div>
+<h4 id="Restricted-Fly-Zone-Unlock-information">Restricted Fly Zone Unlock information</h4>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getflyzoneids"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getflyzoneids_inline">getFlyZoneIDs</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getflyzoneids_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFlyZoneIDs</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; <span class="title function_">getFlyZoneIDs</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-10">Description:</h5>
+<p><font color="#666">Gets the ID of unlock restricted fly zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-9">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;Integer&gt;</td><td><font color="#666"><i>Returns the ID of unlock restricted fly zone.</i></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="cylinder-zone-unlock-information">Cylinder Zone Unlock Information</h4>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude_inline">getCylinderLatitude</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getCylinderLatitude</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getCylinderLatitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
-<p><font color="#666">Gets the latitude of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v10">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>Returns the latitude of the unlock cylinder zone.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude_inline">getCylinderLongitude</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getCylinderLongitude</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getCylinderLongitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
-<p><font color="#666">Gets the longitude of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v11">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>Returns the longitude of the unlock cylinder zone.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderradius_inline">getCylinderRadius</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderradius_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getCylinderRadius</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getCylinderRadius</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
-<p><font color="#666">Gets the radius of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v12">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>Returns the radius of the unlock cylinder zone.</i></font></td></tr></table></html></div>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderheight_inline">getCylinderHeight</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderheight_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getCylinderHeight</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCylinderHeight</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
-<p><font color="#666">Gets the height limit of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v13">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the height limit of the cylinder zone.</i></font></td></tr></table></html></div>
+<h4 id="Cylinder-Zone-Unlock-Information">Cylinder Zone Unlock Information</h4>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude_inline">getCylinderLatitude</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getCylinderLatitude</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> <span class="title function_">getCylinderLatitude</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-11">Description:</h5>
+<p><font color="#666">Gets the latitude of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-10">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</td><td><font color="#666"><i>Returns the latitude of the unlock cylinder zone.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude_inline">getCylinderLongitude</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getCylinderLongitude</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> <span class="title function_">getCylinderLongitude</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-12">Description:</h5>
+<p><font color="#666">Gets the longitude of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-11">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</td><td><font color="#666"><i>Returns the longitude of the unlock cylinder zone.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderradius_inline">getCylinderRadius</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderradius_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getCylinderRadius</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> <span class="title function_">getCylinderRadius</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-13">Description:</h5>
+<p><font color="#666">Gets the radius of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-12">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</td><td><font color="#666"><i>Returns the radius of the unlock cylinder zone.</i></td></tr></table></html></div>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderheight_inline">getCylinderHeight</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderheight_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getCylinderHeight</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getCylinderHeight</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-14">Description:</h5>
+<p><font color="#666">Gets the height limit of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-13">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>Returns the height limit of the cylinder zone.</i></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="polygon-zone-unlock-information">Polygon Zone Unlock Information</h4>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getpolygonpoints"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getpolygonpoints_inline">getPolygonPoints</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getpolygonpoints_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getPolygonPoints</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">List&lt;LocationCoordinate2D&gt; <span class="title">getPolygonPoints</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
-<p><font color="#666">Gets the range of the unlock polygon zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v14">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate2D.html#value_common_struct_locationcoordinate2d">LocationCoordinate2D</a>&gt;</font></td><td><font color="#666"><i>Returns the range of the polygon zone.</i></font></td></tr></table></html></div>
+<h4 id="Polygon-Zone-Unlock-Information">Polygon Zone Unlock Information</h4>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getpolygonpoints"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getpolygonpoints_inline">getPolygonPoints</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getpolygonpoints_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getPolygonPoints</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;LocationCoordinate2D&gt; <span class="title function_">getPolygonPoints</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-15">Description:</h5>
+<p><font color="#666">Gets the range of the unlock polygon zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-14">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate2D.html#value_common_struct_locationcoordinate2d">LocationCoordinate2D</a>&gt;</td><td><font color="#666"><i>Returns the range of the polygon zone.</i></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="height-limit-unlock-information">Height Limit Unlock Information</h4>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlimitedheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlimitedheight_inline">getLimitedHeight</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlimitedheight_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getLimitedHeight</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLimitedHeight</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
-<p><font color="#666">Gets the unlock height limit. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v15">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the unlock height limit.</i></font></td></tr></table></html></div>
+<h4 id="Height-Limit-Unlock-Information">Height Limit Unlock Information</h4>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlimitedheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlimitedheight_inline">getLimitedHeight</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlimitedheight_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLimitedHeight</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getLimitedHeight</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-16">Description:</h5>
+<p><font color="#666">Gets the unlock height limit. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-15">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>Returns the unlock height limit.</i></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="country-unlock-information">Country Unlock Information</h4>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcountryid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcountryid_inline">getCountryId</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcountryid_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getCountryId</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCountryId</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
-<p><font color="#666">Gets the country unlock zone ID. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
-<h5 id="return-v16">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the country unlock zone ID.</i></font></td></tr></table></html></div>
+<h4 id="Country-Unlock-Information">Country Unlock Information</h4>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcountryid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcountryid_inline">getCountryId</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcountryid_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getCountryId</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getCountryId</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-17">Description:</h5>
+<p><font color="#666">Gets the country unlock zone ID. <br><br><code><i>Supported since MSDK 5.3.0</i></code></p>
+<h5 id="Return-16">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>Returns the country unlock zone ID.</i></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="rid-unlock-information">RID Unlock Information</h4>
-<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getridunlocktype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getridunlocktype_inline">getRidUnlockType</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getridunlocktype_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getRidUnlockType</h6></div>
+<h4 id="RID-Unlock-Information">RID Unlock Information</h4>
+<div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getridunlocktype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getridunlocktype_inline">getRidUnlockType</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getridunlocktype_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getRidUnlockType</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">RidUnlockType <span class="title function_">getRidUnlockType</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.aircraft.flysafe.info</td></tr></table></html>
+<h5 id="Description-18">Description:</h5>
+<p><font color="#666">Gets the RID unlock type. <br><br><code><i>Supported since MSDK 5.8.0</i></code></p>
+<h5 id="Return-17">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_ridunlocktype">RidUnlockType</a></td><td><font color="#666"><i>Returns the RID unlock type.</i></td></tr></table></html></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">RidUnlockType <span class="title">getRidUnlockType</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
-<p><font color="#666">Gets the RID unlock type. <br><br><code><i>Supported since MSDK 5.8.0</i></code></font></p>
-<h5 id="return-v17">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_ridunlocktype">RidUnlockType</a></font></td><td><font color="#666"><i>Returns the RID unlock type.</i></font></td></tr></table></html></div>
-
+        </div>
+      </div>
+      <div class="site-toc">
+        <div class="site-toc-inner">
+          <div class="site-toc-title">On this page</div>
+          <ul class="site-toc-list"></ul>
         </div>
       </div>
     </div>
@@ -869,22 +1048,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">Search Mobile SDK Document
+            <h2 class="title">搜索 Mobile SDK 文档
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
-            <div v-show="searchLoading" class="text-center">Loading...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
+            <div v-show="searchLoading" class="text-center">加载中...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
             </div>
           </div>
         </div>
